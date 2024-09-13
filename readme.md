@@ -1,4 +1,5 @@
-Funcionalidades
+A ideia principal do sistema desenvolvido na matéria do projeto integrador: Desenvolvimento de Sistemas Orientado a Objetos é a elaboração de um ecommerce, mais especificamente uma papelaria chamada Imaginarte, empresa fictícia focada no ramo de papelaria vendendo itens para estudantes e amantes de arte.
+A ideia principal é desenvolver as funcionalidades: 
 
 * Navegação de qualquer pessoa entre os itens a venda
 * Cadastro cliente
