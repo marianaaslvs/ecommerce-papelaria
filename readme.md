@@ -10,3 +10,5 @@ A ideia principal é desenvolver as funcionalidades:
 * Tela de FAQ
 * Tela de fale conosco   
 * Carrinho de compras
+
+![diagrama de mer](/imagens/diagrama_mer.png)
