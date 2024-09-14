@@ -13,3 +13,19 @@ A ideia principal é desenvolver as funcionalidades:
 
 Diagrama de MER
 ![diagrama de mer](/imagens/diagrama_mer.png)
+
+
+Tela fale conosco
+![tela fale conosco](/imagens/telafaleconosco.png)
+
+
+Tela FAQ
+![Tela FAQ](/imagens/telafaq.png)
+
+
+Tela Carrinho 
+![Tela Carrinho](/imagens/telacarrinho.png)
+
+
+Tela produto
+![Tela produto](/imagens/telaproduto.png)
