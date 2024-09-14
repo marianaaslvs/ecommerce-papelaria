@@ -29,3 +29,16 @@ Tela Carrinho
 
 Tela produto
 ![Tela produto](/imagens/telaproduto.png)
+
+
+Tela Pedido Administrador
+![Tela Pedido Administrador](/imagens/telapedidoadm.png)
+
+
+
+Tela Pedido Cliente
+![Tela Pedido Cliente](/imagens/telapedidocliente.png)
+
+
+Tela Chamado
+![Tela Chamado](/imagens/telachamadoadm.png)
