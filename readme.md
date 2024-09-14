@@ -11,8 +11,28 @@ A ideia principal é desenvolver as funcionalidades:
 * Tela de fale conosco   
 * Carrinho de compras
 
+Tela Inicial
+![Tela inicial](/imagens/telainicial.png)
+
+
+Tela de navegação 
+![Tela de navegação](/imagens/telanavegacao.png)
+
+
+Tela Login
+![Tela login](/imagens/telalogin.png)
+
+
+Tela de cadastro 1
+![Tela de cadastro 1](/imagens/telacadastro01.png)
+
+
+Tela de cadastro 2
+![Tela de cadastro 2](/imagens/telacadastro02.png)
+
+
 Tela fale conosco
-![tela fale conosco](/imagens/telafaleconosco.png)
+![Tela fale conosco](/imagens/telafaleconosco.png)
 
 
 Tela FAQ
