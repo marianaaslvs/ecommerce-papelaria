@@ -11,10 +11,6 @@ A ideia principal é desenvolver as funcionalidades:
 * Tela de fale conosco   
 * Carrinho de compras
 
-Diagrama de MER
-![diagrama de mer](/imagens/diagrama_mer.png)
-
-
 Tela fale conosco
 ![tela fale conosco](/imagens/telafaleconosco.png)
 
@@ -42,3 +38,7 @@ Tela Pedido Cliente
 
 Tela Chamado
 ![Tela Chamado](/imagens/telachamadoadm.png)
+
+
+Diagrama de MER
+![diagrama de mer](/imagens/diagrama_mer.png)
