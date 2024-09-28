@@ -21,11 +21,11 @@ public class ClienteDao {
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
 
             preparedStatement.setString(1, cliente.getNome());
-            preparedStatement.setInt(2, cliente.getCpf());
-            preparedStatement.setInt(3, cliente.getTelefone());
+            preparedStatement.setString(2, cliente.getCpf());
+            preparedStatement.setString(3, cliente.getTelefone());
             preparedStatement.setString(4, cliente.getEmail());
             preparedStatement.setString(5, cliente.getRua());
-            preparedStatement.setInt(6, cliente.getNumero());
+            preparedStatement.setString(6, cliente.getNumero());
             preparedStatement.setString(7, cliente.getEstado());
             preparedStatement.setString(8, cliente.getCidade());
             preparedStatement.execute();

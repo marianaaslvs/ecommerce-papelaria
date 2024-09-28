@@ -26,14 +26,14 @@ public class CreateClienteServlet extends HttpServlet {
         String telefone = req.getParameter("telefone");
 
         Cliente cliente = new Cliente();
-        cliente.setNome();
-        cliente.setEmail();
-        cliente.setRua();
-        cliente.setCidade();
-        cliente.setEstado();
-        cliente.setCpf();
-        cliente.setNumero();
-        cliente.setTelefone();
+        cliente.setNome(nome);
+        cliente.setEmail(email);
+        cliente.setRua(rua);
+        cliente.setCidade(cidade);
+        cliente.setEstado(estado);
+        cliente.setCpf(cpf);
+        cliente.setNumero(numero);
+        cliente.setTelefone(telefone);
 
         ClienteDao clienteDao = new ClienteDao();
         clienteDao.criarCliente(cliente);
