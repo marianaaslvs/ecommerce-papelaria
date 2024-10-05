@@ -11,7 +11,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet ("/criar-cliente")
+
 public class CreateClienteServlet extends HttpServlet {
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getRequestDispatcher("/cliente.html").forward(req, resp);
+    }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
@@ -25,20 +30,12 @@ public class CreateClienteServlet extends HttpServlet {
         String numero = req.getParameter("numero");
         String telefone = req.getParameter("telefone");
 
-        Cliente cliente = new Cliente();
-        cliente.setNome(nome);
-        cliente.setEmail(email);
-        cliente.setRua(rua);
-        cliente.setCidade(cidade);
-        cliente.setEstado(estado);
-        cliente.setCpf(cpf);
-        cliente.setNumero(numero);
-        cliente.setTelefone(telefone);
+        Cliente cliente = new Cliente(nome, email, rua, cidade, estado, cpf, numero, telefone);
 
         ClienteDao clienteDao = new ClienteDao();
         clienteDao.criarCliente(cliente);
 
-        req.getRequestDispatcher("index.html").forward(req, resp);
+        resp.sendRedirect("/find-all-clientes");
 
     }
 
