@@ -16,7 +16,7 @@ public class CreateProdutoServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 
-        String idProduto = req.getParameter("idProduto");
+        String idProduto = req.getParameter("id-Produto");
         String descricao = req.getParameter("descricao");
         String preco = req.getParameter("preco");
 

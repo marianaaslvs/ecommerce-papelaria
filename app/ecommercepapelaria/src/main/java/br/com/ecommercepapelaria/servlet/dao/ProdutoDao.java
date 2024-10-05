@@ -6,7 +6,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
-
 public class ProdutoDao {
 
     public void createProduto(Produto produto){
@@ -23,6 +22,7 @@ public class ProdutoDao {
             preparedStatement.setString(1, produto.getIdProduto());
             preparedStatement.setString(2,produto.getDescricao());
             preparedStatement.setString(3, produto.getPreco());
+
             preparedStatement.execute();
 
             System.out.println("Sucesso ao inserir o produto no banco de dados");
@@ -31,7 +31,7 @@ public class ProdutoDao {
 
         } catch (Exception e) {
 
-            System.out.println("Erro ao inserir produto no banco de dados" + e.getMessage());
+            System.out.println("Erro ao inserir produto no banco de dados " + e.getMessage());
 
         }
 }}
