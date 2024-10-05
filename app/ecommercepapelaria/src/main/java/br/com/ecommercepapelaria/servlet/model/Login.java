@@ -3,6 +3,7 @@ package br.com.ecommercepapelaria.servlet.model;
 public class Login {
 
     private String cpf;
+    private String senha;
 
     public String getCpf() {
         return cpf;
@@ -20,7 +21,7 @@ public class Login {
         this.senha = senha;
     }
 
-    private String senha;
+
 
 
 }
