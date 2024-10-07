@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet("/criar-login")
-public class CreateLogin  extends HttpServlet{
+public class CreateLoginServlet extends HttpServlet{
 
         @Override
         protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

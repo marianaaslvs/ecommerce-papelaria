@@ -25,13 +25,13 @@ public class LoginDao {
             preparedStatement.setString(2,login.getSenha());
                        preparedStatement.execute();
 
-            System.out.println("Sucesso ao inserir o produto no banco de dados");
+            System.out.println("Sucesso ao inserir o LOGIN no banco de dados");
 
             connection.close();
 
         } catch (Exception e) {
 
-            System.out.println("Erro ao inserir produto no banco de dados" + e.getMessage());
+            System.out.println("Erro ao inserir LOGIN no banco de dados" + e.getMessage());
 
         }
     }}
