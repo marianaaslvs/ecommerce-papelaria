@@ -14,7 +14,7 @@ public class ClienteDao {
 
     public void criarCliente(Cliente cliente){
 
-        String SQL = "INSERT INTO CLIENTES (NOME, CPF, TELEFONE, EMAIL, RUA, NUMERO, ESTADO, CIDADE) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        String SQL = "INSERT INTO CLIENTE (NOME, CPF, TELEFONE, EMAIL, RUA, NUMERO, ESTADO, CIDADE) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
         try{
 
@@ -46,7 +46,7 @@ public class ClienteDao {
 
     public List<Cliente> findAllClientes(){
 
-        String SQL = "SELECT * FROM CLIENTES";
+        String SQL = "SELECT * FROM CLIENTE";
 
         try{
 
@@ -84,7 +84,7 @@ public class ClienteDao {
 
         } catch (Exception e) {
 
-            System.out.println("Falha ao consultar os carros na tabela CAR: " + e.getMessage());
+            System.out.println("Falha ao consultar os carros na tabela CLIENTE: " + e.getMessage());
 
         }
 
