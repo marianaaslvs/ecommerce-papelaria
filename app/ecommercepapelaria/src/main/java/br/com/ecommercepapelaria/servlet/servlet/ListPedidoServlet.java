@@ -1,7 +1,7 @@
 package br.com.ecommercepapelaria.servlet.servlet;
 
-import br.com.ecommercepapelaria.servlet.dao.ClienteDao;
-import br.com.ecommercepapelaria.servlet.model.Cliente;
+import br.com.ecommercepapelaria.servlet.dao.PedidoDao;
+import br.com.ecommercepapelaria.servlet.model.Pedido;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,18 +11,19 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/find-all-clientes")
-public class ListClienteServlet extends HttpServlet {
+@WebServlet("/find-all-pedidos")
+ public class ListPedidoServlet extends HttpServlet {
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        ClienteDao clienteDao = new ClienteDao();
+        PedidoDao pedidoDao = new PedidoDao();
 
-        List<Cliente> allClientes = clienteDao.findAllClientes();
+        List<Pedido> allPedidos = pedidoDao.findAllPedidos();
 
-        req.setAttribute("clientes", allClientes);
+        req.setAttribute("pedidos", allPedidos);
 
-        req.getRequestDispatcher("/cliente.jsp").forward(req, resp);
+        req.getRequestDispatcher("/pedido.jsp").forward(req, resp);
 
     }
 }
