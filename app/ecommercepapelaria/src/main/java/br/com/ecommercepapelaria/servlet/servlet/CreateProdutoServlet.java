@@ -10,26 +10,30 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet ("/criar-produto")
-public class CreateProdutoServlet extends HttpServlet {
+    @WebServlet ("/criar-produto")
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+    public class CreateProdutoServlet extends HttpServlet {
 
-        String idProduto = req.getParameter("id-Produto");
+        @Override
+        protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+            req.getRequestDispatcher("/produto.html").forward(req, resp);
+        }
+
+
+        @Override
+        protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+
+        String nomeProduto = req.getParameter("nome-produto");
         String descricao = req.getParameter("descricao");
         String preco = req.getParameter("preco");
 
-        Produto prod = new Produto();
+        Produto prod = new Produto(nomeProduto, descricao, preco);
 
-        prod.setIdProduto(idProduto);
-        prod.setDescricao(descricao);
-        prod.setPreco(preco);
 
         ProdutoDao ProdutoDao = new ProdutoDao();
         ProdutoDao.createProduto(prod);
 
-        req.getRequestDispatcher("index.html").forward(req, resp);
+        req.getRequestDispatcher("/find-all-produtos").forward(req, resp);
 
     }
 

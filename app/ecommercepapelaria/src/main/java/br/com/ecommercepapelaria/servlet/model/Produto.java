@@ -2,35 +2,25 @@ package br.com.ecommercepapelaria.servlet.model;
 
 public class Produto {
 
-    private String idProduto;
+    private String nomeProduto;
+    private String descricao;
+    private String preco;
 
-    public String getIdProduto() {
-        return idProduto;
+    public Produto(String nomeProduto, String descricao, String preco) {
+        this.nomeProduto = nomeProduto;
+        this.descricao = descricao;
+        this.preco = preco;
     }
 
-    public void setIdProduto(String idProduto) {
-        this.idProduto = idProduto;
+    public String getNomeProduto() {
+        return nomeProduto;
     }
 
     public String getDescricao() {
         return descricao;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-
     public String getPreco() {
         return preco;
     }
-
-    public void setPreco(String preco) {
-        this.preco = preco;
-    }
-
-    private String descricao;
-    private String preco;
-
-
-
 }
