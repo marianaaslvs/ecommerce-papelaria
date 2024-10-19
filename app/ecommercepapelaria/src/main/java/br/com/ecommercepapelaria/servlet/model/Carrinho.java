@@ -5,27 +5,23 @@ public class Carrinho {
     private String idCliente;
     private String idProduto;
 
+
+    public Carrinho(String idCliente, String idProduto) {
+        this.idCliente = idCliente;
+        this.idProduto = idProduto;
+    }
+
     public int getIdCarrinho() {
         return idCarrinho;
     }
 
-    public void setIdCarrinho(int idCarrinho) {
-        this.idCarrinho = idCarrinho;
-    }
-
-    public String getIdCliente() {
+   public String getIdCliente() {
         return idCliente;
     }
 
-    public void setIdCliente(String idCliente) {
-        this.idCliente = idCliente;
-    }
 
     public String getIdProduto() {
         return idProduto;
     }
 
-    public void setIdProduto(String idProduto) {
-        this.idProduto = idProduto;
-    }
 }

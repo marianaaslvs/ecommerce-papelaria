@@ -13,24 +13,29 @@ import java.io.IOException;
 @WebServlet("/criar-carrinho")
 public class CreateCarrinhoServlet extends HttpServlet {
 
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getRequestDispatcher("/carrinho.html").forward(req, resp);
+    }
 
-       @Override
+
+
+
+    @Override
         protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
             String idCliente = req.getParameter("idCliente");
-            String idProduto = req.getParameter("idCarrinho");
+            String idProduto = req.getParameter("idProduto");
 
 
-            Carrinho carrinho = new Carrinho();
+            Carrinho carrinho = new Carrinho(idCliente, idProduto);
 
-            carrinho.setIdCliente(idCliente);
-            carrinho.setIdProduto(idProduto);
 
 
             CarrinhoDao carrinhoDao = new CarrinhoDao();
             carrinhoDao.createCarrinho(carrinho);
 
-            req.getRequestDispatcher("index.html").forward(req, resp);
-
+           // req.getRequestDispatcher("index.html").forward(req, resp);
+        //req.getRequestDispatcher("/find-all-login");
+        resp.sendRedirect("/find-all-login");
         }
 }

@@ -38,9 +38,9 @@ public class CreateLoginServlet extends HttpServlet{
         LoginDao loginDao = new LoginDao();
         loginDao.createLogin(login);
 
-        resp.sendRedirect("/find-all-login");
-        //
-        // req.getRequestDispatcher("/find-all-login");
+//        resp.sendRedirect("/find-all-login");
+//        //
+         req.getRequestDispatcher("/find-all-login");
 
     }
 
