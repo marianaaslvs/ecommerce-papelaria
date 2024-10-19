@@ -1,37 +1,88 @@
 package br.com.ecommercepapelaria.servlet.dao;
 
 import br.com.ecommercepapelaria.servlet.model.Login;
-import br.com.ecommercepapelaria.servlet.model.Produto;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Collections;
 
 public class LoginDao {
 
     public void createLogin(Login login){
-        String SQL = "INSERT INTO LOGIN (CPF,SENHA) VALUES (?,?)";
 
-        try {
+            String SQL = "INSERT INTO LOGIN (CPF,SENHA) VALUES (?,?)";
 
-            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa","sa");
+            try {
 
-            System.out.println("Sucesso ao se conectar no banco de dados");
+                Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa","sa");
 
-            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+                System.out.println("Sucesso ao se conectar no banco de dados");
 
-            preparedStatement.setString(1, login.getCpf());
-            preparedStatement.setString(2,login.getSenha());
-                       preparedStatement.execute();
+                PreparedStatement preparedStatement = connection.prepareStatement(SQL);
 
-            System.out.println("Sucesso ao inserir o LOGIN no banco de dados");
+                preparedStatement.setString(1, login.getCpf());
+                preparedStatement.setString(2,login.getSenha());
+                preparedStatement.execute();
 
-            connection.close();
+                System.out.println("Sucesso ao inserir o LOGIN no banco de dados");
 
-        } catch (Exception e) {
+                connection.close();
 
-            System.out.println("Erro ao inserir LOGIN no banco de dados" + e.getMessage());
+            } catch (Exception e) {
+
+                System.out.println("Erro ao inserir LOGIN no banco de dados" + e.getMessage());
+
+            }
+        }
+
+        public List<Login> findAllLogin(){
+
+            String SQL = "SELECT * FROM LOGIN";
+
+            try{
+
+                Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "sa");
+
+                System.out.println("Sucesso ao se conectar com o DB!");
+
+                PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+
+                ResultSet resultSet = preparedStatement.executeQuery();
+
+                List<Login> allLogin = new ArrayList<>();
+
+                while (resultSet.next()) {
+
+                    String cpf = resultSet.getString("CPF");
+                    String senha = resultSet.getString("SENHA");
+
+
+                    Login login= new Login(cpf,senha);
+
+                    allLogin.add(login);
+                }
+
+                System.out.println("Sucesso ao consultar os dados na tabela LOGIN");
+
+                connection.close();
+
+                return allLogin;
+
+            } catch (Exception e) {
+
+                System.out.println("Falha ao consultar os dados na tabela LOGIN: " + e.getMessage());
+
+            }
+
+
+            return Collections.emptyList();
 
         }
-    }}
+
+
+
+    }
