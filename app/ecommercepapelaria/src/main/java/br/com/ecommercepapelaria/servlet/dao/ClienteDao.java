@@ -1,6 +1,7 @@
 package br.com.ecommercepapelaria.servlet.dao;
 
 import br.com.ecommercepapelaria.servlet.model.Cliente;
+import br.com.ecommercepapelaria.servlet.model.Pedido;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -62,16 +63,17 @@ public class ClienteDao {
 
             while (resultSet.next()) {
 
+                String idCliente = resultSet.getString("ID");
                 String nome = resultSet.getString("NOME");
+                String cpf = resultSet.getString("CPF");
+                String telefone = resultSet.getString("TELEFONE");
                 String email = resultSet.getString("EMAIL");
                 String rua = resultSet.getString("RUA");
+                String numero = resultSet.getString("NUMERO");
                 String cidade = resultSet.getString("CIDADE");
                 String estado = resultSet.getString("ESTADO");
-                String cpf = resultSet.getString("CPF");
-                String numero = resultSet.getString("NUMERO");
-                String telefone = resultSet.getString("TELEFONE");
 
-                Cliente cliente = new Cliente(nome, email, rua, cidade, estado, cpf, numero, telefone);
+                Cliente cliente = new Cliente(idCliente, nome, cpf, telefone, email, rua, numero, cidade, estado);
 
                 allClientes.add(cliente);
             }
@@ -90,6 +92,69 @@ public class ClienteDao {
 
 
         return Collections.emptyList();
+
+    }
+
+    public void deleteClienteById(String idCliente) {
+
+        String SQL = "DELETE CLIENTE WHERE ID = ?";
+
+        try {
+
+            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "sa");
+
+            System.out.println("Sucesso ao se conectar com o DB!");
+
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+            preparedStatement.setString(1, idCliente);
+            preparedStatement.execute();
+
+            System.out.println("Sucesso ao deletar o pedido: " + idCliente);
+
+            connection.close();
+
+        } catch (Exception e) {
+
+            System.out.println("Falha ao se conectar com o DB!");
+
+        }
+
+    }
+
+    public void updateCliente(Cliente cliente) {
+
+        String SQL = "UPDATE CLIENTE SET NOME = ? WHERE ID = ?, SET CPF = ? WHERE ID = ?, SET TELEFONE = ? WHERE ID = ?, SET EMAIL = ? WHERE ID = ?, SET RUA = ? WHERE ID = ?, SET NUMERO = ? WHERE ID = ?, SET ESTADO = ? WHERE ID = ?, SET CIDADE = ? WHERE ID = ?";
+
+        try {
+
+            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa","sa");
+
+            System.out.println("Sucesso ao se conectar com o DB!");
+
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+
+            preparedStatement.setString(1, cliente.getIdCliente());
+            preparedStatement.setString(2, cliente.getNome());
+            preparedStatement.setString(3, cliente.getCpf());
+            preparedStatement.setString(4, cliente.getTelefone());
+            preparedStatement.setString(5, cliente.getEmail());
+            preparedStatement.setString(6, cliente.getRua());
+            preparedStatement.setString(7, cliente.getNumero());
+            preparedStatement.setString(8, cliente.getEstado());
+            preparedStatement.setString(9, cliente.getCidade());
+
+            preparedStatement.execute();
+
+            System.out.println("Sucesso ao atualizar o cliente");
+
+            connection.close();
+
+        } catch (Exception e) {
+
+            System.out.println("Falha ao se conectar com o DB!");
+            System.out.println("Error: " + e.getMessage());
+
+        }
 
     }
 }

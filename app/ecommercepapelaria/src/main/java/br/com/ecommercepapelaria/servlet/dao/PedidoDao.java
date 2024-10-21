@@ -58,12 +58,13 @@ public class PedidoDao {
 
             while (resultSet.next()) {
 
+                String codPedido = resultSet.getString("ID");
                 String cliente = resultSet.getString("CLIENTE");
                 String produto = resultSet.getString("PRODUTO");
-                String metodoDePagamento = resultSet.getString("METODOPAGAMENTO");
+                String metodoPagamento = resultSet.getString("METODOPAGAMENTO");
                 String status = resultSet.getString("STATUS");
 
-                Pedido pedido = new Pedido(status, cliente, metodoDePagamento, produto);
+                Pedido pedido = new Pedido(codPedido, cliente, produto, metodoPagamento, status);
 
                 allPedidos.add(pedido);
             }
@@ -82,6 +83,65 @@ public class PedidoDao {
 
 
         return Collections.emptyList();
+
+    }
+
+    public void deletePedidoById(String codPedido) {
+
+        String SQL = "DELETE PEDIDO WHERE ID = ?";
+
+        try {
+
+            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "sa");
+
+            System.out.println("Sucesso ao se conectar com o DB!");
+
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+            preparedStatement.setString(1, codPedido);
+            preparedStatement.execute();
+
+            System.out.println("Sucesso ao deletar o pedido: " + codPedido);
+
+            connection.close();
+
+        } catch (Exception e) {
+
+            System.out.println("Falha ao se conectar com o DB!");
+
+        }
+
+    }
+
+    public void updatePedido(Pedido pedido) {
+
+        String SQL = "UPDATE PEDIDO SET CLIENTE = ? WHERE ID = ?, SET PRODUTO = ? WHERE ID = ?, SET METODOPAGAMENTO = ? WHERE ID = ?, SET STATUS = ? WHERE ID = ?";
+
+        try {
+
+            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa","sa");
+
+            System.out.println("Sucesso ao se conectar com o DB!");
+
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+
+            preparedStatement.setString(1, pedido.getCodPedido());
+            preparedStatement.setString(2, pedido.getCliente());
+            preparedStatement.setString(3, pedido.getProduto());
+            preparedStatement.setString(4, pedido.getMetodoPagamento());
+            preparedStatement.setString(5, pedido.getStatus());
+
+            preparedStatement.execute();
+
+            System.out.println("Sucesso ao atualizar o pedido");
+
+            connection.close();
+
+        } catch (Exception e) {
+
+            System.out.println("Falha ao se conectar com o DB!");
+            System.out.println("Error: " + e.getMessage());
+
+        }
 
     }
 }

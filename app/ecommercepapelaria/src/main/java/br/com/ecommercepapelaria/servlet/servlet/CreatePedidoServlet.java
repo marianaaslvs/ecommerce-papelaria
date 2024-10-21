@@ -15,22 +15,30 @@ import java.io.IOException;
     public class CreatePedidoServlet extends HttpServlet {
         @Override
         protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-            req.getRequestDispatcher("/pedido.html").forward(req, resp);
+            req.getRequestDispatcher("/pedidos.jsp").forward(req, resp);
         }
 
         @Override
         protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+            String codPedido = req.getParameter("codPedido");
             String cliente = req.getParameter("cliente");
             String produto = req.getParameter("produto");
-            String metodoDePagamento = req.getParameter("metodoDePagamento");
+            String metodoPagamento = req.getParameter("metodoPagamento");
             String status = req.getParameter("status");
 
 
-            Pedido pedido = new Pedido(status, cliente, metodoDePagamento, produto);
-
             PedidoDao pedidoDao = new PedidoDao();
-            pedidoDao.criarPedido(pedido);
+            Pedido pedido = new Pedido(codPedido, cliente, produto, metodoPagamento, status);
+
+            if (codPedido.isBlank()) {
+
+                pedidoDao.criarPedido(pedido);
+
+            } else {
+
+                pedidoDao.updatePedido(pedido);
+            }
 
             resp.sendRedirect("/find-all-pedidos");
 

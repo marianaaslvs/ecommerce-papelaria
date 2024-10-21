@@ -2,7 +2,7 @@ package br.com.ecommercepapelaria.servlet.model;
 
 public class Pedido {
 
-    private int CodPedido;
+    private String codPedido;
     private String status;
     private String cliente;
     private String metodoPagamento;
@@ -15,12 +15,16 @@ public class Pedido {
         this.produto = produto;
     }
 
-    public int getCodPedido() {
-        return CodPedido;
+    public Pedido(String codPedido, String status, String cliente, String metodoPagamento, String produto) {
+        this.codPedido = codPedido;
+        this.status = status;
+        this.cliente = cliente;
+        this.metodoPagamento = metodoPagamento;
+        this.produto = produto;
     }
 
-    public void setCodPedido(int codPedido) {
-        CodPedido = codPedido;
+    public String getCodPedido() {
+        return codPedido;
     }
 
     public String getStatus() {

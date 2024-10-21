@@ -15,25 +15,33 @@ import java.io.IOException;
 public class CreateClienteServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/cliente.html").forward(req, resp);
+        req.getRequestDispatcher("/clientes.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 
+        String idCliente = req.getParameter("idCliente");
         String nome = req.getParameter("nome");
+        String cpf = req.getParameter("cpf");
+        String telefone = req.getParameter("telefone");
         String email = req.getParameter("email");
         String rua = req.getParameter("rua");
+        String numero = req.getParameter("numero");
         String cidade = req.getParameter("cidade");
         String estado = req.getParameter("estado");
-        String cpf = req.getParameter("cpf");
-        String numero = req.getParameter("numero");
-        String telefone = req.getParameter("telefone");
-
-        Cliente cliente = new Cliente(nome, email, rua, cidade, estado, cpf, numero, telefone);
 
         ClienteDao clienteDao = new ClienteDao();
-        clienteDao.criarCliente(cliente);
+        Cliente cliente = new Cliente(idCliente, nome, cpf, telefone, email, rua, numero, estado, cidade);
+
+        if (idCliente.isBlank()) {
+
+            clienteDao.criarCliente(cliente);
+
+        } else {
+
+            clienteDao.updateCliente(cliente);
+        }
 
         resp.sendRedirect("/find-all-clientes");
 

@@ -2,7 +2,7 @@ package br.com.ecommercepapelaria.servlet.model;
 
 public class Cliente {
 
-    private int idCliente;
+    private String idCliente;
     private String telefone;
     private String cpf;
     private String numero;
@@ -23,12 +23,20 @@ public class Cliente {
         this.estado = estado;
     }
 
-    public int getIdCliente() {
-        return idCliente;
+    public Cliente(String idCliente, String telefone, String cpf, String numero, String email, String nome, String rua, String cidade, String estado) {
+        this.idCliente = idCliente;
+        this.telefone = telefone;
+        this.cpf = cpf;
+        this.numero = numero;
+        this.email = email;
+        this.nome = nome;
+        this.rua = rua;
+        this.cidade = cidade;
+        this.estado = estado;
     }
 
-    public void setIdCliente(int idCliente) {
-        this.idCliente = idCliente;
+    public String getIdCliente() {
+        return idCliente;
     }
 
     public String getTelefone() {
@@ -62,6 +70,5 @@ public class Cliente {
     public String getEstado() {
         return estado;
     }
-
 
 }
