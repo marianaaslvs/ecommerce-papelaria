@@ -17,23 +17,32 @@ public class CreateMetodoPagamentoServlet  extends HttpServlet{
 
 
 
-        @Override
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getRequestDispatcher("/metodoPagamento.html").forward(req, resp);
+    }
+
+
+
+
+    @Override
         protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-            String idMetodoPagamento = req.getParameter("metodoPagamento");
+        String idMetodoPagamento = req.getParameter("idMetodoPagamento");
+        String titular = req.getParameter("titular");
+        String numCartao = req.getParameter("numCartao");
+        String validade = req.getParameter("validade");
+        String codSeg = req.getParameter("codSeg");
 
 
-
-            MetodoPagamento metodoPagamento  = new MetodoPagamento();
-
-            metodoPagamento.setIdMetodoPagamento(idMetodoPagamento);
+        MetodoPagamento metodoPagamento  = new MetodoPagamento(idMetodoPagamento,titular,numCartao,validade,codSeg);
 
 
-
-            MetodoPagamentoDao metodoPagamentoDao = new MetodoPagamentoDao();
+        MetodoPagamentoDao metodoPagamentoDao = new MetodoPagamentoDao();
             metodoPagamentoDao.createMetodoPagamento(metodoPagamento);
 
-            req.getRequestDispatcher("index.html").forward(req, resp);
+           // req.getRequestDispatcher("index.html").forward(req, resp);
+        req.getRequestDispatcher("/find-all-metodoPagamento");
 
         }
 
