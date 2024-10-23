@@ -2,14 +2,20 @@ package br.com.ecommercepapelaria.servlet.model;
 
 public class Produto {
 
+    private String idProduto;
     private String nomeProduto;
     private String descricao;
-    private String preco;
+    private double preco;
 
-    public Produto(String nomeProduto, String descricao, String preco) {
+    public Produto(String idProduto, String nomeProduto, String descricao, double preco) {
+        this.idProduto = idProduto;
         this.nomeProduto = nomeProduto;
         this.descricao = descricao;
         this.preco = preco;
+    }
+
+    public String getIdProduto() {
+        return idProduto;
     }
 
     public String getNomeProduto() {
@@ -20,7 +26,7 @@ public class Produto {
         return descricao;
     }
 
-    public String getPreco() {
+    public double getPreco() {
         return preco;
     }
 }

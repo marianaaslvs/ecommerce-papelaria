@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet ("/Fale-Conosco")
+@WebServlet ("/fale-conosco")
 public class CreateFaleConoscoServlet extends HttpServlet {
 
     @Override

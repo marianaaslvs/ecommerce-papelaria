@@ -23,17 +23,18 @@ import java.io.IOException;
         @Override
         protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 
+        String idProduto = req.getParameter("idProduto");
         String nomeProduto = req.getParameter("nome-produto");
         String descricao = req.getParameter("descricao");
-        String preco = req.getParameter("preco");
+        double preco = Double.parseDouble(req.getParameter("preco"));
 
-        Produto prod = new Produto(nomeProduto, descricao, preco);
+        Produto prod = new Produto(idProduto, nomeProduto, descricao, preco);
 
 
         ProdutoDao ProdutoDao = new ProdutoDao();
         ProdutoDao.createProduto(prod);
 
-        req.getRequestDispatcher("/find-all-produtos").forward(req, resp);
+        resp.sendRedirect("/find-all-produtos");
 
     }
 

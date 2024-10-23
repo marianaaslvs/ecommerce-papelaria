@@ -42,7 +42,7 @@ public class FaleConoscoDao {
 
     public List<FaleConosco> findAllDuvidas(){
 
-        String SQL = "SELECT * FROM PEDIDO";
+        String SQL = "SELECT * FROM FALECONOSCO";
 
         try{
 
@@ -75,7 +75,7 @@ public class FaleConoscoDao {
 
         } catch (Exception e) {
 
-            System.out.println("Falha ao consultar os carros na tabela FALE CONOSCO: " + e.getMessage());
+            System.out.println("Falha ao consultar as duvidas na tabela FALE CONOSCO: " + e.getMessage());
 
         }
 

@@ -17,6 +17,7 @@
   <table class="table">
     <thead>
     <tr>
+      <th>idProduto</th>
       <th>nomeProduto</th>
       <th>descricao</th>
       <th>preco</th>
@@ -26,9 +27,16 @@
     <tbody>
     <c:forEach var="produto" items="${produtos}">
       <tr>
-        <td>${produtos.nomeProduto}</td>
-        <td>${produtos.descricao}</td>
-        <td>${produtos.preco}</td>
+        <td>${produto.idProduto}</td>
+        <td>${produto.nomeProduto}</td>
+        <td>${produto.descricao}</td>
+        <td>${produto.preco}</td>
+            <td>
+                   <form action="/delete-produto" method="post">
+                   <input type="hidden" id="idProduto" name="idProduto" value="${produto.idProduto}">
+                   <button type="submit">Delete</button>
+                   </form>
+            </td>
       </tr>
     </c:forEach>
     </tbody>

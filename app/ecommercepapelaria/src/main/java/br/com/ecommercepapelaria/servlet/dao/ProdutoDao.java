@@ -26,7 +26,7 @@ public class ProdutoDao {
 
             preparedStatement.setString(1, produto.getNomeProduto());
             preparedStatement.setString(2,produto.getDescricao());
-            preparedStatement.setString(3, produto.getPreco());
+            preparedStatement.setDouble(3, produto.getPreco());
             preparedStatement.execute();
 
             System.out.println("Sucesso ao inserir o produto no banco de dados");
@@ -58,11 +58,12 @@ public class ProdutoDao {
 
             while (resultSet.next()) {
 
+                String idProduto = resultSet.getString("ID");
                 String nomeProduto = resultSet.getString("NOMEPRODUTO");
                 String descricao = resultSet.getString("DESCRICAO");
-                String preco = resultSet.getString("PRECO");
+                double preco = resultSet.getDouble("PRECO");
 
-                Produto produto = new Produto(nomeProduto, descricao, preco);
+                Produto produto = new Produto(idProduto, nomeProduto, descricao, preco);
 
                 allProdutos.add(produto);
             }
@@ -75,12 +76,37 @@ public class ProdutoDao {
 
         } catch (Exception e) {
 
-            System.out.println("Falha ao consultar os carros na tabela PRODUTO: " + e.getMessage());
+            System.out.println("Falha ao consultar os produtos na tabela PRODUTO: " + e.getMessage());
 
         }
 
 
         return Collections.emptyList();
 
+    }
+
+    public void deleteProduto(String idProduto) {
+
+        String SQL = "DELETE PRODUTO WHERE ID = ?";
+
+        try {
+
+            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "sa");
+
+            System.out.println("Sucesso ao se conectar com o DB!");
+
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+            preparedStatement.setString(1, idProduto);
+            preparedStatement.execute();
+
+            System.out.println("Sucesso ao deletar o Produto: " + idProduto);
+
+            connection.close();
+
+        } catch (Exception e) {
+
+            System.out.println("Falha ao se conectar com o DB!");
+
+        }
     }
 }
