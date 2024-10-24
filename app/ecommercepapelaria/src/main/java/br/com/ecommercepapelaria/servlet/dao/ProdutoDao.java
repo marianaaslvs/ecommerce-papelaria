@@ -109,4 +109,35 @@ public class ProdutoDao {
 
         }
     }
+
+    public void updateProduto(Produto produto){
+        String SQL = "UPDATE PRODUTO SET NOMEPRODUTO = ?, DESCRICAO = ?, PRECO = ?  WHERE ID = ?";
+
+        try {
+
+            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa","sa");
+
+            System.out.println("Sucesso ao se conectar com o DB!");
+
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+
+            preparedStatement.setString(1, produto.getNomeProduto());
+            preparedStatement.setString(2, produto.getDescricao());
+            preparedStatement.setDouble(3, produto.getPreco());
+            preparedStatement.setString(4, produto.getIdProduto());
+
+            preparedStatement.execute();
+
+            System.out.println("Sucesso ao atualizar o Produto");
+
+            connection.close();
+
+        } catch (Exception e) {
+
+            System.out.println("Falha ao se conectar ao BD!");
+            System.out.println("Error: " + e.getMessage());
+
+        }
+
+    }
 }

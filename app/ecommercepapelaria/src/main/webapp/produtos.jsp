@@ -12,19 +12,21 @@
 
   <form action="/criar-produto" method="post">
 
+     <input type="hidden" id="idProduto" name="idProduto" value="${param.idProduto}">
+
     <div  class="mb-3">
-      <label for="nome-produto" class="form-label">Nome Produto:</label>
-      <input type="text" name="nome-produto" id="nome-produto" class="form-control">
+      <label>Nome Produto:</label>
+      <input type="text" name="nome-produto" id="nome-produto" class="form-control" value="${param.nameProduto}">
     </div>
 
     <div  class="mb-3">
       <label for="descricao" class="form-label">Descricao:</label>
-      <input type="text" name="descricao" id="descricao"  class="form-control">
+      <input type="text" name="descricao" id="descricao" class="form-control" value="${param.descricao}">
     </div>
 
     <div  class="mb-3">
-      <label for="preco" class="form-label">preco</label>
-      <input type="text" name="preco" id="preco"  class="form-control">
+      <label for="preco" class="form-label">Preco</label>
+      <input type="text" name="preco" id="preco"  class="form-control" value="${param.preco}">
     </div>
 
     <button class="btn btn-primary" type="submit">Salvar</button>

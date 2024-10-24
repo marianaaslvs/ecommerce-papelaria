@@ -16,7 +16,7 @@ import java.io.IOException;
 
         @Override
         protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-            req.getRequestDispatcher("/produto.html").forward(req, resp);
+            req.getRequestDispatcher("/produtos.jsp").forward(req, resp);
         }
 
 
@@ -28,11 +28,16 @@ import java.io.IOException;
         String descricao = req.getParameter("descricao");
         double preco = Double.parseDouble(req.getParameter("preco"));
 
-        Produto prod = new Produto(idProduto, nomeProduto, descricao, preco);
+        ProdutoDao produtoDao = new ProdutoDao();
+        Produto produto = new Produto(idProduto, nomeProduto, descricao, preco);
 
 
-        ProdutoDao ProdutoDao = new ProdutoDao();
-        ProdutoDao.createProduto(prod);
+            if(idProduto.isBlank()){
+                produtoDao.createProduto(produto);
+            }
+            else {
+                produtoDao.updateProduto(produto);
+            }
 
         resp.sendRedirect("/find-all-produtos");
 

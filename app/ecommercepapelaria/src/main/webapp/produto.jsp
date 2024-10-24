@@ -35,6 +35,9 @@
                    <form action="/delete-produto" method="post">
                    <input type="hidden" id="idProduto" name="idProduto" value="${produto.idProduto}">
                    <button type="submit">Delete</button>
+
+                   <span> | </span>
+                   <a href="produtos.jsp? idProduto=${produto.idProduto} &nomeProduto=${produto.nomeProduto}&descricao=${produto.descricao}&preco=${produto.preco}">Update</a>
                    </form>
             </td>
       </tr>
