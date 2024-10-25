@@ -1,5 +1,6 @@
 package br.com.ecommercepapelaria.servlet.dao;
 
+import br.com.ecommercepapelaria.servlet.config.ConnectionPoolConfig;
 import br.com.ecommercepapelaria.servlet.model.FaleConosco;
 
 import java.sql.Connection;
@@ -18,9 +19,7 @@ public class FaleConoscoDao {
 
         try{
 
-            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa","sa");
-
-            System.out.println("Sucesso ao se conectar no banco de dados");
+            Connection connection = ConnectionPoolConfig.getConnection();
 
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
 
@@ -46,9 +45,7 @@ public class FaleConoscoDao {
 
         try{
 
-            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "sa");
-
-            System.out.println("Sucesso ao se conectar com o DB!");
+            Connection connection = ConnectionPoolConfig.getConnection();
 
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
 

@@ -1,5 +1,6 @@
 package br.com.ecommercepapelaria.servlet.dao;
 
+import br.com.ecommercepapelaria.servlet.config.ConnectionPoolConfig;
 import br.com.ecommercepapelaria.servlet.model.Pedido;
 import br.com.ecommercepapelaria.servlet.model.Produto;
 
@@ -14,19 +15,18 @@ import java.util.List;
 public class ProdutoDao {
 
     public void createProduto(Produto produto){
-        String SQL = "INSERT INTO PRODUTO (NOMEPRODUTO, DESCRICAO,PRECO) VALUES (?,?,?)";
+        String SQL = "INSERT INTO PRODUTO (NOMEPRODUTO, DESCRICAO, PRECO, IMAGE) VALUES (?,?,?,?)";
 
         try {
 
-            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa","sa");
-
-            System.out.println("Sucesso ao se conectar no banco de dados");
+            Connection connection = ConnectionPoolConfig.getConnection();
 
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
 
             preparedStatement.setString(1, produto.getNomeProduto());
             preparedStatement.setString(2,produto.getDescricao());
             preparedStatement.setDouble(3, produto.getPreco());
+            preparedStatement.setString(4,produto.getImage());
             preparedStatement.execute();
 
             System.out.println("Sucesso ao inserir o produto no banco de dados");
@@ -46,9 +46,7 @@ public class ProdutoDao {
 
         try{
 
-            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "sa");
-
-            System.out.println("Sucesso ao se conectar com o DB!");
+            Connection connection = ConnectionPoolConfig.getConnection();
 
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
 
@@ -62,8 +60,9 @@ public class ProdutoDao {
                 String nomeProduto = resultSet.getString("NOMEPRODUTO");
                 String descricao = resultSet.getString("DESCRICAO");
                 double preco = resultSet.getDouble("PRECO");
+                String image = resultSet.getString("image");
 
-                Produto produto = new Produto(idProduto, nomeProduto, descricao, preco);
+                Produto produto = new Produto(idProduto, nomeProduto, descricao, preco, image);
 
                 allProdutos.add(produto);
             }
@@ -91,9 +90,7 @@ public class ProdutoDao {
 
         try {
 
-            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "sa");
-
-            System.out.println("Sucesso ao se conectar com o DB!");
+            Connection connection = ConnectionPoolConfig.getConnection();
 
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
             preparedStatement.setString(1, idProduto);
@@ -111,20 +108,19 @@ public class ProdutoDao {
     }
 
     public void updateProduto(Produto produto){
-        String SQL = "UPDATE PRODUTO SET NOMEPRODUTO = ?, DESCRICAO = ?, PRECO = ?  WHERE ID = ?";
+        String SQL = "UPDATE PRODUTO SET NOMEPRODUTO = ?, DESCRICAO = ?, PRECO = ?, IMAGE = ?  WHERE ID = ?";
 
         try {
 
-            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa","sa");
-
-            System.out.println("Sucesso ao se conectar com o DB!");
+            Connection connection = ConnectionPoolConfig.getConnection();
 
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
 
             preparedStatement.setString(1, produto.getNomeProduto());
             preparedStatement.setString(2, produto.getDescricao());
             preparedStatement.setDouble(3, produto.getPreco());
-            preparedStatement.setString(4, produto.getIdProduto());
+            preparedStatement.setString(4, produto.getImage());
+            preparedStatement.setString(5, produto.getIdProduto());
 
             preparedStatement.execute();
 

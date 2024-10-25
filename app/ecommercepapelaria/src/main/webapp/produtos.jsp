@@ -10,26 +10,31 @@
 
   <h2>Cadastrar Produtos</h2>
 
-  <form action="/criar-produto" method="post">
+  <form action="/criar-produto" method="post" enctype="multipart/form-data">
 
-     <input type="hidden" id="idProduto" name="idProduto" value="${param.idProduto}">
+            <input type="hidden" id="idProduto" name="idProduto" value="${param.idProduto}">
 
-    <div  class="mb-3">
-      <label>Nome Produto:</label>
-      <input type="text" name="nome-produto" id="nome-produto" class="form-control" value="${param.nameProduto}">
-    </div>
+            <div  class="mb-3">
+              <label>Nome Produto:</label>
+              <input type="text" name="nome-produto" id="nome-produto" class="form-control" value="${param.nameProduto}">
+            </div>
 
-    <div  class="mb-3">
-      <label for="descricao" class="form-label">Descricao:</label>
-      <input type="text" name="descricao" id="descricao" class="form-control" value="${param.descricao}">
-    </div>
+            <div  class="mb-3">
+              <label for="descricao" class="form-label">Descricao:</label>
+              <input type="text" name="descricao" id="descricao" class="form-control" value="${param.descricao}">
+            </div>
 
-    <div  class="mb-3">
-      <label for="preco" class="form-label">Preco</label>
-      <input type="text" name="preco" id="preco"  class="form-control" value="${param.preco}">
-    </div>
+            <div  class="mb-3">
+              <label for="preco" class="form-label">Preco</label>
+              <input type="text" name="preco" id="preco"  class="form-control" value="${param.preco}">
+            </div>
 
-    <button class="btn btn-primary" type="submit">Salvar</button>
+            <div  class="mb-3">
+              <label for="image">Choose file</label>
+              <input type="file" name="image" id="image">
+            </div>
+
+            <button class="btn btn-primary" type="submit">Salvar</button>
 
   </form>
 

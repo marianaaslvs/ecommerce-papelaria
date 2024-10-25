@@ -6,12 +6,14 @@ public class Produto {
     private String nomeProduto;
     private String descricao;
     private double preco;
+    private String image;
 
-    public Produto(String idProduto, String nomeProduto, String descricao, double preco) {
+    public Produto(String idProduto, String nomeProduto, String descricao, double preco, String image) {
         this.idProduto = idProduto;
         this.nomeProduto = nomeProduto;
         this.descricao = descricao;
         this.preco = preco;
+        this.image = image;
     }
 
     public String getIdProduto() {
@@ -28,5 +30,9 @@ public class Produto {
 
     public double getPreco() {
         return preco;
+    }
+
+    public String getImage() {
+        return image;
     }
 }
