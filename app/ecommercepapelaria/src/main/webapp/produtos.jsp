@@ -16,7 +16,7 @@
 
             <div  class="mb-3">
               <label>Nome Produto:</label>
-              <input type="text" name="nome-produto" id="nome-produto" class="form-control" value="${param.nameProduto}">
+              <input type="text" name="nomeProduto" id="nome-produto" class="form-control" value="${param.nomeProduto}">
             </div>
 
             <div  class="mb-3">

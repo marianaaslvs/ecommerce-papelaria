@@ -36,16 +36,16 @@ import static org.apache.commons.fileupload.servlet.ServletFileUpload.isMultipar
             Map<String, String> parameters = uploadImage(req);
 
             String idProduto = parameters.get("idProduto");
-            String nomeProduto = parameters.get("nome-produto");
+            String nomeProduto = parameters.get("nomeProduto");
             String descricao = parameters.get("descricao");
             double preco = Double.parseDouble(parameters.get("preco"));
             String produtoImagePath = parameters.get("image");
 
             ProdutoDao produtoDao = new ProdutoDao();
-            Produto produto = new Produto("0", nomeProduto, descricao, preco, produtoImagePath);
+            Produto produto = new Produto(idProduto, nomeProduto, descricao, preco, produtoImagePath);
 
 
-                if(idProduto.isBlank()){
+                if(null == idProduto || idProduto.equals("")){
                     produtoDao.createProduto(produto);
                 }
                 else {
