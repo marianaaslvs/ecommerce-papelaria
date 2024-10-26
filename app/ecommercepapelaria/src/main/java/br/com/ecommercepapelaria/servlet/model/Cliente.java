@@ -23,7 +23,7 @@ public class Cliente {
         this.estado = estado;
     }
 
-    public Cliente(String idCliente, String telefone, String cpf, String numero, String email, String nome, String rua, String cidade, String estado) {
+    public Cliente(String idCliente, String nome, String cpf, String telefone, String email, String rua, String numero, String estado, String cidade) {
         this.idCliente = idCliente;
         this.telefone = telefone;
         this.cpf = cpf;

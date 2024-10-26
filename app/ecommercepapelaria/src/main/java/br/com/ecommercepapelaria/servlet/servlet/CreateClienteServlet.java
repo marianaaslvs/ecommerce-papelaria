@@ -34,7 +34,7 @@ public class CreateClienteServlet extends HttpServlet {
         ClienteDao clienteDao = new ClienteDao();
         Cliente cliente = new Cliente(idCliente, nome, cpf, telefone, email, rua, numero, estado, cidade);
 
-        if (idCliente.isBlank()) {
+        if (null == idCliente || idCliente.equals("")) {
 
             clienteDao.criarCliente(cliente);
 
