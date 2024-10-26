@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Pedido</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
 <body>
 
@@ -13,7 +14,8 @@
 
   <br>
 
-  <table>
+  <table class="table table-sm">
+    <thead>
     <tr>
       <th>ID</th>
       <th>Cliente</th>
@@ -21,6 +23,9 @@
       <th>Metodo De Pagamento</th>
       <th>Status</th>
     </tr>
+    </thead>
+
+    <tbody>
     <c:forEach var="pedido" items="${pedidos}">
       <tr>
         <td>${pedido.codPedido}</td>
@@ -33,11 +38,12 @@
           <input type="hidden" id="codPedido" name="codPedido" value="${pedido.codPedido}">
           <button type="submit">Delete</button>
           <span> | </span>
-          <a href="pedidos.jsp?id=${pedido.codPedido}&name=${pedido.cliente}">Update</a>
+          <a href="pedidos.jsp?codPedido=${pedido.codPedido}&cliente=${pedido.cliente}&produto=${pedido.produto}&metodoPagamento=${pedido.metodoPagamento}&status=${pedido.status}">Update</a>
         </form>
        </td>
       </tr>
     </c:forEach>
+    </tbody>
 
   </table>
   </div>

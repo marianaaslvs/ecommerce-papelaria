@@ -31,7 +31,7 @@ import java.io.IOException;
             PedidoDao pedidoDao = new PedidoDao();
             Pedido pedido = new Pedido(codPedido, cliente, produto, metodoPagamento, status);
 
-            if (codPedido.isBlank()) {
+            if (null == codPedido || codPedido.equals("")) {
 
                 pedidoDao.criarPedido(pedido);
 

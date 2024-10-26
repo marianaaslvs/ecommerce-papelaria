@@ -1,5 +1,6 @@
 package br.com.ecommercepapelaria.servlet.dao;
 
+import br.com.ecommercepapelaria.servlet.config.ConnectionPoolConfig;
 import br.com.ecommercepapelaria.servlet.model.Pedido;
 
 import java.sql.Connection;
@@ -18,9 +19,7 @@ public class PedidoDao {
 
         try{
 
-            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa","sa");
-
-            System.out.println("Sucesso ao se conectar no banco de dados");
+            Connection connection = ConnectionPoolConfig.getConnection();
 
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
 
@@ -46,9 +45,7 @@ public class PedidoDao {
 
         try{
 
-            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "sa");
-
-            System.out.println("Sucesso ao se conectar com o DB!");
+            Connection connection = ConnectionPoolConfig.getConnection();
 
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
 
@@ -92,9 +89,7 @@ public class PedidoDao {
 
         try {
 
-            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "sa");
-
-            System.out.println("Sucesso ao se conectar com o DB!");
+            Connection connection = ConnectionPoolConfig.getConnection();
 
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
             preparedStatement.setString(1, codPedido);
@@ -114,13 +109,11 @@ public class PedidoDao {
 
     public void updatePedido(Pedido pedido) {
 
-        String SQL = "UPDATE PEDIDO SET CLIENTE = ? WHERE ID = ?, SET PRODUTO = ? WHERE ID = ?, SET METODOPAGAMENTO = ? WHERE ID = ?, SET STATUS = ? WHERE ID = ?";
+        String SQL = "UPDATE PEDIDO SET CLIENTE = ? ,PRODUTO = ? ,METODOPAGAMENTO = ? ,STATUS = ? WHERE ID = ?";
 
         try {
 
-            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa","sa");
-
-            System.out.println("Sucesso ao se conectar com o DB!");
+            Connection connection = ConnectionPoolConfig.getConnection();
 
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
 

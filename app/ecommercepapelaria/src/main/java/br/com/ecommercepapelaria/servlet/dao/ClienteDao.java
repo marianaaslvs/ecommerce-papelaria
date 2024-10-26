@@ -1,5 +1,6 @@
 package br.com.ecommercepapelaria.servlet.dao;
 
+import br.com.ecommercepapelaria.servlet.config.ConnectionPoolConfig;
 import br.com.ecommercepapelaria.servlet.model.Cliente;
 import br.com.ecommercepapelaria.servlet.model.Pedido;
 
@@ -15,13 +16,11 @@ public class ClienteDao {
 
     public void criarCliente(Cliente cliente){
 
-        String SQL = "INSERT INTO CLIENTE (NOME, CPF, TELEFONE, EMAIL, RUA, NUMERO, ESTADO, CIDADE) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        String SQL = "INSERT INTO CLIENTE (NOME, CPF, TELEFONE, EMAIL, RUA, NUMERO, CIDADE, ESTADO) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
         try{
 
-            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa","sa");
-
-            System.out.println("Sucesso ao se conectar no banco de dados");
+            Connection connection = ConnectionPoolConfig.getConnection();
 
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
 
@@ -31,8 +30,8 @@ public class ClienteDao {
             preparedStatement.setString(4, cliente.getEmail());
             preparedStatement.setString(5, cliente.getRua());
             preparedStatement.setString(6, cliente.getNumero());
-            preparedStatement.setString(7, cliente.getEstado());
-            preparedStatement.setString(8, cliente.getCidade());
+            preparedStatement.setString(7, cliente.getCidade());
+            preparedStatement.setString(8, cliente.getEstado());
             preparedStatement.execute();
 
             System.out.println("Sucesso ao inserir o cliente no banco de dados");
@@ -51,9 +50,7 @@ public class ClienteDao {
 
         try{
 
-            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "sa");
-
-            System.out.println("Sucesso ao se conectar com o DB!");
+            Connection connection = ConnectionPoolConfig.getConnection();
 
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
 
@@ -101,9 +98,7 @@ public class ClienteDao {
 
         try {
 
-            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "sa");
-
-            System.out.println("Sucesso ao se conectar com o DB!");
+            Connection connection = ConnectionPoolConfig.getConnection();
 
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
             preparedStatement.setString(1, idCliente);
@@ -123,13 +118,12 @@ public class ClienteDao {
 
     public void updateCliente(Cliente cliente) {
 
-        String SQL = "UPDATE CLIENTE SET NOME = ? WHERE ID = ?, SET CPF = ? WHERE ID = ?, SET TELEFONE = ? WHERE ID = ?, SET EMAIL = ? WHERE ID = ?, SET RUA = ? WHERE ID = ?, SET NUMERO = ? WHERE ID = ?, SET ESTADO = ? WHERE ID = ?, SET CIDADE = ? WHERE ID = ?";
+        String SQL = "UPDATE CLIENTE SET NOME = ?, CPF = ?, TELEFONE = ?, EMAIL = ?, RUA = ?, NUMERO = ?, CIDADE = ?, ESTADO = ? WHERE ID = ?";
+
 
         try {
 
-            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa","sa");
-
-            System.out.println("Sucesso ao se conectar com o DB!");
+            Connection connection = ConnectionPoolConfig.getConnection();
 
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
 
@@ -140,8 +134,8 @@ public class ClienteDao {
             preparedStatement.setString(5, cliente.getEmail());
             preparedStatement.setString(6, cliente.getRua());
             preparedStatement.setString(7, cliente.getNumero());
-            preparedStatement.setString(8, cliente.getEstado());
-            preparedStatement.setString(9, cliente.getCidade());
+            preparedStatement.setString(8, cliente.getCidade());
+            preparedStatement.setString(9, cliente.getEstado());
 
             preparedStatement.execute();
 

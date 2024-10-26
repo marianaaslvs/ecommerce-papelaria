@@ -8,14 +8,14 @@ public class Pedido {
     private String metodoPagamento;
     private String produto;
 
-    public Pedido(String status, String cliente, String metodoPagamento, String produto) {
+    public Pedido(String cliente, String produto, String metodoPagamento, String status) {
         this.status = status;
         this.cliente = cliente;
         this.metodoPagamento = metodoPagamento;
         this.produto = produto;
     }
 
-    public Pedido(String codPedido, String status, String cliente, String metodoPagamento, String produto) {
+    public Pedido(String codPedido, String cliente, String produto, String metodoPagamento, String status) {
         this.codPedido = codPedido;
         this.status = status;
         this.cliente = cliente;

@@ -1,14 +1,58 @@
-<html>
-
+<html lang="pt-BR">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Imaginarte</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybIVzJOiZzzQu9D1Jp4TZ8x3r2iFw2z7lD0mCJ39p1P8zS4wd" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-Q6fXQK6S6Xty4YhK7a1EpZb73dV+DUfw5c9hhQyFIWzV0F9KPldCmVFVWJu5KNwj" crossorigin="anonymous"></script>
 </head>
-
 <body>
-
-<h2>Criando lables</h2>
-
-
-
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Imaginarte</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Produtos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Promoções</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contato</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<h2 class="text-center mt-4">Bem-vindo à Imaginarte</h2>
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" style="max-width: 800px; margin: auto;">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_662071-MLU78439773727_082024-F.webp" class="d-block w-100" alt="Promoção 1">
+        </div>
+        <div class="carousel-item">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_810078-MLB47364200756_092021-O.webp" class="d-block w-100" alt="Promoção 2">
+        </div>
+        <div class="carousel-item">
+            <img src="https://th.bing.com/th?id=OPHS.bwI9g3MGLILRDw474C474&w=300&h=300&o=5&pid=21.1" class="d-block w-100" alt="Promoção 3">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
 </body>
 </html>

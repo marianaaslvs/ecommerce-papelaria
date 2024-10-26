@@ -12,25 +12,25 @@ public class Cliente {
     private String cidade;
     private String estado;
 
-    public Cliente(String telefone, String cpf, String numero, String email, String nome, String rua, String cidade, String estado) {
-        this.telefone = telefone;
-        this.cpf = cpf;
-        this.numero = numero;
-        this.email = email;
+    public Cliente(String nome, String cpf, String telefone, String email, String rua, String numero, String cidade, String estado) {
         this.nome = nome;
+        this.cpf = cpf;
+        this.telefone = telefone;
+        this.email = email;
         this.rua = rua;
+        this.numero = numero;
         this.cidade = cidade;
         this.estado = estado;
     }
 
-    public Cliente(String idCliente, String nome, String cpf, String telefone, String email, String rua, String numero, String estado, String cidade) {
+    public Cliente(String idCliente, String nome, String cpf, String telefone, String email, String rua, String numero, String cidade, String estado) {
         this.idCliente = idCliente;
-        this.telefone = telefone;
-        this.cpf = cpf;
-        this.numero = numero;
-        this.email = email;
         this.nome = nome;
+        this.cpf = cpf;
+        this.telefone = telefone;
+        this.email = email;
         this.rua = rua;
+        this.numero = numero;
         this.cidade = cidade;
         this.estado = estado;
     }
