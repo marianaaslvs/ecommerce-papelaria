@@ -1,6 +1,6 @@
 package br.com.ecommercepapelaria.servlet.dao;
 
-import br.com.ecommercepapelaria.servlet.model.Login;
+import br.com.ecommercepapelaria.servlet.config.ConnectionPoolConfig;
 import br.com.ecommercepapelaria.servlet.model.MetodoPagamento;
 
 import java.sql.Connection;
@@ -14,23 +14,20 @@ import java.util.List;
 public class MetodoPagamentoDao {
 
     public void createMetodoPagamento(MetodoPagamento metodoPagamento) {
-        String SQL = "INSERT INTO METODOPAGAMENTO (idMetodoPagamento, titular,numCartao,validade,codSeg) VALUES (?,?,?,?,?)";
+        String SQL = "INSERT INTO METODOPAGAMENTO(TITULAR,NUMCARTAO,VALIDADE,CODSEG) VALUES (?,?,?,?)";
 
         try {
+            Connection connection = ConnectionPoolConfig.getConnection();
 
-            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "sa");
-
-            System.out.println("Sucesso ao se conectar no banco de dados");
 
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
 
-            preparedStatement.setString(1, metodoPagamento.getIdMetodoPagamento());
-            preparedStatement.setString(2, metodoPagamento.getTitular());
-            preparedStatement.setString(3, metodoPagamento.getNumCartao());
-            preparedStatement.setString(4, metodoPagamento.getValidade());
-            preparedStatement.setString(5, metodoPagamento.getCodSeg());
+            preparedStatement.setString(1, metodoPagamento.getTitular());
+            preparedStatement.setString(2, metodoPagamento.getNumCartao());
+            preparedStatement.setString(3, metodoPagamento.getValidade());
+            preparedStatement.setString(4, metodoPagamento.getCodSeg());
 
-
+preparedStatement.execute();
 
             System.out.println("Sucesso ao inserir o metodo de pagamentos no banco de dados");
 
@@ -45,7 +42,7 @@ public class MetodoPagamentoDao {
 
 
 
-        public List<MetodoPagamento> findAllMetodoPagamentos(){
+        public List<MetodoPagamento> findAllMetodoPagamento(){
 
             String SQL = "SELECT * FROM METODOPAGAMENTO";
 

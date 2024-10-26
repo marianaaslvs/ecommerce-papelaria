@@ -13,13 +13,13 @@ import java.io.IOException;
 
 
 @WebServlet("/criar-metodoPagamento")
-public class CreateMetodoPagamentoServlet  extends HttpServlet{
+public class CreateMetodoPagamentoServlet extends HttpServlet{
 
 
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/metodoPagamento.html").forward(req, resp);
+        req.getRequestDispatcher("/metodoPagamentos.jsp").forward(req, resp);
     }
 
 
