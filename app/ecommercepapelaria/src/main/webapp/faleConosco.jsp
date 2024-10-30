@@ -6,7 +6,6 @@
   <title>Fale Conosco</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
-
 <body>
 
 <div class="container">
@@ -18,18 +17,18 @@
   <table class="table">
     <thead>
     <tr>
-      <th>nome</th>
-      <th>email</th>
-      <th>duvida</th>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Duvida</th>
     </tr>
     </thead>
 
     <tbody>
-    <c:forEach var="faleConosco" items="${duvidas}">
+    <c:forEach var="duvida" items="${duvidas}">
       <tr>
-        <td>${duvidas.nome}</td>
-        <td>${duvidas.email}</td>
-        <td>${duvidas.duvida}</td>
+        <td>${duvida.nome}</td>
+        <td>${duvida.email}</td>
+        <td>${duvida.duvida}</td>
       </tr>
     </c:forEach>
     </tbody>

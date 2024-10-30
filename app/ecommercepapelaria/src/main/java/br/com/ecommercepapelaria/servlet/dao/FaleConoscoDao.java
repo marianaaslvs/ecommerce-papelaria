@@ -81,4 +81,9 @@ public class FaleConoscoDao {
 
     }
 
+    public void updateFaleConosco (FaleConosco faleConosco) {
+        String SQL = "UPDATE FALECONOSCO SET STATUS = ?  WHERE ID = ?";
+
+    }
+
 }

@@ -25,12 +25,12 @@ public class CreateFaleConoscoServlet extends HttpServlet {
         String email = req.getParameter("email");
         String duvida = req.getParameter("duvida");
 
-        FaleConosco FaleConosco = new FaleConosco(nome, email, duvida);
-
         FaleConoscoDao FaleConoscoDao = new FaleConoscoDao();
-        FaleConoscoDao.criarCriarFaleConosco(FaleConosco);
+        FaleConosco faleConosco = new FaleConosco(nome, email, duvida);
 
-        req.getRequestDispatcher("/find-all-duvidas").forward(req, resp);
+        FaleConoscoDao.criarCriarFaleConosco(faleConosco);
+
+        resp.sendRedirect("/find-all-duvidas");
 
     }
 
