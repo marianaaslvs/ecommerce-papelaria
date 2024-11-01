@@ -15,20 +15,27 @@ public class CreateFaleConoscoServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/faleConosco.html").forward(req, resp);
+        req.getRequestDispatcher("/faleConoscoP.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 
+        String idDuvida = req.getParameter("idDuvida");
         String nome = req.getParameter("nome");
         String email = req.getParameter("email");
         String duvida = req.getParameter("duvida");
+        String status = req.getParameter("status");
 
-        FaleConoscoDao FaleConoscoDao = new FaleConoscoDao();
-        FaleConosco faleConosco = new FaleConosco(nome, email, duvida);
+        FaleConoscoDao faleConoscoDao = new FaleConoscoDao();
+        FaleConosco faleConosco = new FaleConosco(idDuvida, nome, email, duvida,status);
 
-        FaleConoscoDao.criarCriarFaleConosco(faleConosco);
+        if(null == idDuvida || idDuvida.equals("")){
+            faleConoscoDao.criarCriarFaleConosco(faleConosco);
+        }
+        else {
+            faleConoscoDao.updateFaleConosco(faleConosco);
+        }
 
         resp.sendRedirect("/find-all-duvidas");
 
