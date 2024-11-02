@@ -30,9 +30,11 @@ public class CreateClienteServlet extends HttpServlet {
         String numero = req.getParameter("numero");
         String cidade = req.getParameter("cidade");
         String estado = req.getParameter("estado");
+        String senha = req.getParameter("senha");
 
         ClienteDao clienteDao = new ClienteDao();
-        Cliente cliente = new Cliente(idCliente, nome, cpf, telefone, email, rua, numero, cidade, estado);
+
+        Cliente cliente = new Cliente(idCliente, nome, cpf, telefone, email, rua, numero, cidade, estado, senha);
 
         if (null == idCliente || idCliente.equals("")) {
 

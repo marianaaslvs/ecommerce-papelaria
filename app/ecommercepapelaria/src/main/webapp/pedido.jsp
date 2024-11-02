@@ -36,9 +36,9 @@
        <td>
         <form action="/delete-pedido" method="post">
           <input type="hidden" id="codPedido" name="codPedido" value="${pedido.codPedido}">
-          <button type="submit">Delete</button>
+          <button type="submit" class="btn btn-primary">Excluir</button>
           <span> | </span>
-          <a href="pedidos.jsp?codPedido=${pedido.codPedido}&cliente=${pedido.cliente}&produto=${pedido.produto}&metodoPagamento=${pedido.metodoPagamento}&status=${pedido.status}">Update</a>
+          <a class="btn btn-secondary" href="pedidos.jsp?codPedido=${pedido.codPedido}&cliente=${pedido.cliente}&produto=${pedido.produto}&metodoPagamento=${pedido.metodoPagamento}&status=${pedido.status}">Alterar</a>
         </form>
        </td>
       </tr>

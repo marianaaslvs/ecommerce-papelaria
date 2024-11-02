@@ -16,7 +16,7 @@ public class ClienteDao {
 
     public void criarCliente(Cliente cliente){
 
-        String SQL = "INSERT INTO CLIENTE (NOME, CPF, TELEFONE, EMAIL, RUA, NUMERO, CIDADE, ESTADO) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        String SQL = "INSERT INTO CLIENTE (NOME, CPF, TELEFONE, EMAIL, RUA, NUMERO, CIDADE, ESTADO, SENHA) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try{
 
@@ -32,6 +32,7 @@ public class ClienteDao {
             preparedStatement.setString(6, cliente.getNumero());
             preparedStatement.setString(7, cliente.getCidade());
             preparedStatement.setString(8, cliente.getEstado());
+            preparedStatement.setString(9, cliente.getSenha());
             preparedStatement.execute();
 
             System.out.println("Sucesso ao inserir o cliente no banco de dados");
@@ -69,8 +70,9 @@ public class ClienteDao {
                 String numero = resultSet.getString("NUMERO");
                 String cidade = resultSet.getString("CIDADE");
                 String estado = resultSet.getString("ESTADO");
+                String senha = resultSet.getString("SENHA");
 
-                Cliente cliente = new Cliente(idCliente, nome, cpf, telefone, email, rua, numero, cidade, estado);
+                Cliente cliente = new Cliente(idCliente, nome, cpf, telefone, email, rua, numero, cidade, estado, senha);
 
                 allClientes.add(cliente);
             }
@@ -118,8 +120,7 @@ public class ClienteDao {
 
     public void updateCliente(Cliente cliente) {
 
-        String SQL = "UPDATE CLIENTE SET NOME = ?, CPF = ?, TELEFONE = ?, EMAIL = ?, RUA = ?, NUMERO = ?, CIDADE = ?, ESTADO = ? WHERE ID = ?";
-
+        String SQL = "UPDATE CLIENTE SET NOME = ?, CPF = ?, TELEFONE = ?, EMAIL = ?, RUA = ?, NUMERO = ?, CIDADE = ?, ESTADO = ?, SENHA = ? WHERE ID = ?";
 
         try {
 
@@ -127,15 +128,16 @@ public class ClienteDao {
 
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
 
-            preparedStatement.setString(1, cliente.getIdCliente());
-            preparedStatement.setString(2, cliente.getNome());
-            preparedStatement.setString(3, cliente.getCpf());
-            preparedStatement.setString(4, cliente.getTelefone());
-            preparedStatement.setString(5, cliente.getEmail());
-            preparedStatement.setString(6, cliente.getRua());
-            preparedStatement.setString(7, cliente.getNumero());
-            preparedStatement.setString(8, cliente.getCidade());
-            preparedStatement.setString(9, cliente.getEstado());
+            preparedStatement.setString(1, cliente.getNome());
+            preparedStatement.setString(2, cliente.getCpf());
+            preparedStatement.setString(3, cliente.getTelefone());
+            preparedStatement.setString(4, cliente.getEmail());
+            preparedStatement.setString(5, cliente.getRua());
+            preparedStatement.setString(6, cliente.getNumero());
+            preparedStatement.setString(7, cliente.getCidade());
+            preparedStatement.setString(8, cliente.getEstado());
+            preparedStatement.setString(9, cliente.getSenha());
+            preparedStatement.setString(10, cliente.getIdCliente());
 
             preparedStatement.execute();
 

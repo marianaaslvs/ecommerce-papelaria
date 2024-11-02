@@ -117,11 +117,11 @@ public class PedidoDao {
 
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
 
-            preparedStatement.setString(1, pedido.getCodPedido());
-            preparedStatement.setString(2, pedido.getCliente());
-            preparedStatement.setString(3, pedido.getProduto());
-            preparedStatement.setString(4, pedido.getMetodoPagamento());
-            preparedStatement.setString(5, pedido.getStatus());
+            preparedStatement.setString(1, pedido.getCliente());
+            preparedStatement.setString(2, pedido.getProduto());
+            preparedStatement.setString(3, pedido.getMetodoPagamento());
+            preparedStatement.setString(4, pedido.getStatus());
+            preparedStatement.setString(5, pedido.getCodPedido());
 
             preparedStatement.execute();
 

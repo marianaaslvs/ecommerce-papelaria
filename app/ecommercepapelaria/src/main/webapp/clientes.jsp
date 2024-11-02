@@ -8,7 +8,7 @@
 
 <div class="container">
 
-    <h2>Cadastro de Clientes</h2>
+    <h2>Insira seus Dados</h2>
 
     <form action="/criar-cliente" method="post">
 
@@ -120,6 +120,11 @@
                 <option value="TO">TO</option>
             </select>
         </div>
+
+         <div class="mb-3">
+                    <label>Senha</label>
+                    <input type="password" name="senha" id="senha" class="form-control" value="${param.senha}">
+                   </div>
 
         <button class="btn btn-primary" type="submit">Salvar</button>
 

@@ -11,8 +11,9 @@ public class Cliente {
     private String rua;
     private String cidade;
     private String estado;
+    private String senha;
 
-    public Cliente(String nome, String cpf, String telefone, String email, String rua, String numero, String cidade, String estado) {
+    public Cliente(String nome, String cpf, String telefone, String email, String rua, String numero, String cidade, String estado, String senha) {
         this.nome = nome;
         this.cpf = cpf;
         this.telefone = telefone;
@@ -21,9 +22,10 @@ public class Cliente {
         this.numero = numero;
         this.cidade = cidade;
         this.estado = estado;
+        this.senha = senha;
     }
 
-    public Cliente(String idCliente, String nome, String cpf, String telefone, String email, String rua, String numero, String cidade, String estado) {
+    public Cliente(String idCliente, String nome, String cpf, String telefone, String email, String rua, String numero, String cidade, String estado, String senha) {
         this.idCliente = idCliente;
         this.nome = nome;
         this.cpf = cpf;
@@ -33,6 +35,7 @@ public class Cliente {
         this.numero = numero;
         this.cidade = cidade;
         this.estado = estado;
+        this.senha = senha;
     }
 
     public String getIdCliente() {
@@ -71,4 +74,7 @@ public class Cliente {
         return estado;
     }
 
+    public String getSenha() {
+        return senha;
+    }
 }

@@ -26,6 +26,7 @@
       <th>Numero</th>
       <th>Cidade</th>
       <th>Estado</th>
+      <th>Senha</th>
     </tr>
     </thead>
 
@@ -41,12 +42,13 @@
         <td>${cliente.numero}</td>
         <td>${cliente.cidade}</td>
         <td>${cliente.estado}</td>
+        <td>${cliente.senha}</td>
         <td>
         <form action="/delete-cliente" method="post">
           <input type="hidden" id="idCliente" name="idCliente" value="${cliente.idCliente}">
           <button type="submit">Delete</button>
           <span> | </span>
-          <a href="clientes.jsp?idCliente=${cliente.idCliente}&nome=${cliente.nome}&cpf=${cliente.cpf}&telefone=${cliente.telefone}&email=${cliente.email}&rua=${cliente.rua}&numero=${cliente.numero}&cidade=${cliente.cidade}&estado=${cliente.estado}">Update</a>
+          <a href="clientes.jsp?idCliente=${cliente.idCliente}&nome=${cliente.nome}&cpf=${cliente.cpf}&telefone=${cliente.telefone}&email=${cliente.email}&rua=${cliente.rua}&numero=${cliente.numero}&cidade=${cliente.cidade}&estado=${cliente.estado}&senha=${cliente.senha}">Update</a>
         </form>
         </td>
       </tr>
