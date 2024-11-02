@@ -48,9 +48,7 @@ preparedStatement.execute();
 
             try{
 
-                Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "sa");
-
-                System.out.println("Sucesso ao se conectar com o DB!");
+                Connection connection = ConnectionPoolConfig.getConnection();
 
                 PreparedStatement preparedStatement = connection.prepareStatement(SQL);
 
@@ -64,7 +62,7 @@ preparedStatement.execute();
                     String titular = resultSet.getString("TITULAR");
                     String numCartao = resultSet.getString("NUMCARTAO");
                     String validade = resultSet.getString("VALIDADE");
-                    String codSeg = resultSet.getString("CODSEGURANCA");
+                    String codSeg = resultSet.getString("CODSEG");
 
 
                     MetodoPagamento metodoPagamento = new MetodoPagamento(idMetodoPagamento,titular,numCartao,validade,codSeg);
@@ -89,6 +87,31 @@ preparedStatement.execute();
 
         }
 
+        public void deleteMetodoPagamento(String idMetodoPagamento){
+
+            String SQL = "DELETE METODOPAGAMENTO WHERE ID = ?";
+
+            try {
+
+                Connection connection = ConnectionPoolConfig.getConnection();
+
+                PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+                preparedStatement.setString(1, idMetodoPagamento);
+                preparedStatement.execute();
+
+                System.out.println("Sucesso ao deletar o Metodo de Pagamento: " + idMetodoPagamento);
+
+                connection.close();
+
+            } catch (Exception e) {
+
+                System.out.println("Falha ao se conectar com o BD!");
+
+            }
+
+
+
+        }
 
 
 }

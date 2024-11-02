@@ -13,6 +13,10 @@
 
 
 
+            <input type="hidden" id="idMetodoPagamento" name="idMetodoPagamento" value="${param.idMetodoPagamento}">
+
+
+
         <div class="mb-3">
             <label for="titular" class="form-label">Nome do Titular:</label>
             <input type="text" name="titular" id="titular" class="form-control" required>

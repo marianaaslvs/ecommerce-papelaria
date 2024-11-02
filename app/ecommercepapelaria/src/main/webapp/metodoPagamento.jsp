@@ -31,16 +31,17 @@
 
 
       <tr>
+        <td>${metodoPagamento.idMetodoPagamento}</td>
         <td>${metodoPagamento.titular}</td>
         <td>${metodoPagamento.numCartao}</td>
         <td>${metodoPagamento.validade}</td>
         <td>${metodoPagamento.codSeg}</td>
-        <td>${metodoPagamento.id}</td>
 
        <td>
         <form action="/delete-metodoPagamento" method="post">
-          <input type="hidden" id="numCartao" name="cpf" value="${metodoPagamento.numCartao}">
+          <input type="hidden" id="idMetodoPagamento" name="idMetodoPagamento" value="${metodoPagamento.idMetodoPagamento}">
           <button type="submit">Delete</button>
+
           <span> | </span>
           <a href="login.jsp?id=${metodoPagamento.numCartao}&name=${metodoPagamento.numCartao}">Update</a>
         </form>

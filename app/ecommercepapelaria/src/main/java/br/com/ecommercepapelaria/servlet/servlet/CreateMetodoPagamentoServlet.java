@@ -42,7 +42,7 @@ public class CreateMetodoPagamentoServlet extends HttpServlet{
             metodoPagamentoDao.createMetodoPagamento(metodoPagamento);
 
            // req.getRequestDispatcher("index.html").forward(req, resp);
-        req.getRequestDispatcher("/find-all-metodoPagamento");
+        resp.sendRedirect("/find-all-metodoPagamento");
 
         }
 
