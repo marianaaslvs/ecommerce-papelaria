@@ -1,46 +1,51 @@
-<html>
+<html lang="pt-BR">
 <head>
+    <meta charset="UTF-8">
     <title>Imaginarte - Cadastrar Produto</title>
-  <link rel="stylesheet" href="webapp/css/CadastrarProduto.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="css/CadastrarProduto.css" rel="stylesheet" type="text/css" >
+
 </head>
 
 <body>
 
+
 <div class="container">
 
-  <h2>Cadastrar Produtos</h2>
+  <h4>Cadastrar Produtos</h4>
 
   <form action="/criar-produto" method="post" enctype="multipart/form-data">
 
             <input type="hidden" id="idProduto" name="idProduto" value="${param.idProduto}">
 
-            <div  class="mb-3">
-              <label>Nome Produto:</label>
-              <input type="text" name="nomeProduto" id="nome-produto" class="form-control" value="${param.nomeProduto}">
+
+            <div  class="mb-8">
+              <input type="text" name="nomeProduto" id="nome-produto" class="form-control" value="${param.nomeProduto}" placeholder="Nome do Produto">
             </div>
 
-            <div  class="mb-3">
-              <label for="descricao" class="form-label">Descricao:</label>
-              <input type="text" name="descricao" id="descricao" class="form-control" value="${param.descricao}">
+            <div  class="mb-8">
+              <input type="text" name="descricao" id="descricao" class="form-control" value="${param.descricao}" placeholder="Descrição do Produto">
             </div>
 
-            <div  class="mb-3">
-              <label for="preco" class="form-label">Preco</label>
-              <input type="text" name="preco" id="preco"  class="form-control" value="${param.preco}">
+            <div  class="mb-8">
+              <input type="text" name="preco" id="preco"  class="form-control" value="${param.preco}" placeholder="Valor">
             </div>
 
-            <div  class="mb-3">
-              <label for="image">Choose file</label>
-              <input type="file" name="image" id="image">
-            </div>
+      <div class="mb-4 d-flex justify-content-end">
+                <div  class="file-input">
+                    <input type="file" name="image" id="image">
+                    <br>
+                    <label for="image">...</label>
+                </div>
+      </div>
 
-            <button class="btn btn-primary" type="submit">Salvar</button>
+
+            <button class="btn btn-primary" type="submit">Cadastrar</button>
 
   </form>
 
 </div>
-
 
 
 </body>
