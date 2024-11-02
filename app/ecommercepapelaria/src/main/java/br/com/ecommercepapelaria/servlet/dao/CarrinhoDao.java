@@ -18,7 +18,6 @@ public class CarrinhoDao {
 
             Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa","sa");
 
-            System.out.println("Sucesso ao se conectar no banco de dados");
 
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
 
@@ -32,7 +31,7 @@ public class CarrinhoDao {
 
         } catch (Exception e) {
 
-            System.out.println("Erro ao inserir carrinhi no banco de dados" + e.getMessage());
+            System.out.println("Erro ao inserir a tabela de carrinho no banco de dados" + e.getMessage());
 
         }
     }
@@ -54,11 +53,12 @@ public class CarrinhoDao {
 
             while (resultSet.next()) {
 
-                String IdCliente = resultSet.getString("IDCLIENTE");
-                String IdProduto = resultSet.getString("IDPRODUTO");
+                String idCliente = resultSet.getString("IDCLIENTE");
+                String idProduto = resultSet.getString("IDPRODUTO");
 
 
-                Carrinho carrinho = new Carrinho (IdCliente, IdProduto);
+
+                Carrinho carrinho = new Carrinho (idCliente, idProduto);
 
                 allCarrinho.add(carrinho);
             }
