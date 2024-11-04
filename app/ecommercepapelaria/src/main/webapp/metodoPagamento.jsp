@@ -40,10 +40,10 @@
        <td>
         <form action="/delete-metodoPagamento" method="post">
           <input type="hidden" id="idMetodoPagamento" name="idMetodoPagamento" value="${metodoPagamento.idMetodoPagamento}">
-          <button type="submit">Delete</button>
+          <button type="submit" class="btn btn-primary" >Delete</button>
 
           <span> | </span>
-          <a href="login.jsp?id=${metodoPagamento.numCartao}&name=${metodoPagamento.numCartao}">Update</a>
+          <a href="metodoPagamentos.jsp?idMetodoPagamento=${metodoPagamento.idMetodoPagamento}&titular=${metodoPagamento.titular}&numCartao=${metodoPagamento.numCartao}&validade=${metodoPagamento.validade}&codSeg=${metodoPagamento.codSeg}">Update</a>
         </form>
        </td>
       </tr>

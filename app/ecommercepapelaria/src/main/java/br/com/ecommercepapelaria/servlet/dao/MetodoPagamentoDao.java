@@ -2,6 +2,7 @@ package br.com.ecommercepapelaria.servlet.dao;
 
 import br.com.ecommercepapelaria.servlet.config.ConnectionPoolConfig;
 import br.com.ecommercepapelaria.servlet.model.MetodoPagamento;
+import br.com.ecommercepapelaria.servlet.model.Pedido;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -39,9 +40,6 @@ preparedStatement.execute();
 
         }
     }
-
-
-
         public List<MetodoPagamento> findAllMetodoPagamento(){
 
             String SQL = "SELECT * FROM METODOPAGAMENTO";
@@ -89,7 +87,7 @@ preparedStatement.execute();
 
         public void deleteMetodoPagamento(String idMetodoPagamento){
 
-            String SQL = "DELETE METODOPAGAMENTO WHERE ID = ?";
+            String SQL = "DELETE FROM METODOPAGAMENTO WHERE IDMETODOPAGAMENTO = ?";
 
             try {
 
@@ -113,5 +111,38 @@ preparedStatement.execute();
 
         }
 
+        public void updateMetodoPagamento(MetodoPagamento metodoPagamento) {
+
+        String SQL = "UPDATE METODOPAGAMENTO SET TITULAR = ? ,NUMCARTAO = ? ,VALIDADE = ?, CODSEG = ? WHERE IDMETODOPAGAMENTO = ?";
+
+        try {
+
+            Connection connection = ConnectionPoolConfig.getConnection();
+
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+
+            preparedStatement.setString(1, metodoPagamento.getTitular());
+            preparedStatement.setString(2, metodoPagamento.getNumCartao());
+            preparedStatement.setString(3, metodoPagamento.getValidade());
+            preparedStatement.setString(4, metodoPagamento.getCodSeg());
+            preparedStatement.setString(5, metodoPagamento.getIdMetodoPagamento());
+            preparedStatement.execute();
+
+            System.out.println("Sucesso ao atualizar o Metodo de Pagamento");
+
+            connection.close();
+
+        } catch (Exception e) {
+
+            System.out.println("Falha ao se conectar com o DB!");
+            System.out.println("Error: " + e.getMessage());
+
+        }
+
+    }
 
 }
+
+
+
+

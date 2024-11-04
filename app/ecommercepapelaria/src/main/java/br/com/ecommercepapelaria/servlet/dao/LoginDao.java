@@ -1,6 +1,8 @@
 package br.com.ecommercepapelaria.servlet.dao;
 
+import br.com.ecommercepapelaria.servlet.config.ConnectionPoolConfig;
 import br.com.ecommercepapelaria.servlet.model.Login;
+import br.com.ecommercepapelaria.servlet.model.MetodoPagamento;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -39,7 +41,7 @@ public class LoginDao {
             }
         }
 
-        public List<Login> findAllLogin(){
+    public List<Login> findAllLogin(){
 
             String SQL = "SELECT * FROM LOGIN";
 
@@ -83,6 +85,60 @@ public class LoginDao {
 
         }
 
+        public void deleteLogin (String cpf){
+        String SQL = "DELETE FROM LOGIN WHERE CPF = ?";
+            try {
+
+                Connection connection = ConnectionPoolConfig.getConnection();
+
+                PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+                preparedStatement.setString(1, cpf);
+                preparedStatement.execute();
+
+                System.out.println("Sucesso ao deletar o login: " + cpf);
+
+                connection.close();
+
+            } catch (Exception e) {
+
+                System.out.println("Falha ao se conectar com o BD!");
+
+            }
+
+
+
+
+        }
+
+
+
+
+    public void updateLogin(Login login) {
+
+        String SQL = "UPDATE LOGIN SET SENHA = ?  WHERE CPF = ?";
+
+        try {
+
+            Connection connection = ConnectionPoolConfig.getConnection();
+
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+
+            preparedStatement.setString(1, login.getSenha());
+            preparedStatement.setString(2, login.getCpf());
+            preparedStatement.execute();
+
+            System.out.println("Sucesso ao atualizar o Metodo de Pagamento");
+
+            connection.close();
+
+        } catch (Exception e) {
+
+            System.out.println("Falha ao se conectar com o DB!");
+            System.out.println("Error: " + e.getMessage());
+
+        }
+
+    }
 
 
     }

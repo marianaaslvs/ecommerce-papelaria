@@ -30,16 +30,20 @@ public class CreateLoginServlet extends HttpServlet{
         String cpf = req.getParameter("cpf");
         String senha = req.getParameter("senha");
 
-
+        LoginDao loginDao = new LoginDao();
         Login login = new Login(cpf,senha);
 
+        //loginDao.createLogin(login);
+
+        if(null==cpf|| cpf.equals("")){
+            loginDao.createLogin(login);
+        } else{
+            loginDao.updateLogin(login);
+        }
 
 
-        LoginDao loginDao = new LoginDao();
-        loginDao.createLogin(login);
 
-//        resp.sendRedirect("/find-all-login");
-//        //
+
          req.getRequestDispatcher("/find-all-login");
 
     }

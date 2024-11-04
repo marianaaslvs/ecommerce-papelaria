@@ -34,14 +34,18 @@ public class CreateMetodoPagamentoServlet extends HttpServlet{
         String validade = req.getParameter("validade");
         String codSeg = req.getParameter("codSeg");
 
-
+        MetodoPagamentoDao metodoPagamentoDao = new MetodoPagamentoDao();
         MetodoPagamento metodoPagamento  = new MetodoPagamento(idMetodoPagamento,titular,numCartao,validade,codSeg);
 
 
-        MetodoPagamentoDao metodoPagamentoDao = new MetodoPagamentoDao();
-            metodoPagamentoDao.createMetodoPagamento(metodoPagamento);
 
-           // req.getRequestDispatcher("index.html").forward(req, resp);
+
+        if(null == idMetodoPagamento || idMetodoPagamento.equals("")){
+            metodoPagamentoDao.createMetodoPagamento(metodoPagamento);
+        }
+        else {
+            metodoPagamentoDao.updateMetodoPagamento(metodoPagamento);
+        }
         resp.sendRedirect("/find-all-metodoPagamento");
 
         }
