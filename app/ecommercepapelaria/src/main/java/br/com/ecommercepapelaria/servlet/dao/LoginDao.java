@@ -20,13 +20,14 @@ public class LoginDao {
 
             try {
 
-                Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa","sa");
+                Connection connection = ConnectionPoolConfig.getConnection();
 
-                System.out.println("Sucesso ao se conectar no banco de dados");
+
+                //Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa","sa");
 
                 PreparedStatement preparedStatement = connection.prepareStatement(SQL);
 
-                preparedStatement.setString(1, login.getCpf());
+                preparedStatement.setString(1,login.getCpf());
                 preparedStatement.setString(2,login.getSenha());
                 preparedStatement.execute();
 
@@ -47,9 +48,11 @@ public class LoginDao {
 
             try{
 
-                Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "sa");
+                Connection connection = ConnectionPoolConfig.getConnection();
 
-                System.out.println("Sucesso ao se conectar com o DB!");
+           //     Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "sa");
+
+          //      System.out.println("Sucesso ao se conectar com o DB!");
 
                 PreparedStatement preparedStatement = connection.prepareStatement(SQL);
 
@@ -127,7 +130,7 @@ public class LoginDao {
             preparedStatement.setString(2, login.getCpf());
             preparedStatement.execute();
 
-            System.out.println("Sucesso ao atualizar o Metodo de Pagamento");
+            System.out.println("Sucesso ao atualizar o LOGIN");
 
             connection.close();
 
