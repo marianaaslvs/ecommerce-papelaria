@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 public class UserDao {
 
         public boolean verifyCredentials(User user) {
-            String SQL = "SELECT * FROM USER WHERE CPF = ?";
+            String SQL = "SELECT * FROM USUARIO WHERE CPF = ?";
 
             try {
 
