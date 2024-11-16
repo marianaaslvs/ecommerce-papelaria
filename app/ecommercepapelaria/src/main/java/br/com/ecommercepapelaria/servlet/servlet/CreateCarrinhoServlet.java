@@ -34,7 +34,7 @@ public class CreateCarrinhoServlet extends HttpServlet {
             CarrinhoDao carrinhoDao = new CarrinhoDao();
             carrinhoDao.createCarrinho(carrinho);
 
-           // req.getRequestDispatcher("index.html").forward(req, resp);
+           // req.getRequestDispatcher("index.jsp").forward(req, resp);
         //req.getRequestDispatcher("/find-all-login");
         resp.sendRedirect("/find-all-login");
         }
