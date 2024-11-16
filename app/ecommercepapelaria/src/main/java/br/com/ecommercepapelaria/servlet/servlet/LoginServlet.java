@@ -32,7 +32,7 @@ public class LoginServlet extends HttpServlet {
 
             req.getSession().setAttribute("loggedUser", cpf);
 
-            resp.sendRedirect("find-all-metodoPagamento");
+            resp.sendRedirect("/find-all-produtos");
 
         } else {
 
