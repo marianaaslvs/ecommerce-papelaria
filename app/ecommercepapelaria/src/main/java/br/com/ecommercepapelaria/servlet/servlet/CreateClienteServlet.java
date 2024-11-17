@@ -45,7 +45,7 @@ public class CreateClienteServlet extends HttpServlet {
             clienteDao.updateCliente(cliente);
         }
 
-        resp.sendRedirect("/find-all-clientes");
+        resp.sendRedirect("/criar-login");
 
     }
 

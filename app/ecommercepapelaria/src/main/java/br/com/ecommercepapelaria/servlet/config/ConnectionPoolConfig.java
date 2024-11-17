@@ -3,13 +3,16 @@ package br.com.ecommercepapelaria.servlet.config;
 import org.apache.commons.dbcp2.BasicDataSource;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class ConnectionPoolConfig {
 
     private static BasicDataSource dataSource;
+    public String sql = null;
+    public Connection con = null;
 
-    private ConnectionPoolConfig() {
+    public ConnectionPoolConfig() {
         getDataSource();
     }
 
@@ -37,5 +40,4 @@ public class ConnectionPoolConfig {
         return getDataSource().getConnection();
 
     }
-
 }

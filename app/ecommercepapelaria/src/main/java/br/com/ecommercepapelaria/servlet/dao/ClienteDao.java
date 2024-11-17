@@ -4,10 +4,7 @@ import br.com.ecommercepapelaria.servlet.config.ConnectionPoolConfig;
 import br.com.ecommercepapelaria.servlet.model.Cliente;
 import br.com.ecommercepapelaria.servlet.model.Pedido;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
