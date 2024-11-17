@@ -13,37 +13,36 @@
 
 <div class="container">
 
-  <h4>Cadastrar Produtos</h4>
+    <h4>Cadastrar Produtos</h4>
 
-  <form action="/criar-produto" method="post" enctype="multipart/form-data">
+    <form action="/criar-produto" method="post" enctype="multipart/form-data">
 
-            <input type="hidden" id="idProduto" name="idProduto" value="${param.idProduto}">
+        <input type="hidden" id="idProduto" name="idProduto" value="${param.idProduto}">
 
 
+        <div class="pon">
             <div  class="mb-8">
-              <input type="text" name="nomeProduto" id="nome-produto" class="form-control" value="${param.nomeProduto}" placeholder="Nome do Produto">
+                <input type="text" name="nomeProduto" id="nome-produto" class="form-control" value="${param.nomeProduto}" placeholder="Nome do Produto" required>
+                </br>
+
+                <input type="text" name="descricao" id="descricao" class="form-control" value="${param.descricao}" placeholder="Descrição do Produto" required>
+                </br>
+                <input type="text" name="preco" id="preco"  class="form-control" value="${param.preco}" placeholder="Valor" required>
             </div>
 
-            <div  class="mb-8">
-              <input type="text" name="descricao" id="descricao" class="form-control" value="${param.descricao}" placeholder="Descrição do Produto">
-            </div>
-
-            <div  class="mb-8">
-              <input type="text" name="preco" id="preco"  class="form-control" value="${param.preco}" placeholder="Valor">
-            </div>
-
-      <div class="mb-4 d-flex justify-content-end">
+            <div class="mb-4 d-flex justify-content-end">
                 <div  class="file-input">
                     <input type="file" name="image" id="image">
                     <br>
                     <label for="image">...</label>
                 </div>
-      </div>
+            </div>
+        </div>
 
 
-            <button class="btn btn-primary" type="submit">Cadastrar</button>
+        <button class="btn btn-primary" type="submit">Cadastrar</button>
 
-  </form>
+    </form>
 
 </div>
 
