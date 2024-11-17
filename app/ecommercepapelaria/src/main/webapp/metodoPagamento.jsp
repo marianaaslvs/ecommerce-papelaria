@@ -10,6 +10,11 @@
 
 <div class="container">
 
+    <c:if test="${sessionScope.loggedUser != null}">
+        <span>${sessionScope.loggedUser}</span>
+        <a href="/logout">Logout</a>
+    </c:if>
+
   <h1>METODO DE PAGAMENTO</h1>
 
   <br>
@@ -37,7 +42,10 @@
         <td>${metodoPagamento.validade}</td>
         <td>${metodoPagamento.codSeg}</td>
 
+
        <td>
+        <c:if test="${sessionScope.loggedUser != null}">
+
         <form action="/delete-metodoPagamento" method="post">
           <input type="hidden" id="idMetodoPagamento" name="idMetodoPagamento" value="${metodoPagamento.idMetodoPagamento}">
           <button type="submit" class="btn btn-primary" >Delete</button>
@@ -45,7 +53,11 @@
           <span> | </span>
           <a href="metodoPagamentos.jsp?idMetodoPagamento=${metodoPagamento.idMetodoPagamento}&titular=${metodoPagamento.titular}&numCartao=${metodoPagamento.numCartao}&validade=${metodoPagamento.validade}&codSeg=${metodoPagamento.codSeg}">Update</a>
         </form>
+         </c:if>
+
        </td>
+
+
       </tr>
     </c:forEach>
 </tbody>

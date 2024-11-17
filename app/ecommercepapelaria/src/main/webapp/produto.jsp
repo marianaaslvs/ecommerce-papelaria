@@ -11,6 +11,10 @@
 <body>
 
 <div class="container">
+    <c:if test="${sessionScope.loggedUser != null}">
+        <span>${sessionScope.loggedUser}</span>
+        <a href="/logout">Logout</a>
+    </c:if>
 
   <h1>Cadastrar Produto</h1>
 
@@ -36,6 +40,7 @@
 
 
             <td>
+         <c:if test="${sessionScope.loggedUser != null}">
 
                    <form action="/delete-produto" method="post">
                    <input type="hidden" id="idProduto" name="idProduto" value="${produto.idProduto}">
@@ -44,6 +49,7 @@
                    <span> | </span>
                    <a href="produtos.jsp?idProduto=${produto.idProduto}&nomeProduto=${produto.nomeProduto}&descricao=${produto.descricao}&preco=${produto.preco}">Update</a>
                    </form>
+         </c:if>
           </td>
 
 

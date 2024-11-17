@@ -9,6 +9,10 @@
 <body>
 
 <div class="container">
+    <c:if test="${sessionScope.loggedUser != null}">
+        <span>${sessionScope.loggedUser}</span>
+        <a href="/logout">Logout</a>
+    </c:if>
 
   <h1>Pedido</h1>
 
@@ -34,6 +38,8 @@
         <td>${pedido.metodoPagamento}</td>
         <td>${pedido.status}</td>
        <td>
+        <c:if test="${sessionScope.loggedUser != null}">
+
         <form action="/delete-pedido" method="post">
           <input type="hidden" id="codPedido" name="codPedido" value="${pedido.codPedido}">
           <button type="submit" class="btn btn-primary">Excluir</button>
@@ -42,6 +48,8 @@
           <span> | </span>
           <a class="btn btn-secondary" href="pedidos.jsp?codPedido=${pedido.codPedido}&cliente=${pedido.cliente}&produto=${pedido.produto}&metodoPagamento=${pedido.metodoPagamento}&status=${pedido.status}">Alterar</a>
         </form>
+         </c:if>
+
        </td>
       </tr>
     </c:forEach>
