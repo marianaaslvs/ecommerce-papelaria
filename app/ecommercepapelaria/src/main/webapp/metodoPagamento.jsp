@@ -44,7 +44,7 @@
 
 
        <td>
-        <c:if test="${sessionScope.loggedUser != null}">
+        <c:if test="${sessionScope.loggedUser != null  && sessionScope.loggedUser == '12345'}">
 
         <form action="/delete-metodoPagamento" method="post">
           <input type="hidden" id="idMetodoPagamento" name="idMetodoPagamento" value="${metodoPagamento.idMetodoPagamento}">

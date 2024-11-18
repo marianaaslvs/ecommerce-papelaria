@@ -68,7 +68,8 @@
         <td>${pedido.status}</td>
        <td>
 <<<<<<< HEAD
-        <c:if test="${sessionScope.loggedUser != null}">
+<!-- if para que apenas o administrador consiga editar o pedido -->
+        <c:if test="${sessionScope.loggedUser != null && sessionScope.loggedUser == '12345'}">
 =======
 >>>>>>> 086dced3ad8636ebc61819294da391ae0e2221f6
 
