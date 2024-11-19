@@ -1,179 +1,90 @@
-h4 {
-    color: #A9ABBD;
-    text-align: left;
-    padding-bottom: 20px;
-}
+    h4 {
+        color: #FEB6C6;
+        text-align: left;
+        padding-bottom: 20px;
+    }
 
-body {
-    background-color: #FFF8EF;
-}
+    body {
+        background-color: #FFF8EF;
+    }
 
-.container {
-    border: 3px solid;
-    border-color: #FEB6C6;
-    border-radius: 10px;
-    padding: 115px;
-    text-align: center;
-    margin-top: 50px;
-}
+    .container {
+        border: 3px solid;
+        border-color: #FEB6C6;
+        border-radius: 10px;
+        padding: 90px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-top: 50px;
+    }
 
-.form-control::placeholder {
-    color: #FEB6C6;
-}
 
-.form-control {
-    border: 2px solid;
-    border-color: #FEB6C6;
-    display: block;
-    width: 465px;
-    margin-right: 50px;
-}
+    .form-control {
+        border: 2px solid;
+        border-color: #FEB6C6;
+        display: block;
+        width: 465px;
+        margin-right: 50px;
+    }
 
-.form-control#descricao {
-    height: 200px;
-    line-height: 0%;
-}
+    .form-control#descricao {
+        height: 200px;
+        line-height: 0%;
+    }
 
-.pon{
-    display: flex
-}
+    .pon{
+        display: flex
+    }
 
-.mb-8 {
-    padding-bottom: 30px;
-    display: block;
-}
+    .mb-8 {
+        padding-bottom: 30px;
+        display: block;
+    }
 
-.btn-primary {
-    background-color: #A0E6B2;
-    text-decoration-color: #FFF8EF;
-    border: 0;
-}
+    .btn-primary {
+        background-color: #A0E6B2;
+        text-decoration-color: #FFF8EF;
+        border: 0;
+    }
 
-.btn-primary:hover {
-    background-color: #78AB84;
-}
+    .btn-primary:hover {
+        background-color: #78AB84;
+    }
 
-.file-input {
-    display: flex;
-    justify-content: right;
-    width: 326px;
-    height: 326px;
-    overflow: hidden;
-    position: relative;
-    margin: 0 auto;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
+    .file-input {
+        display: flex;
+        justify-content: right;
+        width: 326px;
+        height: 326px;
+        overflow: hidden;
+        position: relative;
+        margin: 0 auto;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
 
-.file-input input[type="file"] {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    cursor: pointer;
-}
+    .file-input input[type="file"] {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer;
+    }
 
-.file-input label {
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-color: #FEB6C6;
-    color: white;
-    text-align: center;
-    line-height: 250px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 70px;
-}
+    .file-input label {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: #FEB6C6;
+        color: white;
+        text-align: center;
+        line-height: 250px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 70px;
+    }
 
-.file-input:hover {
-    transform: scale(1.1);
-}    h4 {
-         color: #A9ABBD;
-         text-align: left;
-         padding-bottom: 20px;
-     }
-
-body {
-    background-color: #FFF8EF;
-}
-
-.container {
-    border: 3px solid;
-    border-color: #FEB6C6;
-    border-radius: 10px;
-    padding: 100px;
-    text-align: center;
-    margin-top: 50px;
-}
-
-.form-control::placeholder {
-    color: #FEB6C6;
-}
-
-.form-control {
-    border: 2px solid;
-    border-color: #FEB6C6;
-    display: block;
-    width: 465px;
-    margin-right: 50px;
-}
-
-.form-control#descricao {
-    height: 200px;
-    line-height: 0%;
-}
-
-.pon{
-    display: flex
-}
-
-.mb-8 {
-    padding-bottom: 30px;
-    display: block;
-}
-
-.btn-primary {
-    background-color: #A0E6B2;
-    text-decoration-color: #FFF8EF;
-    border: 0;
-}
-
-.btn-primary:hover {
-    background-color: #78AB84;
-}
-
-.file-input {
-    display: flex;
-    justify-content: right;
-    width: 326px;
-    height: 326px;
-    overflow: hidden;
-    position: relative;
-    margin: 0 auto;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.file-input input[type="file"] {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    cursor: pointer;
-}
-
-.file-input label {
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-color: #FEB6C6;
-    color: white;
-    text-align: center;
-    line-height: 250px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 70px;
-}
-
-.file-input:hover {
-    transform: scale(1.1);
-}
+    .file-input:hover {
+        transform: scale(1.1);
+    }

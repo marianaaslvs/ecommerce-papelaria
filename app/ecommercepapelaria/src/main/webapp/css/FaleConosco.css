@@ -1,0 +1,42 @@
+    h4 {
+        color: #FEB6C6;
+        text-align: left;
+        padding-bottom: 10px;
+    }
+
+    body {
+        background-color: #FFF8EF;
+    }
+
+    .container {
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+    }
+
+    .btn-primary {
+        background-color: #A0E6B2;
+        text-decoration-color: #FFF8EF;
+        border: 0;
+    }
+
+    .btn-primary:hover {
+        background-color: #78AB84;
+    }
+
+    .form-control#duvida {
+        height: 200px;
+    }
+
+    .form-control {
+        border: 2px solid;
+        border-color: #FEB6C6;
+        width: 465px;
+    }
+
+    .mb-3 {
+        padding-bottom: 2px;
+    }
+
