@@ -14,7 +14,7 @@ import java.io.IOException;
 public class CreateCarrinhoServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/carrinho.html").forward(req, resp);
+        req.getRequestDispatcher("/carrinhos.jsp").forward(req, resp);
     }
 
 
@@ -23,19 +23,25 @@ public class CreateCarrinhoServlet extends HttpServlet {
     @Override
         protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+            String idCarrinho = req.getParameter("idCarrinho");
             String idCliente = req.getParameter("idCliente");
             String idProduto = req.getParameter("idProduto");
-
-
-            Carrinho carrinho = new Carrinho(idCliente, idProduto);
-
+            int quantidade = Integer.parseInt(req.getParameter("quantidade"));
 
 
             CarrinhoDao carrinhoDao = new CarrinhoDao();
-            carrinhoDao.createCarrinho(carrinho);
+            Carrinho carrinho = new Carrinho(idCarrinho,idCliente, idProduto,quantidade);
 
-           // req.getRequestDispatcher("index.jsp").forward(req, resp);
-        //req.getRequestDispatcher("/find-all-login");
-        resp.sendRedirect("/find-all-login");
+
+
+
+        if(null == idCarrinho || idCarrinho.equals("")){
+            carrinhoDao.createCarrinho(carrinho);
         }
+        else {
+            carrinhoDao.updateCarrinho(carrinho);
+        }
+        resp.sendRedirect("/find-all-carrinho");
+
+       }
 }

@@ -32,6 +32,7 @@
     </tr>
 </thead>
 <tbody>
+
     <c:forEach var="metodoPagamento" items="${metodoPagamento}">
 
 

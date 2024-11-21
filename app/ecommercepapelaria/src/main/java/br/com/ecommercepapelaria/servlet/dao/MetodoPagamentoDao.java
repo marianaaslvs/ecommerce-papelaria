@@ -40,6 +40,7 @@ preparedStatement.execute();
 
         }
     }
+
         public List<MetodoPagamento> findAllMetodoPagamento(){
 
             String SQL = "SELECT * FROM METODOPAGAMENTO";

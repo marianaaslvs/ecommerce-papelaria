@@ -1,17 +1,19 @@
 package br.com.ecommercepapelaria.servlet.model;
 
 public class Carrinho {
-    private int idCarrinho;
+    private String idCarrinho;
     private String idCliente;
     private String idProduto;
+    private int quantidade;
 
 
-    public Carrinho(String idCliente, String idProduto) {
+    public Carrinho(String idCarrinho, String idCliente, String idProduto, int quantidade) {
         this.idCliente = idCliente;
         this.idProduto = idProduto;
+        this.quantidade = quantidade;
     }
 
-    public int getIdCarrinho() {
+    public String getIdCarrinho() {
         return idCarrinho;
     }
 
@@ -24,5 +26,9 @@ public class Carrinho {
         return idProduto;
     }
 
+    public int getQuantidade() {
+        return quantidade;
+    }
 
 }
+

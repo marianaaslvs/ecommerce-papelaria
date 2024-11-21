@@ -1,0 +1,150 @@
+/* Responsividade para telas com largura mínima de 1025px (normalmente desktops) */
+@media (min-width: 1025px) {
+  .h-custom {
+    height: 100vh !important; /* Define a altura para 100% da altura da viewport */
+  }
+}
+
+/* Remove a aparência padrão de campo numérico nos navegadores */
+.number-input input[type="number"] {
+  -webkit-appearance: textfield; /* Para Chrome/Safari */
+  -moz-appearance: textfield; /* Para Firefox */
+  appearance: textfield; /* Garante que o campo se comporte como um campo de texto */
+}
+
+/* Remove os botões de incremento e decremento dos campos numéricos nos navegadores baseados em WebKit */
+.number-input input[type=number]::-webkit-inner-spin-button,
+.number-input input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none; /* Remove as setas de rotação */
+}
+
+/* Estilos para os botões de incremento e decremento */
+.number-input button {
+  -webkit-appearance: none; /* Remove a aparência padrão do botão */
+  background-color: transparent; /* Define o fundo como transparente */
+  border: none; /* Remove as bordas */
+  align-items: center; /* Alinha os itens dentro do botão */
+  justify-content: center; /* Alinha os itens dentro do botão */
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+  margin: 0; /* Remove a margem */
+  position: relative; /* Permite posicionamento absoluto dos pseudo-elementos */
+}
+
+/* Adiciona linhas horizontais no botão para criar as setas */
+.number-input button:before,
+.number-input button:after {
+  display: inline-block;
+  position: absolute;
+  content: ''; /* Cria o conteúdo da linha */
+  height: 2px; /* Define a espessura da linha */
+  transform: translate(-50%, -50%); /* Centraliza as linhas no botão */
+}
+
+/* A linha do botão de incremento (seta para cima) é rotacionada */
+.number-input button.plus:after {
+  transform: translate(-50%, -50%) rotate(90deg); /* Gira 90 graus para criar a seta para cima */
+}
+
+/* Centraliza o texto dentro do campo de número */
+.number-input input[type=number] {
+  text-align: center;
+}
+
+/* Estilos gerais para o componente numérico */
+.number-input.number-input {
+  border: 1px solid #ced4da; /* Borda cinza clara */
+  width: 10rem; /* Largura do componente */
+  border-radius: .25rem; /* Bordas arredondadas */
+}
+
+/* Define o tamanho dos botões dentro do componente numérico */
+.number-input.number-input button {
+  width: 2.6rem; /* Largura do botão */
+  height: .7rem; /* Altura do botão */
+}
+
+/* Ajusta o preenchimento à esquerda do botão de decremento */
+.number-input.number-input button.minus {
+  padding-left: 10px;
+}
+
+/* Estilos das linhas nos botões de incremento/decremento */
+.number-input.number-input button:before,
+.number-input.number-input button:after {
+  width: .7rem; /* Largura das linhas */
+  background-color: #495057; /* Cor cinza das linhas */
+}
+
+/* Estiliza o campo numérico com borda, padding e tamanho de fonte */
+.number-input.number-input input[type=number] {
+  max-width: 4rem; /* Largura máxima do campo */
+  padding: .5rem; /* Padding dentro do campo */
+  border: 1px solid #ced4da; /* Borda ao redor do campo */
+  border-width: 0 1px; /* Borda apenas nas laterais */
+  font-size: 1rem; /* Tamanho da fonte */
+  height: 2rem; /* Altura do campo */
+  color: #495057; /* Cor do texto dentro do campo */
+}
+
+/* Ajustes para Safari, corrigindo o posicionamento dos botões */
+@media not all and (min-resolution:.001dpcm) {
+  @supports (-webkit-appearance: none) and (stroke-color:transparent) {
+    .number-input.def-number-input.safari_only button:before,
+    .number-input.def-number-input.safari_only button:after {
+      margin-top: -.3rem; /* Ajuste do alinhamento para Safari */
+    }
+  }
+}
+
+/* Estilos específicos para o carrinho de compras */
+.shopping-cart .def-number-input.number-input {
+  border: none; /* Remove a borda do componente no carrinho */
+}
+
+/* Estilos para o campo de número dentro do carrinho */
+.shopping-cart .def-number-input.number-input input[type=number] {
+  max-width: 2rem; /* Largura máxima reduzida para o campo no carrinho */
+  border: none; /* Remove a borda */
+}
+
+/* Estilos de cor para textos e campos no carrinho */
+.shopping-cart .def-number-input.number-input input[type=number].black-text,
+.shopping-cart .def-number-input.number-input input.btn.btn-link[type=number],
+.shopping-cart .def-number-input.number-input input.md-toast-close-button[type=number]:hover,
+.shopping-cart .def-number-input.number-input input.md-toast-close-button[type=number]:focus {
+  color: #212529 !important; /* Define a cor do texto para um tom escuro */
+}
+
+/* Ajusta o tamanho dos botões dentro do carrinho */
+.shopping-cart .def-number-input.number-input button {
+  width: 1rem; /* Largura menor dos botões */
+}
+
+/* Ajusta a largura das linhas nos botões do carrinho */
+.shopping-cart .def-number-input.number-input button:before,
+.shopping-cart .def-number-input.number-input button:after {
+  width: .5rem; /* Linhas mais finas */
+}
+
+/* Define a cor das linhas do botão de decremento */
+.shopping-cart .def-number-input.number-input button.minus:before,
+.shopping-cart .def-number-input.number-input button.minus:after {
+  background-color: #9e9e9e; /* Cor cinza para decremento */
+}
+
+/* Define a cor das linhas do botão de incremento */
+.shopping-cart .def-number-input.number-input button.plus:before,
+.shopping-cart .def-number-input.number-input button.plus:after {
+  background-color: #4285f4; /* Cor azul para incremento */
+}
+
+.btn-primary {
+  background-color: #FEB6C6; /* Cor de fundo personalizada */
+  color: white; /* Cor do texto */
+  font-weight: bold;
+  border: none; /* Remover borda */
+}
+
+.custom-bg {
+  background-color: #fdBc96;
+}

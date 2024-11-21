@@ -11,6 +11,11 @@
 
     <form action="/criar-carrinho" method="post">
 
+
+          <! --  <input type="hidden" id="idCarrinho" name="idCarrinho" value="${param.idCarrinho}"> -->
+
+
+
         <div  class="mb-3">
             <label for="idCliente" class="form-label">ID do Cliente:</label>
             <input type="text" name="idCliente" id="idCliente" class="form-control">
@@ -20,6 +25,11 @@
             <label for="idProduto" class="form-label">ID do Produto:</label>
             <input type="text" name="idProduto" id="idProduto"  class="form-control">
         </div>
+             <div  class="mb-3">
+                 <label for="quantidade" class="form-label">QUANTIDADE:</label>
+                 <input type="number" name="quantidade" id="quantidade"  class="form-control">
+             </div>
+
 
         <button class="btn btn-primary" type="submit">Salvar</button>
 
@@ -27,3 +37,5 @@
 
 </div>
 
+</body>
+</html>
