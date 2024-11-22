@@ -19,6 +19,16 @@
   <h1>Cadastrar Produto</h1>
 
   <br>
+        <c:forEach var="produto" items="${produtos}">
+        <div class="card" style="width: 300px;">
+            <img src="${produto.image}" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+                <h5 class="card-title">${produto.nomeProduto}</h5>
+                <p class="card-text">${produto.preco}</p>
+                <a href="#" class="btn btn-primary">Comprar</a>
+            </div>
+        </div>
+        </c:forEach>
 
   <table class="table">
     <thead>
