@@ -6,6 +6,7 @@
   <meta charset="UTF-8">
   <title>Imaginarte - Cadastrar Produto</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+   <link href="css/AllProdutos.css" rel="stylesheet" type="text/css" >
 </head>
 
 <body>
@@ -19,34 +20,19 @@
   <h1>Cadastrar Produto</h1>
 
   <br>
+
         <c:forEach var="produto" items="${produtos}">
+        <input type="hidden" id="idProduto" name="idProduto" value="${param.idProduto}">
+
         <div class="card" style="width: 300px;">
             <img src="${produto.image}" class="card-img-top" alt="...">
             <div class="card-body text-center">
                 <h5 class="card-title">${produto.nomeProduto}</h5>
                 <p class="card-text">${produto.preco}</p>
-                <a href="#" class="btn btn-primary">Comprar</a>
+                <a href="/metodoPagamentos.jsp" class="btn btn-primary">Comprar</a>
             </div>
         </div>
         </c:forEach>
-
-  <table class="table">
-    <thead>
-    <tr>
-      <th>idProduto</th>
-      <th>nomeProduto</th>
-      <th>descricao</th>
-      <th>preco</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    <c:forEach var="produto" items="${produtos}">
-      <tr>
-        <td>${produto.idProduto}</td>
-        <td>${produto.nomeProduto}</td>
-        <td>${produto.descricao}</td>
-        <td>${produto.preco}</td>
 
 
             <td>
@@ -62,11 +48,6 @@
          </c:if>
           </td>
 
-
-
-      </tr>
-    </c:forEach>
-    </tbody>
   </table>
   <div>
 
