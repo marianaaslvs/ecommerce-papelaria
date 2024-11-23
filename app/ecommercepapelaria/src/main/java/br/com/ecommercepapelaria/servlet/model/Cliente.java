@@ -25,6 +25,11 @@ public class Cliente {
         this.senha = senha;
     }
 
+    public Cliente(String cpf, String senha) {
+        this.cpf = cpf;
+        this.senha = senha;
+    }
+
     public Cliente(String idCliente, String nome, String cpf, String telefone, String email, String rua, String numero, String cidade, String estado, String senha) {
         this.idCliente = idCliente;
         this.nome = nome;

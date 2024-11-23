@@ -28,27 +28,34 @@
                 <div class="d-flex align-items-center mb-5">
                   <!-- Imagem do produto -->
                   <div class="flex-shrink-0">
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/13.webp"
+                    <img src="${param.image}"
                       class="img-fluid" style="width: 150px;" alt="Generic placeholder image">
                   </div>
                   <!-- Informações do produto -->
                   <div class="flex-grow-1 ms-3">
                     <!-- Ícone para remover o produto -->
                     <a href="#!" class="float-end"><i class="fas fa-times"></i></a>
-                    <h5 class="text-primary" style= "color: #FEB6C6;">Samsung Galaxy M11 64GB</h5>
-                    <h6 style="color: #fdBc96;">Color: white</h6>
-                    <!-- Preço e controle de quantidade -->
-                    <div class="d-flex align-items-center">
-                      <p class="fw-bold mb-0 me-5 pe-3">799$</p>
-                      <div class="def-number-input number-input safari_only">
-                        <!-- Botões para ajustar a quantidade -->
-                        <button data-mdb-button-init onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
-                        <input class="quantity fw-bold bg-body-tertiary text-body" min="0" name="quantity" value="1" type="number">
-                        <button data-mdb-button-init onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
-                      </div>
+                     <h5 class="card-title">${param.nomeProduto}</h5>
+                <h6 style="color: #fdBc96;">${param.descricao}</h6>
+
+
+
+                  <!-- Preço e controle de quantidade -->
+                  <div class="d-flex align-items-center">
+                    <p id="price" class="fw-bold mb-0 me-5 pe-3">${param.preco}</p>
+                    <div class="def-number-input number-input safari_only">
+                      <!-- Botões para ajustar a quantidade -->
+                      <button onclick="adjustQuantity(-1)" class="minus">-</button>
+                      <input id="quantity" class="quantity fw-bold bg-body-tertiary text-body"
+                             min="0" name="quantity" value="1" type="number"
+                             onchange="validateQuantity()">
+                      <button onclick="adjustQuantity(1)" class="plus">+</button>
                     </div>
                   </div>
-                </div>
+                  <p id="total" class="fw-bold mt-3">Total: R$0.00</p>
+
+</div>
+</div>
 
 <!-- FIM SEÇÃO DE PRODUTOS -->
 
@@ -121,7 +128,7 @@
 
         </div>
 
-        <button class="btn btn-primary" type="submit">Realizar Pagamento</button>
+         <button href="/pedido.jsp" class="btn btn-primary" type="submit">Realizar Pagamento</button>
 
     </form>
 

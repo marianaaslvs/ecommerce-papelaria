@@ -1,6 +1,8 @@
 package br.com.ecommercepapelaria.servlet.servlet;
 
+import br.com.ecommercepapelaria.servlet.dao.ClienteDao;
 import br.com.ecommercepapelaria.servlet.dao.UserDao;
+import br.com.ecommercepapelaria.servlet.model.Cliente;
 import br.com.ecommercepapelaria.servlet.model.User;
 
 import javax.servlet.ServletException;
@@ -24,9 +26,9 @@ public class LoginServlet extends HttpServlet {
         String cpf = req.getParameter("cpf");
         String senha = req.getParameter("senha");
 
-        User user = new User(cpf, senha);
+       Cliente cliente = new Cliente(cpf, senha);
 
-        boolean isValidUser = new UserDao().verifyCredentials(user);
+        boolean isValidUser = new ClienteDao().verifyCredentials(cliente);
 
         if (isValidUser) {
 

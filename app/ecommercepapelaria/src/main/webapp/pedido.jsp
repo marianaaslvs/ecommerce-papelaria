@@ -67,11 +67,10 @@
         <td>${pedido.metodoPagamento}</td>
         <td>${pedido.status}</td>
        <td>
-<<<<<<< HEAD
+
+
 <!-- if para que apenas o administrador consiga editar o pedido -->
         <c:if test="${sessionScope.loggedUser != null && sessionScope.loggedUser == '12345'}">
-=======
->>>>>>> 086dced3ad8636ebc61819294da391ae0e2221f6
 
         <form action="/delete-pedido" method="post">
           <input type="hidden" id="codPedido" name="codPedido" value="${pedido.codPedido}">
@@ -87,10 +86,7 @@
           </div>
 
         </form>
-<<<<<<< HEAD
          </c:if>
-=======
->>>>>>> 086dced3ad8636ebc61819294da391ae0e2221f6
 
        </td>
       </tr>

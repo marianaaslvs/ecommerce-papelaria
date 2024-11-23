@@ -29,24 +29,29 @@
             <div class="card-body text-center">
                 <h5 class="card-title">${produto.nomeProduto}</h5>
                 <p class="card-text">${produto.preco}</p>
-                <a href="/metodoPagamentos.jsp" class="btn btn-primary">Comprar</a>
+                <a href="/metodoPagamentos.jsp?idProduto=${produto.idProduto}&nomeProduto=${produto.nomeProduto}&descricao=${produto.descricao}&preco=${produto.preco}&image=${produto.image}" class="btn btn-primary">Comprar</a>
             </div>
         </div>
-        </c:forEach>
+
 
 
             <td>
-         <c:if test="${sessionScope.loggedUser != null && sessionScope.loggedUser == '12345'}">
+         <c:if test="${sessionScope.loggedUser != null && sessionScope.loggedUser == '123.45'}">
 
                    <form action="/delete-produto" method="post">
                    <input type="hidden" id="idProduto" name="idProduto" value="${produto.idProduto}">
                    <button type="submit">Delete</button>
 
                    <span> | </span>
-                   <a href="produtos.jsp?idProduto=${produto.idProduto}&nomeProduto=${produto.nomeProduto}&descricao=${produto.descricao}&preco=${produto.preco}">Update</a>
+                   <a href="produtos.jsp?idProduto=${produto.idProduto}&nomeProduto=${produto.nomeProduto}&descricao=${produto.descricao}&preco=${produto.preco}&image=${produto.image}">Update</a>
                    </form>
          </c:if>
           </td>
+
+
+        </c:forEach>
+
+
 
   </table>
   <div>

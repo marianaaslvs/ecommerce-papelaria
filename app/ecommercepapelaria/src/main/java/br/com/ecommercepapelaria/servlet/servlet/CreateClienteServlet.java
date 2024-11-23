@@ -36,6 +36,7 @@ public class CreateClienteServlet extends HttpServlet {
 
         Cliente cliente = new Cliente(idCliente, nome, cpf, telefone, email, rua, numero, cidade, estado, senha);
 
+
         if (null == idCliente || idCliente.equals("")) {
 
             clienteDao.criarCliente(cliente);
@@ -45,7 +46,7 @@ public class CreateClienteServlet extends HttpServlet {
             clienteDao.updateCliente(cliente);
         }
 
-        resp.sendRedirect("/criar-login");
+        resp.sendRedirect("/login");
 
     }
 

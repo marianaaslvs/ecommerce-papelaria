@@ -3,6 +3,7 @@ package br.com.ecommercepapelaria.servlet.dao;
 import br.com.ecommercepapelaria.servlet.config.ConnectionPoolConfig;
 import br.com.ecommercepapelaria.servlet.model.Cliente;
 import br.com.ecommercepapelaria.servlet.model.Pedido;
+import br.com.ecommercepapelaria.servlet.model.User;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -150,4 +151,48 @@ public class ClienteDao {
         }
 
     }
+
+    public boolean verifyCredentials(Cliente cliente) {
+        //MUDEI
+        String SQL = "SELECT * FROM CLIENTE WHERE CPF = ?";
+
+        try {
+
+            Connection connection = ConnectionPoolConfig.getConnection();
+
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+
+            preparedStatement.setString(1, cliente.getCpf());
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            System.out.println("success in select CPF");
+
+            while (resultSet.next()) {
+
+                String senha = resultSet.getString("senha");
+
+                if (senha.equals(cliente.getSenha())) {
+
+                    return true;
+
+                }
+
+            }
+
+            connection.close();
+
+            return false;
+
+        } catch (Exception e) {
+
+            System.out.println("Error: " + e.getMessage());
+
+            return false;
+
+        }
+
+    }
 }
+
+
+
