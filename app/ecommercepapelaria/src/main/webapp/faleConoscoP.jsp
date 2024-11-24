@@ -3,10 +3,12 @@
     <meta charset="UTF-8">
     <title>Imaginarte - Fale Conosco</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <%@ include file="header.jsp" %>
     <link href="css/FaleConosco.css" rel="stylesheet" type="text/css" >
     <link rel="icon" href="imagens/Logo.png">
+
 </head>
-<%@ include file="header.jsp" %>
+
 
 <body>
 
@@ -22,16 +24,16 @@
     </div>
 
     <div  class="mb-3">
-      <input type="text" name="email" id="email"  class="form-control" value="${param.email}" placeholder="email" required>
+      <input type="text" name="email" id="email"  class="form-control" value="${param.email}" placeholder="Email" required>
     </div>
 
     <div  class="mb-3">
-      <input type="text" name="duvida" id="duvida"  class="form-control" value="${param.duvida}" placeholder="dúvida" required>
+      <input type="text" name="duvida" id="duvida"  class="form-control" value="${param.duvida}" placeholder="Dúvida" required>
     </div>
 
     <div  class="mb-3">
           <select name="status" id="status" class="form-control">
-             <option value="">Status da solicitacao</option>
+             <option value="">Status da solicitação</option>
                  <option value="Não Recebido">Não Recebido</option>
                  <option value="Recebido">Recebido</option>
                  <option value="Concluído">Concluído</option>

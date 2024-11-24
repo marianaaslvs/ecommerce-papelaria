@@ -29,6 +29,7 @@
 
                 <input type="text" name="descricao" id="descricao" class="form-control" value="${param.descricao}" placeholder="Descrição do Produto" required>
                 </br>
+
                 <input type="text" name="preco" id="preco"  class="form-control" value="${param.preco}" placeholder="Valor" required>
             </div>
 
