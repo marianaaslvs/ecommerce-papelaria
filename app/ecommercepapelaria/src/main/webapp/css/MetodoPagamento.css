@@ -148,3 +148,60 @@
 .custom-bg {
   background-color: #fdBc96;
 }
+
+
+<style>
+  .def-number-input {
+    display: flex;
+    align-items: center;
+  }
+
+  .def-number-input .btn {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border: 2px solid #fdBc96;
+    color: #fdBc96;
+    background-color: transparent;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .def-number-input .btn:hover {
+    background-color: #fdBc96;
+    color: white;
+  }
+
+  .def-number-input .btn:active {
+    transform: scale(0.95);
+  }
+
+  .quantity {
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin: 0 5px;
+    padding: 0.25rem;
+  }
+
+  /* Estilo para o separador */
+  hr {
+    background-color: #fdBc96;
+    border: none;
+    height: 4px;
+  }
+
+  /* Estilo para o total */
+  .custom-bg {
+    background-color: #f7f7f7;
+    border-radius: 8px;
+  }
+
+  .fw-bold {
+    font-weight: bold !important;
+  }
+</style>

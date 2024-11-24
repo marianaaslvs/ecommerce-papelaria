@@ -8,6 +8,9 @@
 
 </head>
 
+  <%@ include file="header.jsp"%>
+
+
 <section class="h-100 h-custom" style="background-color: #fff8ef;">
   <div class="container h-100 py-5">
     <div class="row d-flex justify-content-center align-items-center h-100">
@@ -40,19 +43,21 @@
 
 
 
-                  <!-- Preço e controle de quantidade -->
-                  <div class="d-flex align-items-center">
-                    <p id="price" class="fw-bold mb-0 me-5 pe-3">${param.preco}</p>
-                    <div class="def-number-input number-input safari_only">
-                      <!-- Botões para ajustar a quantidade -->
-                      <button onclick="adjustQuantity(-1)" class="minus">-</button>
-                      <input id="quantity" class="quantity fw-bold bg-body-tertiary text-body"
-                             min="0" name="quantity" value="1" type="number"
-                             onchange="validateQuantity()">
-                      <button onclick="adjustQuantity(1)" class="plus">+</button>
-                    </div>
-                  </div>
-                  <p id="total" class="fw-bold mt-3">Total: R$0.00</p>
+<!-- Preço e controle de quantidade -->
+<div class="d-flex align-items-center">
+  <p id="price" class="fw-bold mb-0 me-5 pe-3">${param.preco}</p>
+  <div class="def-number-input number-input d-flex align-items-center">
+    <!-- Botões para ajustar a quantidade -->
+    <button onclick="adjustQuantity(-1)"     class="minus btn btn-sm btn-outline-secondary rounded-circle me-2">-</button>
+    <input id="quantity" class="quantity text-center fw-bold bg-body-tertiary text-body"
+           min="0" name="quantity" value="1" type="number"
+           onchange="validateQuantity()">
+
+
+    <button onclick="adjustQuantity(1)" class="plus btn btn-sm btn-outline-secondary rounded-circle m-2">+</button>
+  </div>
+</div>
+  <script src="total.js" defer></script>
 
 </div>
 </div>
@@ -63,13 +68,10 @@
                 <hr class="mb-4" style="height: 4px; background-color: #fdBc96; opacity: 5; border: none">
 
                 <!-- Resumo de descontos e total -->
-                <div class="d-flex justify-content-between px-x">
-                  <p class="fw-bold">Discount:</p>
-                  <p class="fw-bold">95$</p>
-                </div>
+
                 <div class="d-flex justify-content-between p-2 mb-2 custom-bg">
                   <h5 class="fw-bold mb-0">Total:</h5>
-                  <h5 class="fw-bold mb-0">2261$</h5>
+<p id="total" class="fw-bold mt-3">Total: R$0.00</p>
                 </div>
 
               </div>

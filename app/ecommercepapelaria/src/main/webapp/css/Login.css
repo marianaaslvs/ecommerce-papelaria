@@ -1,274 +1,295 @@
-
 /* BASIC */
 
+/* Definindo a cor de fundo do HTML */
 html {
-  background-color: #fff8ef;
+  background-color: #fff8ef; /* cor de fundo pálida, como um bege claro */
 }
 
+/* Definindo a fonte e altura do corpo */
 body {
-  font-family: "Poppins", sans-serif;
-  height: 100vh;
+  font-family: "Poppins", sans-serif; /* fonte Poppins com fallback para sans-serif */
+  height: 100vh; /* altura da tela, ou seja, a altura total da janela */
 }
 
+/* Estilo para links (a) */
 a {
-  color: #92badd;
-  display:inline-block;
-  text-decoration: none;
-  font-weight: 400;
+  color: #92badd; /* cor do texto do link em azul claro */
+  display: inline-block; /* para que o link se comporte como bloco */
+  text-decoration: none; /* removendo o sublinhado padrão */
+  font-weight: 400; /* peso da fonte normal */
 }
 
+/* Estilo para títulos h2 */
 h2 {
-  text-align: center;
-  font-size: 16px;
-  font-weight: 600;
-  text-transform: uppercase;
-  display:inline-block;
-  margin: 40px 8px 10px 8px;
-  color: #cccccc;
+  text-align: center; /* centralizando o título */
+  font-size: 16px; /* tamanho da fonte */
+  font-weight: 600; /* peso da fonte em negrito */
+  text-transform: uppercase; /* transformando em maiúsculas */
+  display: inline-block; /* exibindo como um bloco inline */
+  margin: 40px 8px 10px 8px; /* definindo as margens */
+  color: #cccccc; /* cor de texto cinza claro */
 }
 
+/* Estilo para títulos h3 */
 h3 {
-  text-align: center;
+  text-align: center; /* centralizando o título */
   font-size: 16px;
   font-weight: 600;
   text-transform: uppercase;
   display: inline-block;
   margin: 40px 8px 10px 8px;
-  color: #FEB6C6 !important;
-  }
-
-
+  color: #FEB6C6 !important; /* cor de texto rosa claro, com a !important para garantir prioridade */
+}
 
 /* STRUCTURE */
 
+/* Estilo para a estrutura geral de layout */
 .wrapper {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  min-height: 100%;
-  padding: 20px;
+  display: flex; /* ativando flexbox */
+  align-items: center; /* centralizando os itens verticalmente */
+  flex-direction: column; /* exibindo os itens em coluna */
+  justify-content: center; /* centralizando os itens horizontalmente */
+  width: 100%; /* largura total */
+  min-height: 100%; /* altura mínima igual a 100% da tela */
+  padding: 20px; /* espaçamento interno */
 }
 
+/* Estilo do formulário */
 #formContent {
-   border: 2px solid #FEB6C6;
-  -webkit-border-radius: 10px 10px 10px 10px;
+   border: 2px solid #FEB6C6; /* borda rosa claro */
+  -webkit-border-radius: 10px 10px 10px 10px; /* bordas arredondadas */
   border-radius: 10px 10px 10px 10px;
-  background: #fff;
-  padding: 30px;
-  width: 90%;
-  max-width: 500px;
+  background: #fff; /* fundo branco */
+  padding: 30px; /* espaçamento interno */
+  width: 90%; /* largura do formulário */
+  max-width: 500px; /* largura máxima de 500px */
   position: relative;
-  padding: 0px;
-  -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
-  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
-  text-align: center;
+  padding: 0px; /* removendo padding extra */
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3); /* sombra suave */
+  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3); /* sombra suave */
+  text-align: center; /* centralizando o conteúdo dentro do formulário */
 }
 
+/* Estilo do rodapé do formulário */
 #formFooter {
-  background-color: #f6f6f6;
-  border-top: 1px solid #dce8f1;
-  padding: 25px;
-  text-align: center;
-  -webkit-border-radius: 0 0 10px 10px;
+  background-color: #f6f6f6; /* fundo cinza claro */
+  border-top: 1px solid #dce8f1; /* borda superior */
+  padding: 25px; /* espaçamento interno */
+  text-align: center; /* centralizando o texto */
+  -webkit-border-radius: 0 0 10px 10px; /* bordas arredondadas no fundo */
   border-radius: 0 0 10px 10px;
 }
 
-
-
 /* TABS */
 
+/* Estilo para título h2 quando está inativo */
 h2.inactive {
-  color: #cccccc;
+  color: #cccccc; /* cor cinza claro */
 }
 
+/* Estilo para título h2 quando está ativo */
 h2.active {
-  color: #0d0d0d;
-  border-bottom: 2px solid #5fbae9;
+  color: #0d0d0d; /* cor preta */
+  border-bottom: 2px solid #5fbae9; /* linha inferior azul claro */
 }
 
+/* FORM TYPOGRAPHY */
 
-
-/* FORM TYPOGRAPHY*/
-
+/* Estilo para botões do formulário */
 input[type=button], input[type=submit], input[type=reset]  {
-  background-color: #56baed;
-  border: none;
-  color: white;
-  padding: 15px 80px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  text-transform: uppercase;
-  font-size: 13px;
-  -webkit-box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
-  box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
-  -webkit-border-radius: 5px 5px 5px 5px;
+  background-color: #a3d2a1; /* cor de fundo azul */
+  border: none; /* sem borda */
+  color: white; /* cor do texto em branco */
+  padding: 15px 80px; /* espaçamento interno */
+  text-align: center; /* centralizando o texto */
+  text-decoration: none; /* removendo sublinhado */
+  display: inline-block; /* comportamento de bloco inline */
+  text-transform: uppercase; /* maiúsculas */
+  font-size: 13px; /* tamanho da fonte */
+  -webkit-box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4); /* sombra suave */
+  box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4); /* sombra suave */
+  -webkit-border-radius: 5px 5px 5px 5px; /* bordas arredondadas */
   border-radius: 5px 5px 5px 5px;
-  margin: 5px 20px 40px 20px;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+  margin: 5px 20px 40px 20px; /* margens do botão */
+  -webkit-transition: all 0.3s ease-in-out; /* transição suave */
+  transition: all 0.3s ease-in-out; /* transição suave */
 }
 
+/* Estilo para botões ao passar o mouse */
 input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
-  background-color: #a3d2a1;
+  background-color: #a0b8a8; /* fundo verde claro */
 }
 
+/* Estilo para botões quando pressionados */
 input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
-  -moz-transform: scale(0.95);
-  -webkit-transform: scale(0.95);
-  -o-transform: scale(0.95);
-  -ms-transform: scale(0.95);
-  transform: scale(0.95);
+  transform: scale(0.95); /* reduzindo o tamanho ao ser pressionado */
 }
 
-input[type=text] {
-  background-color: #f6f6f6;
-  border: none;
-  color: #0d0d0d;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 5px;
-  width: 85%;
-  border: 2px solid #f6f6f6;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -ms-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-  -webkit-border-radius: 5px 5px 5px 5px;
-  border-radius: 5px 5px 5px 5px;
+/* Estilo para campos de texto */
+input[type=text]{
+  background-color: #f6f6f6; /* fundo cinza claro */
+  border: none; /* sem borda */
+  color: #0d0d0d; /* texto em preto */
+  padding: 15px 32px; /* espaçamento interno */
+  text-align: center; /* centralizando o texto */
+  display: inline-block; /* comportamento de bloco inline */
+  font-size: 16px; /* tamanho da fonte */
+  margin: 5px; /* margem */
+  width: 85%; /* largura do campo */
+  border: 2px solid #f6f6f6; /* borda suave */
+  transition: all 0.5s ease-in-out; /* transição suave */
+  border-radius: 5px 5px 5px 5px; /* bordas arredondadas */
 }
 
+
+input[type=password] {
+   background-color: #f6f6f6;
+   border: none;
+   color: #0d0d0d;
+   padding: 15px 32px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 16px;
+   margin: 5px;
+   width: 85%;
+   border: 2px solid #f6f6f6;
+   -webkit-transition: all 0.5s ease-in-out;
+   -moz-transition: all 0.5s ease-in-out;
+   -ms-transition: all 0.5s ease-in-out;
+   -o-transition: all 0.5s ease-in-out;
+   transition: all 0.5s ease-in-out;
+   -webkit-border-radius: 5px 5px 5px 5px;
+   border-radius: 5px 5px 5px 5px;
+ }
+
+ input[type=password]:focus {
+   background-color: #fff;
+   border-bottom: 2px solid #fdBc96;
+ }
+
+ input[type=password]:placeholder {
+   color: #cccccc;
+ }
+
+
+
+/* Estilo para campo de texto ao focar (clicar) */
 input[type=text]:focus {
-  background-color: #fff;
-  border-bottom: 2px solid #5fbae9;
+  background-color: #fff; /* fundo branco */
+  border-bottom: 2px solid #fdBc96; /* linha inferior azul */
 }
 
+/* Estilo para placeholder */
 input[type=text]:placeholder {
-  color: #cccccc;
+  color: #cccccc; /* cor do texto de placeholder */
 }
-
-
 
 /* ANIMATIONS */
 
-/* Simple CSS3 Fade-in-down Animation */
+/* Animação de fade-in-down (desaparece para aparece com movimento para baixo) */
 .fadeInDown {
-  -webkit-animation-name: fadeInDown;
-  animation-name: fadeInDown;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
+  animation-name: fadeInDown; /* nome da animação */
+  animation-duration: 1s; /* duração de 1 segundo */
+  animation-fill-mode: both; /* animação se mantém no estado final */
 }
 
-@-webkit-keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none;
-  }
-}
-
-@keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none;
-  }
-}
-
-/* Simple CSS3 Fade-in Animation */
-@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+/* Animações de fade-in */
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-
 .fadeIn {
   opacity:0;
-  -webkit-animation:fadeIn ease-in 1;
-  -moz-animation:fadeIn ease-in 1;
   animation:fadeIn ease-in 1;
-
-  -webkit-animation-fill-mode:forwards;
-  -moz-animation-fill-mode:forwards;
-  animation-fill-mode:forwards;
-
-  -webkit-animation-duration:1s;
-  -moz-animation-duration:1s;
   animation-duration:1s;
 }
 
-.fadeIn.first {
-  -webkit-animation-delay: 0.4s;
-  -moz-animation-delay: 0.4s;
-  animation-delay: 0.4s;
-}
-
-.fadeIn.second {
-  -webkit-animation-delay: 0.6s;
-  -moz-animation-delay: 0.6s;
-  animation-delay: 0.6s;
-}
-
-.fadeIn.third {
-  -webkit-animation-delay: 0.8s;
-  -moz-animation-delay: 0.8s;
-  animation-delay: 0.8s;
-}
-
-.fadeIn.fourth {
-   background-color: #d3e3d6;
-  -webkit-animation-delay: 1s;
-  -moz-animation-delay: 1s;
-  animation-delay: 1s;
-}
-
-/* Simple CSS3 Fade-in Animation */
+/* Efeitos de hover e animação com atraso */
 .underlineHover:after {
   display: block;
   left: 0;
   bottom: -10px;
   width: 0;
   height: 2px;
-  background-color: #cc041f;
+  background-color: #cc041f; /* cor vermelha */
   content: "";
-  transition: width 0.2s;
+  transition: width 0.2s; /* transição suave */
 }
 
+/* Estilo para o hover no link com sublinhado */
 .underlineHover:hover {
-  color: #0d0d0d;
+  color: #0d0d0d; /* cor do texto em preto ao passar o mouse */
 }
 
 .underlineHover:hover:after{
-  width: 100%;
+  width: 100%; /* mostrando a linha embaixo do texto */
 }
-
-
 
 /* OTHERS */
 
+/* Removendo o contorno ao focar em elementos */
 *:focus {
     outline: none;
 }
 
+/* Estilo para o ícone */
 #icon {
-  width:60%;
+  width:60%; /* largura do ícone ajustada */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Classe fadeIn para aplicar a animação */
+.fadeIn {
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+}
+
+/* Variantes da animação para elementos diferentes (opcional) */
+.fadeIn.first {
+  animation-delay: 0.4s; /* Atrasa a animação para o primeiro elemento */
+}
+
+.fadeIn.second {
+  animation-delay: 0.6s; /* Atrasa mais o segundo elemento */
+}
+
+.fadeIn.third {
+  animation-delay: 0.8s; /* E assim por diante */
+}
+
+.bebas-neue-regular {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
+body{
+    background-color: #FFF8EF;
+}
+
+.btn-secondary {
+    background-color: #A0E6B2;
+    color: #FFF8EF;
+    border: 0;
+    padding: 10px 20px;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    background-color: #78AB84;
+}
+
+.mb-8 {
+    padding-bottom: 30px;
 }

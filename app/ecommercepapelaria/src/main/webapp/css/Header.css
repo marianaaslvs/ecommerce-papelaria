@@ -1,0 +1,61 @@
+/* Estilo Global */
+body {
+    font-family: "Poppins", sans-serif; /* fonte Poppins com fallback para sans-serif */
+      height: 100vh; /* altura da tela, ou seja, a altura total da janela */
+    margin: 0;
+    padding: 0;
+
+}
+
+/* Navbar */
+.navbar {
+    background-color: #FFF8EF; /* Cor de fundo branco/cinza */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar a navbar */
+}
+
+.navbar-brand {
+    display: flex; /* Define um layout flexível */
+    align-items: center; /* Alinha verticalmente o texto e a imagem */
+    font-family: "Bebas Neue", sans-serif; /* Fonte personalizada para o nome da marca */
+    font-size: 3.5rem; /* Tamanho da fonte */
+    color: #ff6f00 !important; /* Cor laranja */
+    text-decoration: none; /* Remove o sublinhado */
+}
+
+.navbar-brand img {
+    border-radius: 50%; /* Deixa a logo circular */
+}
+
+.navbar-nav {
+    display: flex; /* Links organizados em linha */
+    align-items: center; /* Alinhados verticalmente */
+    padding-left: 0; /* Remove o padding padrão */
+    list-style: none; /* Remove os marcadores de lista */
+}
+
+.navbar-nav .nav-link {
+    font-size: 1rem; /* Tamanho do texto dos links */
+    font-weight: 500; /* Negrito moderado */
+    color: #595959 !important; /* Cor preto */
+    text-decoration: none; /* Remove o sublinhado */
+    transition: color 0.3s ease-in-out; /* Efeito de transição ao passar o mouse */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #d84315 !important; /* Laranja mais escuro no hover, quando passamos o mouse por cima */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.5rem; /* Reduz o tamanho da fonte em telas menores */
+    }
+    .navbar-nav {
+        flex-direction: column; /* Links empilhados em dispositivos menores */
+        align-items: flex-start; /* Alinhamento à esquerda */
+    }
+    .navbar-nav .nav-link {
+        font-size: 0.9rem; /* Tamanho reduzido dos links */
+        margin-bottom: 0.5rem; /* Espaço entre os links */
+    }
+}

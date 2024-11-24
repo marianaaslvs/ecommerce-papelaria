@@ -6,6 +6,7 @@
     <link href="css/FaleConosco.css" rel="stylesheet" type="text/css" >
     <link rel="icon" href="imagens/Logo.png">
 </head>
+<%@ include file="header.jsp" %>
 
 <body>
 

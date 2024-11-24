@@ -6,6 +6,10 @@
   <meta charset="UTF-8">
   <title>METODO DE PAGAMENTO</title>
   </head>
+
+  <%@ include file="header.jsp"%>
+
+
 <body>
 
 <div class="container">
