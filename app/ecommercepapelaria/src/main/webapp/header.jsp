@@ -32,7 +32,6 @@
                 <!-- Logo e nome da marca -->
                 <a class="navbar-brand d-flex align-items-center" href="index.jsp">
                     <!-- Logo -->
-                    <img src="/imagens/Imaginarte_Icone.png" alt="Imaginarte Logo" width="50" height="50" class="d-inline-block align-text-top me-2">
                     <!-- Nome da marca -->
                     <span class="brand-name">Imaginarte</span>
                 </a>

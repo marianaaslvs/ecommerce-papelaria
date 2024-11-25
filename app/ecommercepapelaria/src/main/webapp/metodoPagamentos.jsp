@@ -4,7 +4,7 @@
     <title>Metodo de Pagamento</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="css/MetodoPagamento.css">
+    <link rel="stylesheet" type="text/css" href="css/MetodoPagamento.css">
 
 </head>
 
@@ -45,16 +45,16 @@
 
 <!-- Preço e controle de quantidade -->
 <div class="d-flex align-items-center">
-  <p id="price" class="fw-bold mb-0 me-5 pe-3">${param.preco}</p>
+  <p id="price" class="fw-bold mb-0 me-5 pe-3"> R$ ${param.preco}</p>
   <div class="def-number-input number-input d-flex align-items-center">
     <!-- Botões para ajustar a quantidade -->
-    <button onclick="adjustQuantity(-1)"     class="minus btn btn-sm btn-outline-secondary rounded-circle me-2">-</button>
+    <button onclick="adjustQuantity(-1)"     class="minus btn">-</button>
     <input id="quantity" class="quantity text-center fw-bold bg-body-tertiary text-body"
            min="0" name="quantity" value="1" type="number"
            onchange="validateQuantity()">
 
 
-    <button onclick="adjustQuantity(1)" class="plus btn btn-sm btn-outline-secondary rounded-circle m-2">+</button>
+    <button onclick="adjustQuantity(1)" class="plus btn ">+</button>
   </div>
 </div>
   <script src="total.js" defer></script>
@@ -69,8 +69,8 @@
 
                 <!-- Resumo de descontos e total -->
 
-                <div class="d-flex justify-content-between p-2 mb-2 custom-bg">
-                  <h5 class="fw-bold mb-0">Total:</h5>
+                <div class="d-flex justify-content-center p-2 mb-2 custom-bg">
+<!--                  <h5 class="fw-bold mb-0">Total:</h5> -->
 <p id="total" class="fw-bold mt-3">Total: R$0.00</p>
                 </div>
 
@@ -130,7 +130,7 @@
 
         </div>
 
-         <button href="/pedido.jsp" class="btn btn-primary" type="submit">Realizar Pagamento</button>
+<button class="btn btn-primary" type="submit">Realizar Pagamento</button>
 
     </form>
 
