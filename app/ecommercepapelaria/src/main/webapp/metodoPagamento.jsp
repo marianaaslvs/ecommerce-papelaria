@@ -49,6 +49,8 @@
 
 
        <td>
+           <a href="pedidos.jsp?idMetodoPagamento=${metodoPagamento.idMetodoPagamento}&titular=${metodoPagamento.titular}&numCartao=${metodoPagamento.numCartao}&validade=${metodoPagamento.validade}&codSeg=${metodoPagamento.codSeg}">Update</a>
+
         <c:if test="${sessionScope.loggedUser != null  && sessionScope.loggedUser == '12345'}">
 
         <form action="/delete-metodoPagamento" method="post">

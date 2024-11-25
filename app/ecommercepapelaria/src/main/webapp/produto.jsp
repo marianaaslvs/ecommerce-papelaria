@@ -31,6 +31,7 @@
                             <h5 class="card-title">${produto.nomeProduto}</h5>
                             <p class="card-text">R$ ${produto.preco}</p>
                             <a href="/metodoPagamentos.jsp?idProduto=${produto.idProduto}&nomeProduto=${produto.nomeProduto}&descricao=${produto.descricao}&preco=${produto.preco}&image=${produto.image}" class="btn btn-primary">Comprar</a>
+                            <a href="/pedidos.jsp.jsp?idProduto=${produto.idProduto}&nomeProduto=${produto.nomeProduto}&descricao=${produto.descricao}&preco=${produto.preco}&image=${produto.image}" class="btn btn-primary">Comprar</a>
                             <c:if test="${sessionScope.loggedUser != null && sessionScope.loggedUser == '12345'}">
                                     <form action="/delete-produto" method="post" class="mt-3">
                                         <input type="hidden" id="idProduto" name="idProduto" value="${produto.idProduto}">

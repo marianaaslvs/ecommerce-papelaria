@@ -7,6 +7,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
+<%@ include file="header.jsp" %>
 
 <body>
 
@@ -46,6 +47,9 @@
         <td>${cliente.estado}</td>
         <td>${cliente.senha}</td>
         <td>
+
+          <a href="pedidos.jsp?idCliente=${cliente.idCliente}&nome=${cliente.nome}&cpf=${cliente.cpf}&telefone=${cliente.telefone}&email=${cliente.email}&rua=${cliente.rua}&numero=${cliente.numero}&cidade=${cliente.cidade}&estado=${cliente.estado}&senha=${cliente.senha}"></a>
+
         <form action="/delete-cliente" method="post">
           <input type="hidden" id="idCliente" name="idCliente" value="${cliente.idCliente}">
           <button type="submit">Delete</button>
