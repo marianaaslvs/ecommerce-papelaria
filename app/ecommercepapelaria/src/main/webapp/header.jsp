@@ -55,7 +55,21 @@
                             <a class="nav-link" href="/find-all-pedidos">Pedidos</a>
                         </li>
                         <li class="nav-item me-3">
-                            <a class="nav-link" href="/find-all-duvidas">Contato</a>
+                            <c:choose>
+                                <c:when test="${sessionScope.loggedUser != null}">
+                                    <c:choose>
+                                        <c:when test="${sessionScope.loggedUser == '12345'}">
+                                            <a class="nav-link" href="/find-all-duvidas">Fale Conosco (Admin)</a>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <a class="nav-link" href="/fale-conosco">Fale Conosco</a>
+                                        </c:otherwise>
+                                    </c:choose>
+                                </c:when>
+                                <c:otherwise>
+                                    <a class="nav-link" href="/fale-conosco">Fale Conosco</a>
+                                </c:otherwise>
+                            </c:choose>
                         </li>
                     </ul>
 

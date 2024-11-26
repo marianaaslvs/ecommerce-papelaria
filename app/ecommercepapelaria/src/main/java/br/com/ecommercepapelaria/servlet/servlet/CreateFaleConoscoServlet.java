@@ -30,14 +30,23 @@ public class CreateFaleConoscoServlet extends HttpServlet {
         FaleConoscoDao faleConoscoDao = new FaleConoscoDao();
         FaleConosco faleConosco = new FaleConosco(idDuvida, nome, email, duvida,status);
 
-        if(null == idDuvida || idDuvida.equals("")){
-            faleConoscoDao.criarCriarFaleConosco(faleConosco);
-        }
-        else {
-            faleConoscoDao.updateFaleConosco(faleConosco);
+        String mensagem = "";
+
+        try {
+            if (null == idDuvida || idDuvida.equals("")) {
+                faleConoscoDao.criarCriarFaleConosco(faleConosco);
+                mensagem = "Sua dúvida foi registrada com sucesso! , aguarde retorno por email.";
+            } else {
+                faleConoscoDao.updateFaleConosco(faleConosco);
+                mensagem = "A dúvida foi atualizada com sucesso!";
+            }
+            req.setAttribute("mensagem", mensagem);
+        } catch (Exception e) {
+            req.setAttribute("mensagem", "Ocorreu um erro ao processar sua solicitação. Tente novamente.");
         }
 
-        resp.sendRedirect("/find-all-duvidas");
+        req.getRequestDispatcher("/faleConoscoP.jsp").forward(req, resp);
+
 
     }
 

@@ -16,6 +16,8 @@
 
 <div class="container">
 
+
+
   <form action="/fale-conosco" method="post">
       <br>
     <h4>Fale Conosco</h4>
@@ -52,6 +54,12 @@
       </c:if>
 
     <button class="btn btn-primary" type="submit">Enviar</button>
+
+      <c:if test="${not empty mensagem}">
+          <div class="alert alert-info">
+                  ${mensagem}
+          </div>
+      </c:if>
 
   </form>
 

@@ -3,12 +3,13 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
     <head>
-      <meta charset="UTF-8">
       <title>Imaginarte - Produtos</title>
+      <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
       <%@ include file="header.jsp" %>
       <link href="css/AllProdutos.css" rel="stylesheet" type="text/css" >
-      <link rel="icon" href="imagens/Logo.png">
+      <link href="css/Footer.css" rel="stylesheet" type="text/css" >
+      <link rel="icon" href="/imagens/Logo.png">
     </head>
 
 
@@ -27,7 +28,7 @@
               <br>
 
             <div class="product-container">
-                <c:forEach var="produto" items="${produtos}">
+                <c:forEach var="produto" items="${produtos}" varStatus="status">
                     <div class="card">
                         <img src="${produto.image}" class="card-img-top" alt="Imagem do produto">
                         <div class="card-body">
@@ -51,6 +52,28 @@
 
         </div>
 
+
+        <footer>
+            <div class="footer">
+                <div class="cont">
+                    <div class="paginas">
+                        <ul class="navbar-nav ms-3">
+                            <li class="nav-item me-3"> <a class="nav-link" href="index.jsp">Home</a> </li>
+                            <li class="nav-item me-3"> <a class="nav-link" href="find-all-produtos">Produtos</a> </li>
+                            <li class="nav-item me-3"> <a class="nav-link" href="fale-conosco">Fale Conosco</a> </li>
+                        </ul>
+                    </div>
+
+                    <div class="copyright">
+                    Copyright &copy; 2024 Imaginarte
+                    </div>
+
+                    <div class="contatos">
+                    Contato: sac.imaginarte@gmail.com
+                    </div>
+                </div>
+            </div>
+        </footer>
 
     </body>
 </html>
