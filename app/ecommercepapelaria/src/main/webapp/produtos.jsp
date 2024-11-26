@@ -2,19 +2,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Imaginarte - Cadastrar Produto</title>
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <%@ include file="header.jsp" %>
     <link href="css/CadastrarProduto.css" rel="stylesheet" type="text/css">
-
+    <link rel="icon" href="imagens/Logo.png">
 </head>
 
 
 <body>
 
-
+<br>
 <div class="container">
-
-
 
     <form action="/criar-produto" method="post" enctype="multipart/form-data">
         <h4>Cadastrar Produtos</h4>

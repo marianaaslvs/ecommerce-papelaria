@@ -1,4 +1,6 @@
 <html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <head>
     <meta charset="UTF-8">
     <title>Imaginarte - Fale Conosco</title>
@@ -15,6 +17,7 @@
 <div class="container">
 
   <form action="/fale-conosco" method="post">
+      <br>
     <h4>Fale Conosco</h4>
 
     <input type="hidden" id="idDuvida" name="idDuvida" value="${param.idDuvida}">
@@ -31,16 +34,22 @@
       <input type="text" name="duvida" id="duvida"  class="form-control" value="${param.duvida}" placeholder="Dúvida" required>
     </div>
 
-    <div  class="mb-3">
-          <select name="status" id="status" class="form-control">
-             <option value="">Status da solicitação</option>
-                 <option value="Não Recebido">Não Recebido</option>
-                 <option value="Recebido">Recebido</option>
-                 <option value="Concluído">Concluído</option>
-                 <option value="Cancelado">Cancelado</option>
-                 <option value="Indeferido">Indeferido</option>
-          </select>
-    </div>
+    <c:if test="${sessionScope.loggedUser != null && sessionScope.loggedUser == '12345'}">
+        <div  class="mb-3">
+              <select name="status" id="status" class="form-control">
+                 <option value="">Status da solicitação</option>
+                     <option value="Não Recebido">Não Recebido</option>
+                     <option value="Recebido">Recebido</option>
+                     <option value="Concluído">Concluído</option>
+                     <option value="Cancelado">Cancelado</option>
+                     <option value="Indeferido">Indeferido</option>
+              </select>
+        </div>
+    </c:if>
+
+      <c:if test="${sessionScope.loggedUser == null || sessionScope.loggedUser != '12345'}">
+          <input type="hidden" name="status" value="Não Recebido" />
+      </c:if>
 
     <button class="btn btn-primary" type="submit">Enviar</button>
 

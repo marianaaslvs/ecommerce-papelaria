@@ -1,0 +1,16 @@
+    h4 {
+        color: #FEB6C6;
+        text-align: center;
+        padding-bottom: 10px;
+    }
+
+    body {
+        background-color: #FFF8EF;
+    }
+
+    .container {
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+    }
