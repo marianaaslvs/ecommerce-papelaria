@@ -130,7 +130,7 @@
 
         </div>
 
-<button class="btn btn-primary" type="submit">Realizar Pagamento</button>
+<button href="pedidos.jsp?idMetodoPagamento=${metodoPagamento.idMetodoPagamento}&titular=${metodoPagamento.titular}&numCartao=${metodoPagamento.numCartao}&validade=${metodoPagamento.validade}&codSeg=${metodoPagamento.codSeg}" class="btn btn-primary" type="submit">Realizar Pagamento</button>
 
     </form>
 

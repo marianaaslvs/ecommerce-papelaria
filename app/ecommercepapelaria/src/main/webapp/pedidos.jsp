@@ -22,34 +22,29 @@
                                 <!-- Título da seção -->
                                 <h3 class="mb-5 pt-2 text-center fw-bold text-uppercase">SEUS PRODUTOS</h3>
 
-                                <!-- Produto 1 -->
+                                <!-- Produto -->
                                 <div class="d-flex align-items-center mb-5">
                                     <!-- Imagem do produto -->
                                     <div class="flex-shrink-0">
-                                        <img src="${param.image}"
-                                             class="img-fluid" style="width: 150px;" alt="Produto">
+                                        <img src="${param.image}" class="img-fluid" style="width: 150px;" alt="Produto">
                                     </div>
                                     <!-- Informações do produto -->
                                     <div class="flex-grow-1 ms-3">
-                                        <!-- Ícone para remover o produto -->
-                                        <a href="#!" class="float-end"><i class="fas fa-times"></i></a>
                                         <h5 class="card-title">${param.nomeProduto}</h5>
                                         <h6 style="color: #fdBc96;">${param.descricao}</h6>
 
                                         <!-- Preço e controle de quantidade -->
                                         <div class="d-flex align-items-center">
-                                            <p id="price" class="fw-bold mb-0 me-5 pe-3">${param.preco}</p>
+                                            <p id="price" class="fw-bold mb-0 me-5 pe-3">R$ ${param.preco}</p>
                                             <div class="def-number-input number-input d-flex align-items-center">
                                                 <!-- Botões para ajustar a quantidade -->
                                                 <button onclick="adjustQuantity(-1)" class="minus btn btn-sm btn-outline-secondary rounded-circle me-2">-</button>
-                                                <input id="quantity" class="quantity text-center fw-bold bg-body-tertiary text-body" min="0" name="quantity" value="1" type="number" onchange="validateQuantity()">
+                                                <input id="quantity" class="quantity text-center fw-bold bg-body-tertiary text-body" min="0" name="quantity" value="${param.quantity}" type="number" onchange="validateQuantity()">
                                                 <button onclick="adjustQuantity(1)" class="plus btn btn-sm btn-outline-secondary rounded-circle m-2"> + </button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
-                                <!-- FIM SEÇÃO DE PRODUTOS -->
 
                                 <!-- Linha divisória para separar os produtos do resumo -->
                                 <hr class="mb-4" style="height: 4px; background-color: #fdBc96; opacity: 5; border: none">
@@ -57,7 +52,7 @@
                                 <!-- Resumo de descontos e total -->
                                 <div class="d-flex justify-content-between p-2 mb-2 custom-bg">
                                     <h5 class="fw-bold mb-0">Total:</h5>
-                                    <p id="total" class="fw-bold mt-3">Total: R$0.00</p>
+                                    <p id="total" class="fw-bold mt-3">Total: R$ ${param.total}</p>
                                 </div>
                             </div>
 
@@ -86,17 +81,13 @@
 
                                 <!-- Exibir os dados do cliente -->
                                 <div class="container">
-                                    <p><strong>Nome:</strong> ${param.nome}</p>
-                                    <p><strong>CPF:</strong> ${param.cpf}</p>
-                                    <p><strong>Telefone:</strong> ${param.telefone}</p>
-                                    <p><strong>Email:</strong> ${param.email}</p>
-                                    <p><strong>Rua:</strong> ${param.rua}</p>
-                                    <p><strong>Numero:</strong> ${param.numero}</p>
+                                    <p><strong>Nome:</strong> ${param.cliente}</p>
                                     <p><strong>Cidade:</strong> ${param.cidade}</p>
                                     <p><strong>Estado:</strong> ${param.estado}</p>
                                 </div>
                             </div>
                             <!-- FIM SEÇÃO DE DADOS DO CLIENTE -->
+
                         </div>
                     </div>
                 </div>
@@ -104,4 +95,5 @@
         </div>
     </div>
 </section>
+
 </html>

@@ -50,7 +50,7 @@
 
 
         <!-- if para que apenas o administrador consiga editar o pedido -->
-        <c:if test="${sessionScope.loggedUser != null && sessionScope.loggedUser == '12345'}">
+        <c:if test="${sessionScope.loggedUser != null && sessionScope.loggedUser == '123.456.789-10'}">
 
         <form action="/delete-pedido" method="post">
           <input type="hidden" id="codPedido" name="codPedido" value="${pedido.codPedido}">
