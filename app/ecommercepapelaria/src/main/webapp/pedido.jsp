@@ -8,6 +8,7 @@
   <title>Pedido</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="css/ListarPedido.css" rel="stylesheet" type="text/css" >
+  <link href="css/Footer.css" rel="stylesheet" type="text/css" >
 </head>
 
 <%@ include file="header.jsp" %>
@@ -27,10 +28,12 @@
   <table class="table table-sm">
     <thead>
     <tr>
-      <th>ID</th>
+      <th>Pedido</th>
       <th>Cliente</th>
       <th>Produto</th>
-      <th>Metodo De Pagamento</th>
+      <th>Data</th>
+      <th>Endereco</th>
+      <th>Valor</th>
       <th>Status</th>
       <th></th>
     </tr>
@@ -44,13 +47,15 @@
         <td>${pedido.codPedido}</td>
         <td>${pedido.cliente}</td>
         <td>${pedido.produto}</td>
-        <td>${pedido.metodoPagamento}</td>
+        <td>${pedido.data}</td>
+        <td>${pedido.endereco}</td>
+        <td>${pedido.valor}</td>
         <td>${pedido.status}</td>
        <td>
 
 
-        <!-- if para que apenas o administrador consiga editar o pedido -->
-        <c:if test="${sessionScope.loggedUser != null && sessionScope.loggedUser == '123.456.789-10'}">
+        <!-- if para que apenas o administrador consiga editar o pedido (Retirei para testar as funcionalidades sem ter que fazer login)-->
+
 
         <form action="/delete-pedido" method="post">
           <input type="hidden" id="codPedido" name="codPedido" value="${pedido.codPedido}">
@@ -61,12 +66,12 @@
          </div>
           <div class="d-flex justify-content-between mb-8 ">
             <div class="col-6">
-              <a class="btn btn-secondary w-100" href="pedidos.jsp?codPedido=${pedido.codPedido}&cliente=${pedido.cliente}&produto=${pedido.produto}&metodoPagamento=${pedido.metodoPagamento}&status=${pedido.status}">Alterar</a>
+              <a class="btn btn-secondary w-100" href="pedidos.jsp?codPedido=${pedido.codPedido}&cliente=${pedido.cliente}&produto=${pedido.produto}&data=${pedido.data}&endereco=${pedido.endereco}&valor=${pedido.valor}&status=${pedido.status}">Alterar</a>
             </div>
           </div>
 
         </form>
-         </c:if>
+
 
        </td>
       </tr>

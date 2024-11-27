@@ -24,12 +24,14 @@ import java.io.IOException;
             String codPedido = req.getParameter("codPedido");
             String cliente = req.getParameter("cliente");
             String produto = req.getParameter("produto");
-            String metodoPagamento = req.getParameter("metodoPagamento");
+            String data = req.getParameter("data");
+            String endereco = req.getParameter("endereco");
+            double valor = Double.parseDouble(req.getParameter("valor"));
             String status = req.getParameter("status");
 
 
             PedidoDao pedidoDao = new PedidoDao();
-            Pedido pedido = new Pedido(codPedido, cliente, produto, metodoPagamento, status);
+            Pedido pedido = new Pedido(codPedido, cliente, produto, data, endereco, valor, status);
 
             if (null == codPedido || codPedido.equals("")) {
 

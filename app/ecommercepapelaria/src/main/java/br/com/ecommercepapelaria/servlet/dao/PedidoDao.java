@@ -1,6 +1,7 @@
 package br.com.ecommercepapelaria.servlet.dao;
 
 import br.com.ecommercepapelaria.servlet.config.ConnectionPoolConfig;
+import br.com.ecommercepapelaria.servlet.model.Cliente;
 import br.com.ecommercepapelaria.servlet.model.Pedido;
 
 import java.sql.Connection;
@@ -15,7 +16,7 @@ public class PedidoDao {
 
     public void criarPedido(Pedido pedido){
 
-        String SQL = "INSERT INTO PEDIDO (CLIENTE, PRODUTO, METODOPAGAMENTO, STATUS) VALUES (?, ?, ?, ?)";
+        String SQL = "INSERT INTO PEDIDO (CLIENTE, PRODUTO, ENDERECO, VALOR, STATUS) VALUES (?, ?, ?, ?, ?)";
 
         try{
 
@@ -25,8 +26,9 @@ public class PedidoDao {
 
             preparedStatement.setString(1, pedido.getCliente());
             preparedStatement.setString(2, pedido.getProduto());
-            preparedStatement.setString(3, pedido.getMetodoPagamento());
-            preparedStatement.setString(4, pedido.getStatus());
+            preparedStatement.setString(3, pedido.getEndereco());
+            preparedStatement.setDouble(4, pedido.getValor());
+            preparedStatement.setString(5, pedido.getStatus());
             preparedStatement.execute();
 
             System.out.println("Sucesso ao inserir o pedido no banco de dados");
@@ -58,10 +60,12 @@ public class PedidoDao {
                 String codPedido = resultSet.getString("ID");
                 String cliente = resultSet.getString("CLIENTE");
                 String produto = resultSet.getString("PRODUTO");
-                String metodoPagamento = resultSet.getString("METODOPAGAMENTO");
+                String data = resultSet.getString("DATA");
+                String endereco = resultSet.getString("ENDERECO");
+                double valor = resultSet.getDouble("VALOR");
                 String status = resultSet.getString("STATUS");
 
-                Pedido pedido = new Pedido(codPedido, cliente, produto, metodoPagamento, status);
+                Pedido pedido = new Pedido(codPedido, cliente, produto, data, endereco, valor, status);
 
                 allPedidos.add(pedido);
             }
@@ -109,7 +113,7 @@ public class PedidoDao {
 
     public void updatePedido(Pedido pedido) {
 
-        String SQL = "UPDATE PEDIDO SET CLIENTE = ? ,PRODUTO = ? ,METODOPAGAMENTO = ? ,STATUS = ? WHERE ID = ?";
+        String SQL = "UPDATE PEDIDO SET CLIENTE = ? ,PRODUTO = ?, ENDERECO = ?, VALOR = ?,STATUS = ? WHERE ID = ?";
 
         try {
 
@@ -119,9 +123,10 @@ public class PedidoDao {
 
             preparedStatement.setString(1, pedido.getCliente());
             preparedStatement.setString(2, pedido.getProduto());
-            preparedStatement.setString(3, pedido.getMetodoPagamento());
-            preparedStatement.setString(4, pedido.getStatus());
-            preparedStatement.setString(5, pedido.getCodPedido());
+            preparedStatement.setString(3, pedido.getEndereco());
+            preparedStatement.setDouble(4, pedido.getValor());
+            preparedStatement.setString(5, pedido.getStatus());
+            preparedStatement.setString(6, pedido.getCodPedido());
 
             preparedStatement.execute();
 
@@ -135,6 +140,5 @@ public class PedidoDao {
             System.out.println("Error: " + e.getMessage());
 
         }
-
     }
 }

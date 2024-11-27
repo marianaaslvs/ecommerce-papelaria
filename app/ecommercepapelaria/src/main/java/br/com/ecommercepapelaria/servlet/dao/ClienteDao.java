@@ -83,7 +83,7 @@ public class ClienteDao {
 
         } catch (Exception e) {
 
-            System.out.println("Falha ao consultar os carros na tabela CLIENTE: " + e.getMessage());
+            System.out.println("Falha ao consultar os clientes na tabela CLIENTE: " + e.getMessage());
 
         }
 
