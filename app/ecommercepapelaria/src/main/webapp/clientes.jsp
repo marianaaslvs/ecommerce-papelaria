@@ -3,32 +3,30 @@
 <html>
 
 <head>
-    <title>Cadastro</title>
+    <title>Imaginarte - Cadastro</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <%@ include file="header.jsp" %>
     <link href="css/CadastrarCliente.css" rel="stylesheet" type="text/css" >
     <link href="css/Footer.css" rel="stylesheet" type="text/css" >
 </head>
 
 <body>
 
-<%@ include file="header.jsp" %>
-
+<br>
 <div class="container" style="margin-top: 80px;">
 
-    <h2>Insira seus Dados</h2>
+    <form action="/criar-cliente" method="post" enctype="multipart/form-data">
 
-    <form action="/criar-cliente" method="post">
+        <h4>Insira seus Dados</h4>
 
             <input type="hidden" id="idCliente" name="idCliente" value="${param.idCliente}">
 
            <div class="mb-3">
-            <label>Nome</label>
-            <input type="text" name="nome" id="nome" class="form-control" value="${param.nome}">
+            <input type="text" name="nome" id="nome" class="form-control" value="${param.nome}" placeholder="Nome Completo" required>
            </div>
 
         <div class="mb-3">
-            <label for="cpf">CPF</label>
-            <input type="text" name="cpf" id="cpf" class="form-control" maxlength="14" placeholder="000.000.000-00" value="${param.cpf}" oninput="formatCPF(this)" required>
+            <input type="text" name="cpf" id="cpf" class="form-control" maxlength="14" placeholder="CPF" value="${param.cpf}" oninput="formatCPF(this)" required>
         </div>
         <script>
             function formatCPF(cpfField) {
@@ -50,8 +48,7 @@
         </script>
 
         <div class="mb-3">
-            <label for="telefone">Telefone</label>
-            <input type="text" name="telefone" id="telefone" class="form-control" maxlength="15" placeholder="(00) 00000-0000" value="${param.telefone}" oninput="formatTelefone(this)" required>
+            <input type="text" name="telefone" id="telefone" class="form-control" maxlength="15" placeholder="Telefone" value="${param.telefone}" oninput="formatTelefone(this)" required>
         </div>
 
         <script>
@@ -75,27 +72,22 @@
         </script>
 
            <div class="mb-3">
-            <label>Email</label>
-            <input type="text" name="email" id="email" class="form-control" placeholder="seuemail@exemplo.com" value="${param.email}">
+            <input type="text" name="email" id="email" class="form-control" placeholder="seuemail@exemplo.com" value="${param.email}" required>
            </div>
 
            <div class="mb-3">
-            <label>Rua</label>
-            <input type="text" name="rua" id="rua" class="form-control" value="${param.rua}">
+            <input type="text" name="rua" id="rua" class="form-control" value="${param.rua}"  placeholder="Rua" required>
            </div>
 
            <div class="mb-3">
-            <label>Numero:</label>
-            <input type="text" name="numero" id="numero" class="form-control" value="${param.numero}">
+            <input type="text" name="numero" id="numero" class="form-control" value="${param.numero}" placeholder="Número" required>
            </div>
 
            <div class="mb-3">
-            <label>Cidade</label>
-            <input type="text" name="cidade" id="cidade" class="form-control" value="${param.cidade}">
+            <input type="text" name="cidade" id="cidade" class="form-control" value="${param.cidade}" placeholder="Cidade" required>
            </div>
 
            <div class="mb-3">
-            <label for="estado">Estado</label>
             <select name="estado" id="estado" class="form-control">
                 <option value="">Selecione um estado</option>
                 <option value="AC">AC</option>
@@ -129,8 +121,7 @@
         </div>
 
          <div class="mb-3">
-                    <label>Senha</label>
-                    <input type="password" name="senha" id="senha" class="form-control" value="${param.senha}">
+                    <input type="password" name="senha" id="senha" class="form-control" value="${param.senha}"  placeholder="Senha" required>
                    </div>
 
         <button class="btn btn-primary" type="submit">Salvar</button>

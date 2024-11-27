@@ -16,7 +16,7 @@
 
             <div class="container">
 
-              <table class="table">
+              <table class="table table-sm">
                   <br>
                   <h4>Fale Conosco - Controle de Qualidade</h4>
                   <br>
@@ -51,7 +51,7 @@
 
                             </form>
 
-                        =</td>
+                        </td>
                       </tr>
                     </c:forEach>
                 </tbody>
