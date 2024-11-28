@@ -49,7 +49,7 @@
         </div>
     </c:if>
 
-      <c:if test="${sessionScope.loggedUser == null || sessionScope.loggedUser != '12345'}">
+      <c:if test="${sessionScope.loggedUser == null || sessionScope.loggedUser != '123.456.789-10'}">
           <input type="hidden" name="status" value="Não Recebido" />
       </c:if>
 

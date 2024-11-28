@@ -15,7 +15,7 @@
 <br>
 <div class="container" style="margin-top: 80px;">
 
-    <form action="/criar-cliente" method="post" enctype="multipart/form-data">
+    <form action="/criar-cliente" method="post" >
 
         <h4>Insira seus Dados</h4>
 

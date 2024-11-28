@@ -36,7 +36,7 @@
                             <p class="card-text">R$ ${produto.preco}</p>
                             <a href="/metodoPagamentos.jsp?idProduto=${produto.idProduto}&nomeProduto=${produto.nomeProduto}&descricao=${produto.descricao}&preco=${produto.preco}&image=${produto.image}" class="btn btn-primary">Comprar</a>
 
-                            <c:if test="${sessionScope.loggedUser != null && sessionScope.loggedUser == '12345'}">
+                            <c:if test="${sessionScope.loggedUser != null && sessionScope.loggedUser == '123.456.789-10'}">
                                     <form action="/delete-produto" method="post" class="mt-3">
                                         <input type="hidden" id="idProduto" name="idProduto" value="${produto.idProduto}">
                                         <button type="submit" class="btn btn-danger btn-sm">Deletar</button>

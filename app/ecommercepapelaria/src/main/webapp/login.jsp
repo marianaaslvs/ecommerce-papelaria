@@ -42,6 +42,7 @@
 
 <body>
 
+<form action="/login" method="post">
 
 
     <span>${requestScope.message}</span>
@@ -51,7 +52,7 @@
 <!-- LABEL DE CPF -->
   <h1 class="bebas-neue-regular">LOGIN IMAGINARTE</h1>
 
-    <input type="text" id="cpf" class = "fadeIn second" name="cpf" placeholder = "CPF" oninput="formatCPF(this)">
+    <input type="text" id="cpf" class = "fadeIn second" name="cpf" placeholder = "CPF">
 
 
     <br>

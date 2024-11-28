@@ -17,10 +17,12 @@
 <body>
 
 <div class="container">
+
     <c:if test="${sessionScope.loggedUser != null}">
         <span>${sessionScope.loggedUser}</span>
         <a href="/logout">Logout</a>
     </c:if>
+
 
   <table class="table table-sm">
       <br>
