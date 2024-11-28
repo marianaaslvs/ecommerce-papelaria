@@ -124,11 +124,20 @@
                     <input type="password" name="senha" id="senha" class="form-control" value="${param.senha}"  placeholder="Senha" required>
                    </div>
 
-        <button class="btn btn-primary" type="submit">Salvar</button>
+        <button class="btn btn-primary" type="submit">Cadastrar-se</button>
 
     </form>
-
+    <br>
 </div>
+<br>
+        <footer>
+            <div class="footer">
+                <div class="itens">
+                    Contato: sac.imaginarte@gmail.com <br>
+                    Copyright &copy; 2024 Imaginarte
+                </div>
+            </div>
+        </footer>
 
 </body>
 

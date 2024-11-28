@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,7 +59,7 @@
                             <c:choose>
                                 <c:when test="${sessionScope.loggedUser != null}">
                                     <c:choose>
-                                        <c:when test="${sessionScope.loggedUser == '12345'}">
+                                        <c:when test="${sessionScope.loggedUser == '123.456.789-10'}">
                                             <a class="nav-link" href="/find-all-duvidas">Fale Conosco (Admin)</a>
                                         </c:when>
                                         <c:otherwise>
@@ -71,6 +72,12 @@
                                 </c:otherwise>
                             </c:choose>
                         </li>
+
+                        <li class="nav-item me-3">
+                            <c:if test="${sessionScope.loggedUser != null && sessionScope.loggedUser == '123.456.789-10'}">
+                                <a class="nav-link" href="/criar-produto">Criar Produto</a>
+                            </c:if>
+                        </li>
                     </ul>
 
                     <!-- Links de navegação adicionais (alinhados à direita) -->
@@ -79,7 +86,19 @@
                             <a class="nav-link" href="/criar-metodoPagamento">Carrinho</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/login">Login</a>
+                            <c:choose>
+                                <c:when test="${sessionScope.loggedUser != null}">
+                                    <a class="nav-link" href="/logout">Sair</a>
+                                </c:when>
+                                <c:otherwise>
+                                    <a class="nav-link" href="/login">Login</a>
+                                </c:otherwise>
+                            </c:choose>
+                        </li>
+                        <li class="nav-item">
+                            <c:if test="${sessionScope.loggedUser == null}">
+                                <a class="nav-link" href="/criar-cliente">Cadastrar-se</a>
+                            </c:if>
                         </li>
                     </ul>
                 </div>

@@ -15,14 +15,9 @@
 
     <body>
 
+    <div class="content">
         <br>
         <div class="container">
-
-            <c:if test="${sessionScope.loggedUser != null}">
-                <span>${sessionScope.loggedUser}</span>
-                <a href="/logout">Logout</a>
-            </c:if>
-
 
               <h1>Produtos Imaginarte</h1>
               <br>
@@ -51,27 +46,14 @@
             </div>
 
         </div>
-
+    </div>
 
         <footer>
             <div class="footer">
-                <div class="cont">
-                    <div class="paginas">
-                        <ul class="navbar-nav ms-3">
-                            <li class="nav-item me-3"> <a class="nav-link" href="index.jsp">Home</a> </li>
-                            <li class="nav-item me-3"> <a class="nav-link" href="find-all-produtos">Produtos</a> </li>
-                            <li class="nav-item me-3"> <a class="nav-link" href="fale-conosco">Fale Conosco</a> </li>
-                        </ul>
-                    </div>
-
-                    <div class="copyright">
-                    Copyright &copy; 2024 Imaginarte
-                    </div>
-
-                    <div class="contatos">
-                    Contato: sac.imaginarte@gmail.com
-                    </div>
-                </div>
+                <div class="itens">
+                        Contato: sac.imaginarte@gmail.com <br>
+                        Copyright &copy; 2024 Imaginarte
+            </div>
             </div>
         </footer>
 

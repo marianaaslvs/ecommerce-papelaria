@@ -3,7 +3,8 @@
 <head>
     <title>Imaginarte</title>
     <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-    <meta http-equiv="Content-Type" content="text/html" charset=UTF-8>
+    <meta http-equiv="Content-Type" content="text/html" charset=UTF-8
+    <%@ include file="header.jsp" %>
     <link href="/webjars/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/Index.css" rel="stylesheet" type="text/css" >
     <meta charset="utf-8">
@@ -12,7 +13,6 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Template para o carousel Bootstrap</title>
 
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="carousel.css" rel="Astylesheet">
@@ -36,30 +36,6 @@
 
 <body>
 
-<header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <a class="navbar-brand" href="index.jsp">Imaginarte</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.jsp">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/find-all-produtos">Produtos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/find-all-pedidos">Pedidos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/find-all-duvidas">Contato</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</header>
 
 <!-- <div class="img">
     <img src="https://images.pexels.com/photos/2280913/pexels-photo-2280913.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="img-fluid" alt="Imagem">

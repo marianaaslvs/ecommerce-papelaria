@@ -52,7 +52,7 @@
           <a href="pedidos.jsp?idCliente=${cliente.idCliente}&nome=${cliente.nome}&cpf=${cliente.cpf}&telefone=${cliente.telefone}&email=${cliente.email}&rua=${cliente.rua}&numero=${cliente.numero}&cidade=${cliente.cidade}&estado=${cliente.estado}&senha=${cliente.senha}"></a>
 
 
-                            <c:if test="${sessionScope.loggedUser != null && sessionScope.loggedUser == '12345'}">
+                            <c:if test="${sessionScope.loggedUser != null && sessionScope.loggedUser == '123.456.789-10'}">
 
         <form action="/delete-cliente" method="post">
           <input type="hidden" id="idCliente" name="idCliente" value="${cliente.idCliente}">

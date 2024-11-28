@@ -1,8 +1,25 @@
-    .footer{
-        background-color: #AE9BBF;
-    }
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
 
-    .contatos {
-        color: #FFF8EF;
-        text-align: right;
-    }
+/* Corpo da página, com flexbox para empurrar o rodapé para o fim */
+.content {
+    flex: 1;
+}
+
+/* Estilos do rodapé */
+.footer {
+    background-color: #AE9BBF;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.itens {
+    color: #FFFFFF;
+}

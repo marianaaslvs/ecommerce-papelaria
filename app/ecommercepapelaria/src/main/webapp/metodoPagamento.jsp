@@ -14,10 +14,6 @@
 
 <div class="container">
 
-    <c:if test="${sessionScope.loggedUser != null}">
-        <span>${sessionScope.loggedUser}</span>
-        <a href="/logout">Logout</a>
-    </c:if>
 
   <h1>METODO DE PAGAMENTO</h1>
 

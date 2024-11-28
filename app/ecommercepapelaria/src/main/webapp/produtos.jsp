@@ -5,6 +5,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <%@ include file="header.jsp" %>
     <link href="css/CadastrarProduto.css" rel="stylesheet" type="text/css">
+    <link href="css/Footer.css" rel="stylesheet" type="text/css" >
     <link rel="icon" href="/imagens/Logo.png">
 </head>
 
@@ -46,6 +47,15 @@
     </form>
 
 </div>
+
+        <footer>
+            <div class="footer">
+                <div class="itens">
+                    Contato: sac.imaginarte@gmail.com <br>
+                    Copyright &copy; 2024 Imaginarte
+                </div>
+            </div>
+        </footer>
 
 
 </body>

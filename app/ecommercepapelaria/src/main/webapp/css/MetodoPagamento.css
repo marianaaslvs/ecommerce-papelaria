@@ -1,3 +1,4 @@
+
 /* Responsividade para telas com largura mínima de 1025px (normalmente desktops) */
 @media (min-width: 1025px) {
   .h-custom {
@@ -5,7 +6,7 @@
   }
 }
 
-/* Remove a aparência padrão de campo numérico nos navegadores */
+/* Estilos para campos numéricos (remover aparência padrão de número) */
 .number-input input[type="number"] {
   -webkit-appearance: textfield; /* Para Chrome/Safari */
   -moz-appearance: textfield; /* Para Firefox */
@@ -18,7 +19,7 @@
   -webkit-appearance: none; /* Remove as setas de rotação */
 }
 
-/* A linha do botão de incremento (seta para cima) é rotacionada */
+/* Ajuste para os botões dentro do campo numérico */
 .number-input button.plus:after {
   transform: translate(-50%, -50%) rotate(90deg); /* Gira 90 graus para criar a seta para cima */
 }
@@ -29,136 +30,119 @@
 }
 
 /* Estilos gerais para o componente numérico */
-.number-input.number-input {
+.number-input {
+  display: flex;
+  align-items: center;
   border: 1px solid #ced4da; /* Borda cinza clara */
   width: 10rem; /* Largura do componente */
   border-radius: .25rem; /* Bordas arredondadas */
 }
 
 /* Define o tamanho dos botões dentro do componente numérico */
-.number-input.number-input button {
+.number-input button {
   width: 2.6rem; /* Largura do botão */
   height: .7rem; /* Altura do botão */
+  color: #fdBc96;
+  background-color: transparent;
+  border-radius: 1.5px;
+  transition: all 0.2s ease-in-out;
 }
 
-/* Ajusta o preenchimento à esquerda do botão de decremento */
-.number-input.number-input button.minus {
-  padding-left: 10px;
+/* Estilos para botões dentro do campo numérico */
+.number-input button:hover {
+  background-color: #fdBc96;
+  color: white;
 }
 
-/* Estilos das linhas nos botões de incremento/decremento
-.number-input.number-input button:before,
-.number-input.number-input button:after {
-  width: .7rem; /* Largura das linhas */
-  background-color: #495057; /* Cor cinza das linhas */
+.number-input button:active {
+  transform: scale(0.95);
 }
 
-/* Estiliza o campo numérico com borda, padding e tamanho de fonte */
-.number-input.number-input input[type=number] {
-  max-width: 4rem; /* Largura máxima do campo */
-  padding: .5rem; /* Padding dentro do campo */
-  border: 1px solid #ced4da; /* Borda ao redor do campo */
+/* Estilo para o campo numérico dentro do componente */
+.number-input input[type=number] {
+  max-width: 4rem;
+  padding: .5rem;
+  border: 1px solid #ced4da;
   border-width: 0 1px; /* Borda apenas nas laterais */
-  font-size: 1rem; /* Tamanho da fonte */
-  height: 2rem; /* Altura do campo */
-  color: #495057; /* Cor do texto dentro do campo */
+  font-size: 1rem;
+  height: 2rem;
+  color: #495057;
 }
 
-/* Estilos específicos para o carrinho de compras */
-.shopping-cart .def-number-input.number-input {
+/* Estilos para o carrinho de compras */
+.shopping-cart .def-number-input {
   border: none; /* Remove a borda do componente no carrinho */
 }
 
-/* Estilos para o campo de número dentro do carrinho */
-.shopping-cart .def-number-input.number-input input[type=number] {
+.shopping-cart .def-number-input input[type=number] {
   max-width: 2rem; /* Largura máxima reduzida para o campo no carrinho */
-  border: none; /* Remove a borda */
+  border: none;
 }
 
-/* Estilos de cor para textos e campos no carrinho */
-.shopping-cart .def-number-input.number-input input[type=number].black-text,
-.shopping-cart .def-number-input.number-input input.btn.btn-link[type=number],
-.shopping-cart .def-number-input.number-input input.md-toast-close-button[type=number]:hover,
-.shopping-cart .def-number-input.number-input input.md-toast-close-button[type=number]:focus {
+/* Estilos específicos para o carrinho */
+.shopping-cart .def-number-input input[type=number].black-text {
   color: #212529 !important; /* Define a cor do texto para um tom escuro */
 }
 
-/* Ajusta o tamanho dos botões dentro do carrinho */
-.shopping-cart .def-number-input.number-input button {
-  width: 1rem; /* Largura menor dos botões */
-}
-
+/* Estilos para o botão de "Realizar Pagamento" */
 button.btn.btn-primary {
   background-color: #FEB6C6 !important; /* Cor de fundo personalizada */
-  color: white; /* Cor do texto */
+  color: white;
   font-weight: bold;
-  border: none; /* Remover borda */
+  border: none;
 }
 
 button.btn.btn-primary:hover {
   background-color: #FF80A1 !important; /* Cor de fundo no hover (cor de destaque) */
-  color: white; /* Cor do texto continua a mesma */
+  color: white;
 }
 
+/* Estilo para o fundo customizado */
 .custom-bg {
-  background-color: #fdBc96;
+  background-color: #f7f7f7;
+  border-radius: 8px;
 }
 
+/* Estilo para o separador (linha horizontal) */
+hr {
+  background-color: #fdBc96;
+  border: none;
+  height: 4px;
+}
 
-<style>
-  .def-number-input {
-    display: flex;
-    align-items: center;
+/* Estilos adicionais para o layout da página */
+.fw-bold {
+  font-weight: bold !important;
+}
+
+/* Estilos gerais para os campos de entrada do formulário */
+.form-outline {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  font-weight: bold;
+}
+
+.form-control-lg {
+  padding: 0.75rem;
+  font-size: 1rem;
+}
+
+/* Estilo para o título de seções */
+h3.fw-bold {
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* Responsividade: Ajustes para telas pequenas */
+@media (max-width: 1024px) {
+  .number-input {
+    width: 100%;
   }
 
-  .def-number-input .btn {
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    font-size: 1.2rem;
-   /* border: 2px solid #fdBc96;*/
-    color: #fdBc96;
-    background-color: transparent;
-    transition: all 0.2s ease-in-out;
-     border-radius: 1.5; /* Remove bordas circulares */
-
+  .number-input input[type=number] {
+    max-width: 3rem; /* Ajuste da largura para telas pequenas */
   }
-
-  .def-number-input .btn:hover {
-    background-color: #fdBc96;
-    color: white;
-  }
-
-  .def-number-input .btn:active {
-    transform: scale(0.95);
-  }
-
-  .quantity {
-    text-align: center;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-    margin: 0 5px;
-    padding: 0.25rem;
-  }
-
-  /* Estilo para o separador */
-  hr {
-    background-color: #fdBc96;
-    border: none;
-    height: 4px;
-  }
-
-  /* Estilo para o total */
-  .custom-bg {
-    background-color: #f7f7f7;
-    border-radius: 8px;
-  }
-
-  .fw-bold {
-    font-weight: bold !important;
-  }
-</style>
+}
