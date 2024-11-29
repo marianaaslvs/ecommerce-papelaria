@@ -52,9 +52,10 @@
                         <li class="nav-item me-3">
                             <a class="nav-link" href="/find-all-produtos">Produtos</a>
                         </li>
-                        <li class="nav-item me-3">
+                <!--        <li class="nav-item me-3">
                             <a class="nav-link" href="/find-all-pedidos">Pedidos</a>
-                        </li>
+
+                        </li> -->
                         <li class="nav-item me-3">
                             <c:choose>
                                 <c:when test="${sessionScope.loggedUser != null}">

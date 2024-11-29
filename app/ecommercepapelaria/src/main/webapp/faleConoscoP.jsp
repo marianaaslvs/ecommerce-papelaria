@@ -37,7 +37,7 @@
     </div>
 
 
-    <c:if test="${sessionScope.loggedUser != null && sessionScope.loggedUser == '12345'}">
+    <c:if test="${sessionScope.loggedUser != null && sessionScope.loggedUser == '123.456.789-10'}">
         <div  class="mb-3">
               <select name="status" id="status" class="form-control">
                  <option value="">Status da solicitação</option>
