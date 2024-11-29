@@ -47,7 +47,7 @@
                 <!-- LABEL DE CPF -->
                   <h1 class="bebas-neue-regular">LOGIN IMAGINARTE</h1>
 
-                    <input type="text" id="cpf" class = "fadeIn second" name="cpf" placeholder = "CPF">
+                    <input type="text" id="cpf" class = "fadeIn second" name="cpf" placeholder = "CPF" oninput="formatCPF(this)">
 
 
                     <br>

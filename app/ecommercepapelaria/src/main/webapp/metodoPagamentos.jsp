@@ -2,18 +2,26 @@
 
 <head>
     <title>Metodo de Pagamento</title>
+    <meta charset="UTF-8">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="css/MetodoPagamento.css">
+    <link href="css/Footer.css" rel="stylesheet" type="text/css" >
 
 </head>
 
 <%@ include file="header.jsp"%>
 
 
-<section class="h-100 h-custom" style="background-color: #fff8ef;">
+<section class="h-100 h-custom"
+style="background-color: #fff8ef;">
     <div class="container h-100 py-5">
+                <!-- Verifica se o usuário está logado -->
+                <c:choose>
+                    <c:when test="${sessionScope.loggedUser != null}">
+                        <!-- Conteúdo para usuários logados -->
+
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col">
                 <div class="card shopping-cart" style="border-radius: 15px; border: 3px solid #FEB6C6;">
@@ -128,8 +136,40 @@
                                                     <input type="text" name="codSeg" id="codSeg" class="form-control form-control-lg" size="1" required>
 
                                                 </div>
-                                                <button class="btn btn-primary" type="submit">Realizar Pagamento</button>
+                                                         <button href="/pedido.jsp" class="btn btn-primary" type="submit">Realizar Pagamento</button>
+
 
                                         </form>
 
                                 </div>
+                                 </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <!-- Conteúdo para usuários não logados -->
+                                         <div class="text-center py-5">
+                                             <div class="alert alert-danger" role="alert">
+                                                 <h3 class="fw-bold">Voce nao esta logado!</h3>
+                                             </div>
+                                             <p class="lead mb-4">Por favor, faca login para acessar o carrinho de compras.</p>
+    <a href="login.jsp" class="btn" style="background-color: #fdBc96; color: white; border: none; padding: 10px 20px; font-weight: bold;" >Fazer Login</a>
+                                         </div>
+                                                </c:otherwise>
+                                            </c:choose>
+                                        </div>
+                                    </section>
+
+                                            <footer>
+                                                <div class="footer">
+                                                    <div class="itens">
+                                                        Contato: sac.imaginarte@gmail.com <br>
+                                                        Copyright &copy; 2024 Imaginarte
+                                                    </div>
+                                                </div>
+                                            </footer>
+                                </body>
+
+                                </html>
