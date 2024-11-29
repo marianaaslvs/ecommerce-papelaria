@@ -34,6 +34,8 @@ Tela de cadastro 2
 ![Tela de cadastro 2](/imagens/telacadastro02.png)
 
 
+Tela Final de Cadastro
+![Tela de cadastro final](/imagens/telafinalcadastrocliente.png")
 Tela fale conosco
 ![Tela fale conosco](/imagens/telafaleconosco.png)
 
