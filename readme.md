@@ -19,7 +19,7 @@ Tela de navegação
 ![Tela de navegação](/imagens/telanavegacao.png)
 
 
-Tela inicial e navegação versão final 
+Tela inicial e navegação versão final.
 ![Tela de navegação final 1](/imagens/telanavegacaofinal1.png)
 
 ![Tela de navegação final 2](/imagens/telanavegacaofinal2.png)
@@ -41,7 +41,7 @@ Tela de cadastro 2
 
 
 Tela de cadastro versão final 
-![Tela de cadastro](/imagens/telacadastrofinal.png)
+![Tela de cadastro final](/imagens/telacadastrofinal.png)
 
 
 Tela fale conosco
@@ -49,7 +49,7 @@ Tela fale conosco
 
 
 Tela de fale conosco versão final 
-![Tela fale conosco](/imagens/telafaleconoscofinal.png)
+![Tela fale conosco final](/imagens/telafaleconoscofinal.png)
 
 
 Tela FAQ
@@ -60,10 +60,10 @@ Tela Carrinho
 ![Tela Carrinho](/imagens/telacarrinho.png)
 
 Tela de Carrinho e Método de Pagamento versão final caso o usúario esteja logado.
-![Tela Carrinho](/imagens/telacarrinhofinallogado.png)
+![Tela Carrinho logado](/imagens/telacarrinhofinallogado.png)
 
 Tela de Carrinho e Método de Pagamento versão final caso o usúario não esteja logado.
-![Tela Carrinho](/imagens/telacarrinhofinal.png)
+![Tela Carrinho não logado](/imagens/telacarrinhofinal.png)
 
 Tela produto
 ![Tela produto](/imagens/telaproduto.png)
