@@ -46,7 +46,7 @@ public class CreateMetodoPagamentoServlet extends HttpServlet{
         else {
             metodoPagamentoDao.updateMetodoPagamento(metodoPagamento);
         }
-        resp.sendRedirect("/find-all-pedidos");
+        resp.sendRedirect("/confirmacao-pedido");
 
         }
 

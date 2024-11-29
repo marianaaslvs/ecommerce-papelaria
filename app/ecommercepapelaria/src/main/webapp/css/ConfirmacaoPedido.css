@@ -1,0 +1,89 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column; /* Organiza a página em coluna */
+}
+
+body {
+    background-color: #FFF8EF;
+    display: flex;
+    flex-direction: column; /* Garante que os elementos sejam empilhados verticalmente */
+    min-height: 100vh; /* Faz o body ocupar toda a altura da tela */
+    justify-content: center; /* Garante que o conteúdo será centralizado verticalmente */
+}
+
+/* Centralização do card */
+.pon {
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    height: 100vh; /* Ocupa toda a altura da tela */
+    padding-top: 90px; /* Ajusta a altura para que não sobreponha o cabeçalho fixo */
+}
+
+/* Estilo geral para o card */
+.card {
+    width: 18rem; /* Define a largura do card */
+    margin: 10px; /* Espaçamento entre os cards */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave ao redor do card */
+    transition: transform 0.3s ease-in-out; /* Efeito de transição quando o card é interagido */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Leve aumento do card ao passar o mouse */
+}
+
+/* Ajuste na imagem do card */
+.card-img-top {
+    width: 100%; /* Faz a imagem preencher toda a largura do card */
+    height: 250px; /* Aumenta a altura da imagem */
+    object-fit: cover; /* A imagem se adapta para cobrir a área sem distorcer */
+    border-top-left-radius: 8px; /* Bordas arredondadas na parte superior da imagem */
+    border-top-right-radius: 8px;
+}
+
+/* Ajuste no corpo do card */
+.card-body {
+    padding: 1rem; /* Espaçamento interno do card */
+    text-align: center; /* Alinha o texto ao centro */
+    padding-top: 20px; /* Adiciona mais espaço no topo do card */
+    color: #333;
+}
+
+
+/* Título do card */
+.card-title {
+    font-size: 1.25rem;
+    color: #333; /* Cor do título */
+    margin-bottom: 1rem; /* Espaçamento inferior */
+}
+
+/* Responsividade para dispositivos menores */
+@media (max-width: 576px) {
+    .card {
+        width: 100%; /* Faz o card ocupar toda a largura da tela em dispositivos pequenos */
+    }
+    .card-img-top {
+        height: 120px; /* Ajusta a altura da imagem para telas menores */
+    }
+    .card-body {
+        padding: 0.5rem; /* Menos padding em dispositivos menores */
+    }
+    .card-title {
+        font-size: 1rem; /* Ajusta o tamanho da fonte do título */
+    }
+}
+
+/* Fixar o footer na parte inferior da tela */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #FFF8EF;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
