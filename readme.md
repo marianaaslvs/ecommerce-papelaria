@@ -35,7 +35,9 @@ Tela de cadastro 2
 
 
 Tela Final de Cadastro
-![Tela de cadastro final](/imagens/telafinalcadastrocliente.png")
+![Tela de cadastro final](/imagens/telafinalcadastrocliente.png)
+
+
 Tela fale conosco
 ![Tela fale conosco](/imagens/telafaleconosco.png)
 
@@ -47,7 +49,7 @@ Tela FAQ
 Tela Carrinho 
 ![Tela Carrinho](/imagens/telacarrinho.png)
 
-Tela de Carrinho e Método de Pagamento versão final caso o usúario esteja logado.
+Tela de Carrinho e Método de Pagamento versão final caso o usuário esteja logado.
 ![Tela Carrinho](/imagens/telacarrinhofinallogado.png)
 
 Tela de Carrinho e Método de Pagamento versão final caso o usúario não esteja logado.
