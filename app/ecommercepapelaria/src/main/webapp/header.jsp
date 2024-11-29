@@ -52,10 +52,10 @@
                         <li class="nav-item me-3">
                             <a class="nav-link" href="/find-all-produtos">Produtos</a>
                         </li>
-                <!--        <li class="nav-item me-3">
-                            <a class="nav-link" href="/find-all-pedidos">Pedidos</a>
+                 <li class="nav-item me-3">
+                            <a class="nav-link" href="/FAQ.jsp">FAQ</a>
 
-                        </li> -->
+                        </li>
                         <li class="nav-item me-3">
                             <c:choose>
                                 <c:when test="${sessionScope.loggedUser != null}">
@@ -110,4 +110,6 @@
     <!-- Conexão com o Bootstrap (JavaScript) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
+
 </html>
