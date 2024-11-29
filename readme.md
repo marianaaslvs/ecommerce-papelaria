@@ -35,9 +35,13 @@ Tela de cadastro 2
 
 
 Tela Final de Cadastro
+<<<<<<< Updated upstream
 ![Tela de cadastro final](/imagens/telafinalcadastrocliente.png)
 
 
+=======
+![Tela de cadastro final](/imagens/telafinalcadastrocliente.png")
+>>>>>>> Stashed changes
 Tela fale conosco
 ![Tela fale conosco](/imagens/telafaleconosco.png)
 
