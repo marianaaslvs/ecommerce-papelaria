@@ -55,6 +55,9 @@ Tela de fale conosco versão final
 Tela FAQ
 ![Tela FAQ](/imagens/telafaq.png)
 
+Tela FAQ versão final
+![Tela FAQ](/imagens/telafaqfinal.png)
+
 
 Tela Carrinho 
 ![Tela Carrinho](/imagens/telacarrinho.png)
