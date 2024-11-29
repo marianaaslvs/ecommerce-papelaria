@@ -74,7 +74,7 @@ Tela produto
 Tela Produtos Final
 ![Tela Produto logado como admin](/imagens/TelaProdutos.png)
 
-Tela Produtos Final
+Tela Produtos Final 2
 ![Tela Produto não logado como admin](/imagens/TelaProdutos2.png)
 
 
