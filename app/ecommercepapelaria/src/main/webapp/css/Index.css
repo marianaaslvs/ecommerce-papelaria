@@ -1,22 +1,95 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
 body{
     background-color: #FFF8EF;
 }
-
-.btn-secondary {
-    background-color: #A0E6B2;
-    color: #FFF8EF;
-    border: 0;
-    padding: 10px 20px;
-    width: 100%;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
+.container {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-.btn-secondary:hover {
-    background-color: #78AB84;
+.pon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
+
+
 
 .mb-8 {
     padding-bottom: 30px;
 }
+
+/* Estilo geral para o card */
+.card {
+    width: 18rem; /* Define a largura do card */
+    margin: 10px; /* Espaçamento entre os cards */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave ao redor do card */
+    transition: transform 0.3s ease-in-out; /* Efeito de transição quando o card é interagido */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Leve aumento do card ao passar o mouse */
+}
+
+/* Ajuste na imagem do card */
+.card-img-top {
+    width: 100%; /* Faz a imagem preencher toda a largura do card */
+    height: 150px; /* Altura fixa para a imagem */
+    object-fit: cover; /* A imagem se adapta para cobrir a área sem distorcer */
+    border-top-left-radius: 8px; /* Bordas arredondadas na parte superior da imagem */
+    border-top-right-radius: 8px;
+}
+
+/* Estilo do conteúdo do card */
+.card-body {
+    padding: 1rem; /* Espaçamento interno para o conteúdo */
+    text-align: center; /* Alinha o texto ao centro */
+}
+
+/* Título do card */
+.card-title {
+    font-size: 1.25rem;
+    color: #333; /* Cor do título */
+    margin-bottom: 1rem; /* Espaçamento inferior */
+}
+
+/* Responsividade para dispositivos menores */
+@media (max-width: 576px) {
+    .card {
+        width: 100%; /* Faz o card ocupar toda a largura da tela em dispositivos pequenos */
+    }
+    .card-img-top {
+        height: 120px; /* Ajusta a altura da imagem para telas menores */
+    }
+    .card-body {
+        padding: 0.5rem; /* Menos padding em dispositivos menores */
+    }
+    .card-title {
+        font-size: 1rem; /* Ajusta o tamanho da fonte do título */
+    }
+}
+
+.featurette-heading {
+    color: #FEB6C6;
+}
+
+.lead {
+    text-align: justify;
+}
+.featurette {
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+

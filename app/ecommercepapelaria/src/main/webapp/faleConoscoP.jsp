@@ -18,7 +18,6 @@
 <div class="container">
 
 
-
   <form action="/fale-conosco" method="post">
       <br>
     <h4>Fale Conosco</h4>
@@ -36,6 +35,7 @@
     <div  class="mb-3">
       <input type="text" name="duvida" id="duvida"  class="form-control" value="${param.duvida}" placeholder="Dúvida" required>
     </div>
+
 
     <c:if test="${sessionScope.loggedUser != null && sessionScope.loggedUser == '12345'}">
         <div  class="mb-3">
@@ -55,7 +55,7 @@
       </c:if>
 
     <button class="btn btn-primary" type="submit">Enviar</button>
-
+<br>
       <div class="mensagem">
       <c:if test="${not empty mensagem}">
           <div class="alert alert-info">
@@ -63,7 +63,6 @@
           </div>
       </c:if>
       </div>
-
   </form>
 
 </div>

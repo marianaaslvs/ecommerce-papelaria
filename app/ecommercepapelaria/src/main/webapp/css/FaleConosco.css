@@ -9,6 +9,7 @@
     }
 
     .container {
+        display: flex;
         text-align: center;
         align-items: center;
         justify-content: center;
@@ -40,5 +41,10 @@
         padding-bottom: 2px;
     }
 
+    .pon {
+        justify-content: center;
+        align-content: center;
+
+    }
 
 
