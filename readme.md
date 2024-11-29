@@ -71,6 +71,12 @@ Tela de Carrinho e Método de Pagamento versão final caso o usúario não estej
 Tela produto
 ![Tela produto](/imagens/telaproduto.png)
 
+Tela Produtos Final
+![Tela Produto logado como admin](/imagens/telaProdutos.png)
+
+Tela Produtos Final
+![Tela Produto não logado como admin](/imagens/telaProdutos2.png)
+
 
 Tela Pedido Administrador
 ![Tela Pedido Administrador](/imagens/telapedidoadm.png)
