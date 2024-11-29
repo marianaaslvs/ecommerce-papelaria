@@ -72,10 +72,10 @@ Tela produto
 ![Tela produto](/imagens/telaproduto.png)
 
 Tela Produtos Final
-![Tela Produto logado como admin](/imagens/telaProdutos.png)
+![Tela Produto logado como admin](/imagens/TelaProdutos.png)
 
 Tela Produtos Final
-![Tela Produto não logado como admin](/imagens/telaProdutos2.png)
+![Tela Produto não logado como admin](/imagens/TelaProdutos2.png)
 
 
 Tela Pedido Administrador
