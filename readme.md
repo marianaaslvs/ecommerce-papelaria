@@ -56,7 +56,7 @@ Tela FAQ
 ![Tela FAQ](/imagens/telafaq.png)
 
 Tela FAQ versão final
-![Tela FAQ final](/imagens/telafaqfinal.png)
+![Tela FAQ final](/imagens/telafaqFinal.png)
 
 
 Tela Carrinho 
