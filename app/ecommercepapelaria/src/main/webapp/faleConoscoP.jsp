@@ -56,15 +56,18 @@
 
     <button class="btn btn-primary" type="submit">Enviar</button>
 
+      <div class="mensagem">
       <c:if test="${not empty mensagem}">
           <div class="alert alert-info">
                   ${mensagem}
           </div>
       </c:if>
+      </div>
 
   </form>
 
 </div>
+
 </div>
 
 
