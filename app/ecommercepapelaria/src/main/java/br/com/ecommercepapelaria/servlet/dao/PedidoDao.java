@@ -4,21 +4,18 @@ import br.com.ecommercepapelaria.servlet.config.ConnectionPoolConfig;
 import br.com.ecommercepapelaria.servlet.model.Cliente;
 import br.com.ecommercepapelaria.servlet.model.Pedido;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 public class PedidoDao {
 
-    public void criarPedido(Pedido pedido){
+    public void criarPedido(Pedido pedido) {
 
         String SQL = "INSERT INTO PEDIDO (CLIENTE, PRODUTO, ENDERECO, VALOR, STATUS) VALUES (?, ?, ?, ?, ?)";
 
-        try{
+        try {
 
             Connection connection = ConnectionPoolConfig.getConnection();
 
@@ -35,17 +32,17 @@ public class PedidoDao {
 
             connection.close();
 
-        } catch (Exception e){
+        } catch (Exception e) {
 
             System.out.println("Erro ao inserir pedido no banco de dados" + e.getMessage());
         }
     }
 
-    public List<Pedido> findAllPedidos(){
+    public List<Pedido> findAllPedidos() {
 
         String SQL = "SELECT * FROM PEDIDO";
 
-        try{
+        try {
 
             Connection connection = ConnectionPoolConfig.getConnection();
 
@@ -139,6 +136,36 @@ public class PedidoDao {
             System.out.println("Falha ao se conectar com o DB!");
             System.out.println("Error: " + e.getMessage());
 
+        }
+    }
+
+    public void criarPedido(String clienteId, String produtoId) throws SQLException {
+
+        String selectSQL = "SELECT NOME, RUA FROM CLIENTE";
+        String insertSQL = "INSERT INTO PEDIDO (CLIENTE, ENDERECO) VALUES (?, ?)";
+
+        try {
+
+            Connection connection = ConnectionPoolConfig.getConnection();
+
+            PreparedStatement selectStmt = connection.prepareStatement(selectSQL);
+            PreparedStatement insertStmt = connection.prepareStatement(insertSQL);
+            ResultSet resultSet = selectStmt.executeQuery();
+
+            while (resultSet.next()) {
+                String nome = resultSet.getString("NOME");
+                String rua = resultSet.getString("RUA");
+                insertStmt.setString(1, nome);
+                insertStmt.setString(2, rua);
+                insertStmt.executeUpdate();
+            }
+
+            System.out.println("Dados transferidos com sucesso!");
+
+        } catch (Exception e) {
+
+            System.out.println("Falha ao se conectar com o DB!");
+            System.out.println("Error: " + e.getMessage());
         }
     }
 }

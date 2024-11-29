@@ -41,7 +41,7 @@
             <input type="text" name="valor" id="valor" class="form-control" value="${param.valor}">
         </div>
 
-        <c:if test="${sessionScope.loggedUser != null && sessionScope.loggedUser == '12345'}">
+        <c:if test="${sessionScope.loggedUser != null && sessionScope.loggedUser == '123.456.789-10'}">
         <div class="mb-3">
             <label>Status</label>
             <select name="status" id="status" class="form-control">
