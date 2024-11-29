@@ -19,6 +19,12 @@ Tela de navegação
 ![Tela de navegação](/imagens/telanavegacao.png)
 
 
+Tela inicial e navegação versão final 
+![Tela de navegação final 1](/imagens/telanavegacaofinal1.png)
+
+![Tela de navegação final 2](/imagens/telanavegacaofinal2.png)
+
+
 Tela Login versão inicial
 ![Tela login](/imagens/telalogin.png)
 
@@ -34,16 +40,16 @@ Tela de cadastro 2
 ![Tela de cadastro 2](/imagens/telacadastro02.png)
 
 
-Tela Final de Cadastro
-<<<<<<< Updated upstream
-![Tela de cadastro final](/imagens/telafinalcadastrocliente.png)
+Tela de cadastro versão final 
+![Tela de cadastro](/imagens/telacadastrofinal.png)
 
 
-=======
-![Tela de cadastro final](/imagens/telafinalcadastrocliente.png")
->>>>>>> Stashed changes
 Tela fale conosco
 ![Tela fale conosco](/imagens/telafaleconosco.png)
+
+
+Tela de fale conosco versão final 
+![Tela fale conosco](/imagens/telafaleconoscofinal.png)
 
 
 Tela FAQ
@@ -53,7 +59,7 @@ Tela FAQ
 Tela Carrinho 
 ![Tela Carrinho](/imagens/telacarrinho.png)
 
-Tela de Carrinho e Método de Pagamento versão final caso o usuário esteja logado.
+Tela de Carrinho e Método de Pagamento versão final caso o usúario esteja logado.
 ![Tela Carrinho](/imagens/telacarrinhofinallogado.png)
 
 Tela de Carrinho e Método de Pagamento versão final caso o usúario não esteja logado.
@@ -73,6 +79,9 @@ Tela Pedido Cliente
 
 Tela Chamado
 ![Tela Chamado](/imagens/telachamadoadm.png)
+
+Tela de Chamado versão final
+![Tela Chamado Final](/imagens/telafaleconoscofinaladm.png)
 
 
 Diagrama de MER
